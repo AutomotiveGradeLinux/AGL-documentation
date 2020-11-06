@@ -1,0 +1,20 @@
+site_name: AGL Documentation
+site_url: https://docs.automotivelinux.org/
+site_author: Shankho Boron Ghosh
+theme_dir: 'theme/mkdocs_windmill'
+theme:
+  name: null
+  custom_dir: 'theme/mkdocs_windmill'
+  # Copy settings from mkdocs_theme.yml, which is ignored by custom_dir themes.
+  static_templates: [404.html]
+  search_index_only: true
+  include_search_page: true
+
+plugins:
+  - search:
+      separator: '[\s\-\_]+'
+
+markdown_extensions:
+  - pymdownx.superfences
+
+
