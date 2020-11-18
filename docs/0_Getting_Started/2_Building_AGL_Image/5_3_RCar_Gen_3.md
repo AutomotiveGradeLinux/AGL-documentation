@@ -265,7 +265,7 @@ In general, the defaults along with the configuration fragments the
 `aglsetup.sh` script applies in the `local.conf` file are good enough.
 However, you can customize aspects by editing the `local.conf` file.
 See the
-"[Customizing Your Build](../image-workflow-cust-build.html)"
+"[Customizing Your Build](4_Customizing_Your_Build.md)"
 section for common configurations you might want to consider.
 
 **NOTE:** For detailed explanations of the configurations you can make
@@ -295,8 +295,9 @@ or
 ```
 
 If you ran the `aglsetup.sh` script as described in the
-"[Making Sure Your Build Environment is Correct](./renesas.html#4-making-sure-your-build-environment-is-correct)"
-section earlier, the "agl-devel", "agl-demo" AGL features will be in effect.
+"[Making Sure Your Build Environment is Correct](./5_3_RCar_Gen_3.md#4-making-sure-your-build-environment-is-correct)"
+section earlier, the "agl-devel", "agl-demo", "agl-netboot", "agl-appfw-smack", and
+"agl-localdev" AGL features will be in effect.
 These features provide the following:
 
 * A debugger (gdb)
@@ -834,8 +835,6 @@ you can determine the board's IP address and log in using `ssh`.
     </code>
   </pre>
 </details>
-
-**NOTE:** More generics troubleshooting can be found here : [Generic issues](../troubleshooting.html)
 
 ## 11. Supplementary Information
 
