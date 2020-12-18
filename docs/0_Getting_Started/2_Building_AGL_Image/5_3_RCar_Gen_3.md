@@ -51,7 +51,7 @@ Follow these steps to download the drivers you need:
 
 | AGL Version | Renesas version |
 |:-:|:-:|
-| AGL jellyfish 10.0.0 | 3.21.0 |
+| AGL jellyfish 10.0.1 | 3.21.0-v2 |
 
 
 3. **Download the Files:**
