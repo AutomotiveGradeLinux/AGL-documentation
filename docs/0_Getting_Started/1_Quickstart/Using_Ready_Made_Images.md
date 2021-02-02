@@ -8,9 +8,9 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ### 1. QEMU (Emulation)
 
-1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.ext4.xz).
+1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/koi/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.ext4.xz).
 
-2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/bzImage).
+2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/release/koi/latest/qemux86-64/deploy/images/qemux86-64/bzImage).
 
 3. Install [QEMU](https://www.qemu.org/download/) :
 
@@ -75,7 +75,9 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ### 2. Virtual Box (Emulation)
 
-  1. Download the [compressed vbox disk image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.wic.vmdk.xz).
+    **NOTE :** Please see https://jira.automotivelinux.org/browse/SPEC-3731 .
+
+  1. Download the [compressed vbox disk image](https://download.automotivelinux.org/AGL/release/koi/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.wic.vmdk.xz).
 
   2. Install and set up [Virtual Box](https://www.virtualbox.org/wiki/Linux_Downloads).
 
@@ -103,7 +105,7 @@ AGL provides a number of pre-built ready-made images of various versions.
 
   **NOTE :** UEFI enabled system is required.
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.wic.xz).
+  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/koi/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.wic.xz).
 
   2. Extract the image into USB drive :
 
@@ -121,9 +123,9 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ### 1. QEMU (Emulation)
 
-1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm/deploy/images/qemuarm/agl-demo-platform-crosssdk-qemuarm.ext4.xz).
+1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/koi/latest/qemuarm/deploy/images/qemuarm/agl-demo-platform-crosssdk-qemuarm.ext4.xz).
 
-2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm/deploy/images/qemuarm/zImage).
+2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/release/koi/latest/qemuarm/deploy/images/qemuarm/zImage).
 
 3. Install [QEMU](https://www.qemu.org/download/) :
 
@@ -192,7 +194,7 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ### 2. BeagleBone Enhanced (BBE)
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/bbe/deploy/images/bbe/agl-demo-platform-crosssdk-bbe.wic.xz).
+  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/koi/latest/bbe/deploy/images/bbe/agl-demo-platform-crosssdk-bbe.wic.xz).
 
   2. Extract the image into the SD card of BeagleBone Enhanced :
 
@@ -217,9 +219,9 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ### 1. QEMU (Emulation)
 
-1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm64/deploy/images/qemuarm64/agl-demo-platform-crosssdk-qemuarm64.ext4.xz).
+1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/koi/latest/qemuarm64/deploy/images/qemuarm64/agl-demo-platform-crosssdk-qemuarm64.ext4.xz).
 
-2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm64/deploy/images/qemuarm64/Image).
+2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/release/koi/latest/qemuarm64/deploy/images/qemuarm64/Image).
 
 3. Install [QEMU](https://www.qemu.org/download/) :
 
@@ -288,7 +290,7 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ### 2. Raspberry Pi 4
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-demo-platform-crosssdk-raspberrypi4-64.wic.xz).
+  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/koi/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-demo-platform-crosssdk-raspberrypi4-64.wic.xz).
 
   2. Extract the image into the SD card of Raspberry Pi 4 :
 
@@ -356,9 +358,9 @@ AGL provides a number of pre-built ready-made images of various versions.
 **NOTE :** The prebuilt image doesn't support graphics (as of yet) and will run headless. For graphical support, a local build with the neccesary graphics driver is required.
 
 
-  1. Update the [firmware](https://elinux.org/R-Car/Boards/H3SK#Flashing_firmware) using files from [here](https://download.automotivelinux.org/AGL/snapshots/master/latest/h3ulcb-nogfx/deploy/images/h3ulcb/).
+  1. Update the [firmware](https://elinux.org/R-Car/Boards/H3SK#Flashing_firmware) using files from [here](https://download.automotivelinux.org/AGL/release/koi/latest/h3ulcb-nogfx/deploy/images/h3ulcb/).
 
-  2. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/h3ulcb-nogfx/deploy/images/h3ulcb/agl-image-ivi-crosssdk-h3ulcb.wic.xz).
+  2. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/koi/latest/h3ulcb-nogfx/deploy/images/h3ulcb/agl-image-ivi-crosssdk-h3ulcb.wic.xz).
 
   3. Extract the image into the boot device :
 
