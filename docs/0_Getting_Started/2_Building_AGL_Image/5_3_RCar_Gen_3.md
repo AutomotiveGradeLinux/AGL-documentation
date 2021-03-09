@@ -61,7 +61,7 @@ Follow these steps to download the drivers you need:
 
     | AGL Version | Renesas version |
     |:-:|:-:|
-    | AGL koi | 4.1.0 and w/ Wayland 1.18/Weston8.0 |
+    | AGL master | 4.7.0 |
 
 3. **Download the Files:**
 
