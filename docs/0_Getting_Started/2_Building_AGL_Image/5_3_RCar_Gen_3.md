@@ -61,7 +61,9 @@ Follow these steps to download the drivers you need:
 
     | AGL Version | Renesas version |
     |:-:|:-:|
-    | AGL master | 4.7.0 |
+    | AGL Koi 11.0.0 | 4.7.0 |
+    | AGL Koi 11.0.1 | 4.7.0 |
+    | AGL Koi 11.0.2 | 4.7.0 |
 
 3. **Download the Files:**
 
