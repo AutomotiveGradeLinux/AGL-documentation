@@ -7,11 +7,11 @@ quickstart the service and application development process.
 
 1. Download the prebuilt SDK :
 
-      - **x86** : [qemux86-64](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-10.90.0+snapshot.sh)
+      - **x86** : [qemux86-64](https://download.automotivelinux.org/AGL/release/lamprey/latest/qemux86-64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-12.0.0.sh)
 
-      - **ARM 32 bit** : [qemuarm](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-armv7vet2hf-neon-vfpv4-qemuarm-toolchain-10.90.0+snapshot.sh)
+      - **ARM 32 bit** : [qemuarm](https://download.automotivelinux.org/AGL/release/lamprey/latest/qemuarm/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-armv7vet2hf-neon-vfpv4-qemuarm-toolchain-12.0.0.sh)
 
-      - **AARCH64 - ARM 64bit** : [qemuarm64](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-aarch64-qemuarm64-toolchain-10.90.0+snapshot.sh)
+      - **AARCH64 - ARM 64bit** : [qemuarm64](https://download.automotivelinux.org/AGL/release/lamprey/latest/qemuarm64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-aarch64-qemuarm64-toolchain-13.0.0.sh)
 
         *Henceforth,* **qemux86-64** *is used in these guides, unless specified
         otherwise.*
@@ -20,23 +20,23 @@ quickstart the service and application development process.
 
     ```sh
     $ mkdir ~/agl-app
-    $ cp ~/Downloads/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-10.90.0+snapshot.sh ~/agl-app/
+    $ cp ~/Downloads/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-*.sh ~/agl-app/
     $ cd ~/agl-app
     ```
 
 3. Install the downloaded SDK :
 
     ```sh
-    $ chmod 777 poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-10.90.0+snapshot.sh
+    $ chmod 777 poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-*.sh
     $ mkdir agl-sdk/
-    $ ./poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-10.90.0+snapshot.sh
+    $ ./poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-*.sh
     ```
     Select target directory for SDK : `~/agl-app/agl-sdk`
 
     ```sh
     Automotive Grade Linux SDK installer version 10.90.0+snapshot
     =============================================================
-    Enter target directory for SDK (default: /opt/agl-sdk/10.90.0+snapshot-corei7-64): ~/agl-app/agl-sdk
+    Enter target directory for SDK (default: /opt/agl-sdk/12.0.0+snapshot-corei7-64): ~/agl-app/agl-sdk
     You are about to install the SDK to "/home/boron/agl-app/agl-sdk". Proceed [Y/n]? Y
     Extracting SDK..........................................................................................................................................done
     Setting it up...done

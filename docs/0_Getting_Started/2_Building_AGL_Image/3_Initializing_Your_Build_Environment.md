@@ -10,7 +10,7 @@ run to initialize the build environment.
 You can find this script here:
 
 ```sh
-$AGL_TOP/master/meta-agl/scripts/aglsetup.sh
+$AGL_TOP/lamprey/meta-agl/scripts/aglsetup.sh
 ```
 
 The script accepts many options that allow you to define build parameters such
@@ -18,7 +18,7 @@ as the target hardware (i.e. the machine), build directory, and so forth.
 Use the following commands to see the available options and script syntax:
 
 ```sh
-$ cd $AGL_TOP/master
+$ cd $AGL_TOP/lamprey
 $ source meta-agl/scripts/aglsetup.sh -h
 ```
 
@@ -33,32 +33,33 @@ Following is a list of the available machines (level of support varies!):
 ```sh
 Available machines:
    [meta-agl]
-       bbe                        # BeagleBoneEnhanced
-       beaglebone                 # BeagleBone
-       cubox-i                    # multiple i.MX6 boards
-       cyclone5                   # CycloneV
-       dra7xx-evm                 # TI DRA7xx-EVM 'vayu'
-       dragonboard-410c           # Qualcomm Dragonboard 410c
-       dragonboard-820c           # Qualcomm Dragonboard 820c
-       ebisu                      # Renesas RCar Ebisu
-       h3-salvator-x              # Renesas RCar Salvator/H3
-       h3ulcb                     # Renesas RCar H3
-       h3ulcb-kf                  # Renesas RCar H3 w Kingfisher Board
-       h3ulcb-nogfx               # Renesas RCar H3 w/o gfx blobs
-       hsdk                       # ARC HS
-       imx6qdlsabreauto           # i.MX6 sabreauto
-       imx8mqevk                  # i.MX8 w etnaviv
-       imx8mqevk-viv              # i.MX8 w vivante
-       intel-corei7-64            # x86-64 (Intel flavour)
-       m3-salvator-x              # Renesas RCar Salvator/M3
-       m3ulcb                     # Renesas RCar M3
-       m3ulcb-kf                  # Renesas RCar M3 w Kingfisher Board
-       m3ulcb-nogfx               # Renesas RCAR M3 w/o gfx blobs
-       nitrogen6x                 # i.MX6 nitrogen board
-       qemuarm                    # Qemu ARM
-       qemuarm64                  # Qemu AArch 64 (ARM 64bit)
-     * qemux86-64                 # Qemu x86-64
-       raspberrypi4               # Raspberry Pi 4
+       bbe
+       beaglebone
+       cubox-i
+       dragonboard-410c
+       dragonboard-820c
+       ebisu
+       h3-salvator-x
+       h3ulcb
+       h3ulcb-kf
+       h3ulcb-nogfx
+       hsdk
+       imx6qdlsabreauto
+       imx8mqevk
+       imx8mqevk-viv
+       intel-corei7-64
+       j7-evm
+       m3-salvator-x
+       m3ulcb
+       m3ulcb-kf
+       m3ulcb-nogfx
+       nitrogen6x
+       qemuarm
+       qemuarm64
+       qemuriscv64
+     * qemux86-64
+       raspberrypi4
+       virtio-aarch64
 ```
 
 ## AGL Features
@@ -73,53 +74,44 @@ Following is a list of the available features:
 ```sh
 Available features:
    [meta-agl]
-       agl-all-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-netboot )
+       agl-all-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-pipewire  agl-netboot )
        agl-appfw-smack
        agl-archiver
        agl-buildstats
        agl-ci
-       agl-ci-change-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-devel  agl-netboot  agl-pipewire  agl-cloudproxy  agl-buildstats  agl-ptest )
-       agl-ci-change-features-nogfx :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-devel  agl-netboot  agl-pipewire  agl-cloudproxy  agl-buildstats  agl-ptest )
-       agl-ci-snapshot-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-devel  agl-netboot  agl-archiver  agl-pipewire  agl-buildstats  agl-ptest )
-       agl-ci-snapshot-features-nogfx :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework  agl-devel  agl-netboot  agl-archiver  agl-pipewire  agl-buildstats  agl-ptest )
-       agl-devel
+       agl-ci-change-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-pipewire  agl-devel  agl-package-management  agl-netboot  agl-pipewire  agl-cloudproxy  agl-buildstats  agl-ptest )
+       agl-ci-change-features-nogfx :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-pipewire  agl-devel  agl-package-management  agl-netboot  agl-pipewire  agl-cloudproxy  agl-buildstats  agl-ptest )
+       agl-ci-snapshot-features :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-pipewire  agl-devel  agl-package-management  agl-netboot  agl-archiver  agl-pipewire  agl-buildstats  agl-ptest )
+       agl-ci-snapshot-features-nogfx :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-pipewire  agl-devel  agl-package-management  agl-netboot  agl-archiver  agl-pipewire  agl-buildstats  agl-ptest )
+       agl-devel :( agl-package-management )
        agl-fossdriver
        agl-gplv2
        agl-hmi-framework
+       agl-localdev
        agl-netboot
+       agl-package-management
        agl-pipewire
-       agl-profile-cluster :( agl-profile-graphical )
-       agl-profile-cluster-qt5 :( agl-profile-graphical-qt5  agl-profile-graphical )
-       agl-profile-graphical
-       agl-profile-graphical-html5 :( agl-profile-graphical )
-       agl-profile-graphical-qt5 :( agl-profile-graphical )
-       agl-profile-hud
-       agl-profile-telematics
        agl-ptest
+       agl-refhw-h3
        agl-sign-wgts
        agl-sota
        agl-virt
        agl-virt-guest-xen
        agl-virt-xen :( agl-virt )
-       agl-weston-remoting :( agl-profile-graphical )
-   [meta-agl-cluster-demo]
-       agl-cluster-demo :( agl-profile-cluster-qt5  agl-profile-graphical-qt5  agl-profile-graphical  agl-hmi-framework )
-       agl-cluster-demo-preload
+       agl-weston-remoting :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-pipewire )
+       agl-weston-waltham-remoting :( agl-demo  agl-appfw-smack  agl-hmi-framework  agl-pipewire )
    [meta-agl-demo]
        agl-cloudproxy
-       agl-cluster-demo-support :( agl-weston-remoting  agl-profile-graphical )
-       agl-demo :( agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-pipewire  agl-speech-framework )
+       agl-cluster-demo-support :( agl-weston-remoting  agl-demo  agl-appfw-smack  agl-hmi-framework  agl-pipewire )
+       agl-demo :( agl-appfw-smack  agl-hmi-framework  agl-pipewire )
        agl-demo-preload
-       agl-demo-soundmanager :( agl-appfw-smack  agl-hmi-framework  agl-profile-graphical-qt5  agl-profile-graphical  agl-audio-soundmanager-framework )
    [meta-agl-devel]
+       agl-basesystem
+       agl-drm-lease
        agl-jailhouse
-       agl-speech-framework
-       agl-voiceagent-alexa :( agl-speech-framework )
-       agl-voiceagent-alexa-wakeword :( agl-voiceagent-alexa  agl-speech-framework )
-   [meta-agl-extra]
-       agl-localdev
-   [meta-agl-telematics-demo]
-       agl-telematics-demo :( agl-profile-telematics )
+       agl-lxc :( agl-virt  agl-drm-lease )
+       agl-voiceagent-alexa  
+       agl-voiceagent-alexa-wakeword :( agl-voiceagent-alexa )
 ```
 
 To find out exactly what a feature provides, check out the respective layer and its README.
@@ -190,17 +182,10 @@ Following are brief descriptions of the AGL features you can specify on the
   [Ptest](https://yoctoproject.org/docs/3.1.4/dev-manual/dev-manual.html#testing-packages-with-ptest)
   as part of the build.
 
-* **agl-sota**: Enables Software Over-the-Air (SOTA) components and dependencies.
-  Includes meta-updater, meta-updater-qemux86-64, meta-filesystems, and meta-python.
-
 * **agl-demo**: Enables the layers meta-agl-demo and meta-qt5.
   You need agl-demo if you are going to build the agl-demo-platform.
 
-* **agl-sdl**: Enables or adds SDL to the build.
-
 * **agl-pipewire**: Enables AGLs pipewire support.
-
-* **agl-audio-soundmanager-framework**: Enables Soundmanager framework, which is an exclusive switch for audio framework.
 
 * **agl-localdev**: Adds a local layer named "meta-localdev" in the
   meta directory and a local.dev.inc configuration file when that file
@@ -256,7 +241,7 @@ Common targets are:
 
 Running the script creates the Build Directory if it does not already exist.
 The default Build Directory is `$AGL_TOP/<release-branch-name>/build`, and the nomenclature to be used throughout this doc is going to be `$AGL_TOP/<release-branch-name>/<build-dir>`
-For this example, the Build Directory is `$AGL_TOP/master/qemux86-64`.
+For this example, the Build Directory is `$AGL_TOP/lamprey/qemux86-64`.
 
 The script's output also indicates the machine and AGL features selected for the build.
 

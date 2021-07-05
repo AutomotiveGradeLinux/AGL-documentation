@@ -94,7 +94,7 @@ If you built your image with bitbake, you can now just use the ``runqemu`` wrapp
 For this example :
 
 ```sh
-$ source $AGL_TOP/master/qemux86-64/agl-init-build-env
+$ source $AGL_TOP/lamprey/qemux86-64/agl-init-build-env
 ```
 
 In general :

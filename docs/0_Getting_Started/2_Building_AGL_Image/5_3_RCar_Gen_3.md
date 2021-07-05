@@ -1,4 +1,4 @@
-﻿# Building for Supported Renesas Boards
+# Building for Supported Renesas Boards
 
 AGL supports building for several automotive
 [Renesas](https://www.renesas.com/us/en/solutions/automotive.html) board kits.
@@ -61,7 +61,7 @@ Follow these steps to download the drivers you need:
 
     | AGL Version | Renesas version |
     |:-:|:-:|
-    | AGL master | 4.7.0 |
+    | AGL lamprey | 4.7.0 |
 
 3. **Download the Files:**
 

@@ -51,14 +51,14 @@ The remainder of this section provides steps on how to download the AGL source f
      Using the latest stable release gives you a solid snapshot of the
      latest know release.
      The release is static, tested, and known to work.
-     To download the latest stable release branch (i.e. Jellyfish), use
+     To download the latest stable release branch (i.e. lamprey), use
      the following commands:
 
      ```sh
      $ cd $AGL_TOP
-     $ mkdir koi
-     $ cd koi
-     $ repo init -b koi -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+     $ mkdir lamprey
+     $ cd lamprey
+     $ repo init -b lamprey -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
      $ repo sync
      ```
 

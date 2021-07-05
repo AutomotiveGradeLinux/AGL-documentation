@@ -11,11 +11,11 @@ distributions.
 You could find the SDK build from Yocto which embed the afb-helpers library
 here:
 
-- **x86** : [qemux86-64](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-10.90.0+snapshot.sh)
+- **x86** : [qemux86-64](https://download.automotivelinux.org/AGL/release/lamprey/latest/qemux86-64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-12.0.0.sh)
 
-- **ARM 32 bit** : [qemuarm](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-armv7vet2hf-neon-vfpv4-qemuarm-toolchain-10.90.0+snapshot.sh)
+- **ARM 32 bit** : [qemuarm](https://download.automotivelinux.org/AGL/release/lamprey/latest/qemuarm/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-armv7vet2hf-neon-vfpv4-qemuarm-toolchain-12.0.0.sh)
 
-- **AARCH64 - ARM 64bit** : [qemuarm64](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-aarch64-qemuarm64-toolchain-10.90.0+snapshot.sh)
+- **AARCH64 - ARM 64bit** : [qemuarm64](https://download.automotivelinux.org/AGL/release/lamprey/latest/qemuarm64/deploy/sdk/poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-aarch64-qemuarm64-toolchain-12.0.0.sh)
 
 Then use your package manager to install the library.
 
