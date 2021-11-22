@@ -65,7 +65,7 @@ Follow these steps to download the drivers you need:
 
     | AGL Version | Renesas version |
     |:-:|:-:|
-    | AGL lamprey | 4.7.0 |
+    | AGL lamprey | 5.5.0 |
 
 3. **Download the Files:**
 
