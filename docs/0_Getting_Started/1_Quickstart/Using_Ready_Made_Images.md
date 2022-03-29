@@ -8,9 +8,9 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ### 1. QEMU (Emulation)
 
-1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.ext4.xz).
+1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.ext4.xz).
 
-2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/bzImage).
+2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/qemux86-64/deploy/images/qemux86-64/bzImage).
 
 3. Install [QEMU](https://www.qemu.org/download/) :
 
@@ -78,7 +78,7 @@ AGL provides a number of pre-built ready-made images of various versions.
 **NOTE :** Please note [https://www.virtualbox.org/ticket/19873](https://www.virtualbox.org/ticket/19873) as this affects the VMs resolution.
 The AGL demo images do require 1920x1080. The instructions below have been adapted.
 
-  1. Download the [compressed vbox disk image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.wic.vmdk.xz).
+  1. Download the [compressed vbox disk image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.wic.vmdk.xz).
 
   2. Install and set up [Virtual Box](https://www.virtualbox.org/wiki/Linux_Downloads).
 
@@ -110,7 +110,7 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
   **NOTE :** UEFI enabled system is required.
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.wic.xz).
+  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/qemux86-64/deploy/images/qemux86-64/agl-demo-platform-crosssdk-qemux86-64.wic.xz).
 
   2. Extract the image into USB drive :
 
@@ -128,9 +128,9 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
 ### 1. QEMU (Emulation)
 
-1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm/deploy/images/qemuarm/agl-demo-platform-crosssdk-qemuarm.ext4.xz).
+1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/qemuarm/deploy/images/qemuarm/agl-demo-platform-crosssdk-qemuarm.ext4.xz).
 
-2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm/deploy/images/qemuarm/zImage).
+2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/qemuarm/deploy/images/qemuarm/zImage).
 
 3. Install [QEMU](https://www.qemu.org/download/) :
 
@@ -199,7 +199,7 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
 ### 2. BeagleBone Enhanced (BBE)
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/bbe/deploy/images/bbe/agl-demo-platform-crosssdk-bbe.wic.xz).
+  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/bbe/deploy/images/bbe/agl-demo-platform-crosssdk-bbe.wic.xz).
 
   2. Extract the image into the SD card of BeagleBone Enhanced :
 
@@ -224,9 +224,9 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
 ### 1. QEMU (Emulation)
 
-1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm64/deploy/images/qemuarm64/agl-demo-platform-crosssdk-qemuarm64.ext4.xz).
+1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/qemuarm64/deploy/images/qemuarm64/agl-demo-platform-crosssdk-qemuarm64.ext4.xz).
 
-2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm64/deploy/images/qemuarm64/Image).
+2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/qemuarm64/deploy/images/qemuarm64/Image).
 
 3. Install [QEMU](https://www.qemu.org/download/) :
 
@@ -295,7 +295,7 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
 ### 2. Raspberry Pi 4
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-demo-platform-crosssdk-raspberrypi4-64.wic.xz).
+  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-demo-platform-crosssdk-raspberrypi4-64.wic.xz).
 
   2. Extract the image into the SD card of Raspberry Pi 4 :
 
@@ -363,9 +363,9 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 **NOTE :** The prebuilt image does support **non-accelerated** graphics mode (software rendering). For **accelerated** graphics support, a local build with the neccesary graphics driver is required.
 
 
-  1. Update the [firmware](https://elinux.org/R-Car/Boards/H3SK#Flashing_firmware) using files from [here](https://download.automotivelinux.org/AGL/snapshots/master/latest/h3ulcb-nogfx/deploy/images/h3ulcb/).
+  1. Update the [firmware](https://elinux.org/R-Car/Boards/H3SK#Flashing_firmware) using files from [here](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/h3ulcb-nogfx/deploy/images/h3ulcb/).
 
-  2. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/h3ulcb-nogfx/deploy/images/h3ulcb/agl-demo-platform-crosssdk-h3ulcb.wic.xz).
+  2. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/marlin/latest/h3ulcb-nogfx/deploy/images/h3ulcb/agl-demo-platform-crosssdk-h3ulcb.wic.xz).
 
   3. Extract the image into the boot device :
 

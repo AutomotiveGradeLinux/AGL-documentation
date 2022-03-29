@@ -24,19 +24,19 @@ The `meta-agl-demo` layer has the following base dependencies:
     - URI: git://git.yoctoproject.org/poky
     - Branch: "thud"
     - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
+      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/marlin/default.xml)
       manifest file for the `AGL-repo` repository for revision information.
 
 - AGL `meta-agl` Layer:
 
     - URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-agl
-    - Branch: "master"
+    - Branch: "marlin"
 
 - OpenEmbedded `meta-openembedded` Layer:
 
     - Branch: "thud"
     - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
+      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/marlin/default.xml)
       manifest file for the `AGL-repo` repository for revision information.
 
     Specifically, out of `meta-openembedded`, these sub-layers are used:
@@ -114,12 +114,12 @@ dependencies:
 - AGL's `meta-netboot` Layer within the `meta-agl` Layer:
 
     - URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git
-    - Branch: "master"
+    - Branch: "marlin"
 
 
 ## Packagegroups
 
-AGL DEMO Platform's [packagegroups](https://www.yoctoproject.org/docs/3.1.4/dev-manual/dev-manual.html#usingpoky-extend-customimage-customtasks)
+AGL DEMO Platform's [packagegroups](https://www.yoctoproject.org/docs/3.1.14/dev-manual/dev-manual.html#usingpoky-extend-customimage-customtasks)
 consist of the following:
 
 - packagegroup-agl-demo-platform
@@ -138,22 +138,3 @@ consist of the following:
       * `packagegroup-agl-image-ivi`
       * `packagegroup-agl-demo-platform`
 
-- packagegroup-agl-appfw*
-
-    These packagegroups contain packages for the AGL distribution's
-    Application Framework. Subsystem should maintain
-    `packagegroup-agl-appfw-[subsystem].bb`, which should hold sufficient packages
-    for the Application Framework.
-
-    Subsystems also can maintain their own packagegroups using appropriate
-    `recipes-*/`.
-
-    For example, Qt5 has two packagegroups in `meta-agl-demo`:
-    `packagegroup-agl-appfw-native-qt5` and `packagegroup-agl-demo-qt-examples`,
-    which are under `recipes-qt/`.
-
-    The `packagegroup-agl-appfw-native-qt5` is included by `packagegroup-agl-appfw-native` because Qt5 belongs to native application framework of AGL Distro.
-
-    Because the `packagegroup-agl-demo-qt-examples` is not mandatory for the AGL
-    Application Framework and the AGL DEMO, the packagegroup is added to the layer's
-    `local.conf` file only when needed.
