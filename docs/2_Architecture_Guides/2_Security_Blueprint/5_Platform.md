@@ -2,6 +2,16 @@
 title: Platform
 ---
 
+###### # #    # #    # ###### 
+#      #  #  #  ##  ## #      
+#####  #   ##   # ## # #####  
+#      #   ##   #    # #      
+#      #  #  #  #    # #      
+#      # #    # #    # ###### 
+
+This information is old and only kept for reference. The current implementation has evolved.
+
+
 The Automotive Grade Linux platform is a Linux distribution with **AGL**
 compliant applications and services. The platform includes the following
 software:

@@ -16,11 +16,11 @@ The following table briefs about the various hardware platforms, supported by AG
 
 |      BOARD      |     MACHINE    | ARCHITECHTURE | QUICK START GUIDE|
 |:---------------:|:--------------:|:-------------:|:----------------:|
-|       QEMU      |   qemu-x86-64  |      x86      |[QEMU Quick Start](https://docs.automotivelinux.org/en/master/#0_Getting_Started/1_Quickstart/Using_Ready_Made_Images/#_top)|
+|       QEMU      |   qemu-x86-64  |      x86      |[QEMU Quick Start](https://docs.automotivelinux.org/en/needlefish/#0_Getting_Started/1_Quickstart/Using_Ready_Made_Images/#_top)|
 |                 |    qemu-arm    |     arm32     |
 |                 |   qemu-arm64   |     arm64     |
 |                 |                |               |
-|    RCar Gen 3   |     h3ulcb     |     arm64     |[RCar Gen 3 Quick Start](https://docs.automotivelinux.org/en/master/#0_Getting_Started/1_Quickstart/Using_Ready_Made_Images/#3-r-car-h3sk-h3ulcb-board)|
+|    RCar Gen 3   |     h3ulcb     |     arm64     |[RCar Gen 3 Quick Start](https://docs.automotivelinux.org/en/needlefish/#0_Getting_Started/1_Quickstart/Using_Ready_Made_Images/#3-r-car-h3sk-h3ulcb-board)|
 |                 | h3-salvator-x  |     arm64     |
 |                 |      h3-kf     |     arm64     |
 |                 |     m3ulcb     |     arm64     |
@@ -28,7 +28,7 @@ The following table briefs about the various hardware platforms, supported by AG
 |                 |      m3-kf     |     arm64     |
 |                 |   agl-refhw    |     arm64     |
 |                 |                |               |
-|  Raspberry Pi   |  raspberrypi4  |     arm64     |[Raspberry Pi Quick Start](https://docs.automotivelinux.org/en/master/#0_Getting_Started/1_Quickstart/Using_Ready_Made_Images/#2-raspberry-pi-4)|
+|  Raspberry Pi   |  raspberrypi4  |     arm64     |[Raspberry Pi Quick Start](https://docs.automotivelinux.org/en/needlefish/#0_Getting_Started/1_Quickstart/Using_Ready_Made_Images/#2-raspberry-pi-4)|
 
 
 ### Community Supported Boards
@@ -91,6 +91,24 @@ Community supported Machines (BBE, i. MX 6, i. MX 8)
         ```sh
         $ time bitbake agl-demo-platform-html5
         ```
+
+* Flutter-based Image:
+
+    * Setting up flags at `aglsetup` script :
+
+        ```sh
+        $ source meta-agl/scripts/aglsetup.sh -f -m $MACHINE -b build-$MACHINE agl-demo agl-flutter
+
+        # To enable Developer Options
+        $ source meta-agl/scripts/aglsetup.sh -f -m $MACHINE -b build-$MACHINE agl-demo agl-flutter agl-devel
+        ```
+
+    * Building target image :
+
+        ```sh
+        $ time bitbake agl-ivi-demo-platform-flutter
+        ```
+
 
 
 #### 2. Instrument Cluster

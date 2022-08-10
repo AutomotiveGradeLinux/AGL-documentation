@@ -26,21 +26,21 @@ chmod a+x $HOME/bin/repo
 ```
 
 ## 3. Download the AGL Source Files
-- **AGL Version:** Magic Marlin
+- **AGL Version:** Nifty Needlefish (tip op branch)
 ```bash
 cd $AGL_TOP
-mkdir marlin
-export AGL_TOP=$HOME/AGL/marlin
+mkdir needlefish
+export AGL_TOP=$HOME/AGL/needlefish
 cd $AGL_TOP
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-repo init -b marlin -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b needlefish -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
-- Optional: Specify the manifest file(marlin_13.0.0.xml) using -m option
+- Optional: Specify the manifest file of a point release (needlefish_14.0.1.xml) using -m option
 
 ```bash
-repo init -b marlin -m marlin_13.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b needlefish -m needlefish_14.0.1.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 ```
 - Optional: Specify the master branch
 ```bash
@@ -60,7 +60,7 @@ cp R-Car_Gen3_Series_Evaluation_Software_Package_* $XDG_DOWNLOAD_DIR/
 chmod a+rw $XDG_DOWNLOAD_DIR/*.zip
 ```
 ## 5. Define Your Board
-- Supporting Starter Kit Pro/M3 + kingfisher Board (For other supported boards, check [Define Your Board](https://docs.automotivelinux.org/en/master/#0_Getting_Started/2_Building_AGL_Image/5_3_RCar_Gen_3/))
+- Supporting Starter Kit Pro/M3 + kingfisher Board (For other supported boards, check [Define Your Board](https://docs.automotivelinux.org/en/needlefish/#0_Getting_Started/2_Building_AGL_Image/5_3_RCar_Gen_3/))
 ```bash
 export MACHINE=m3ulcb-kf
 ```
@@ -117,8 +117,8 @@ B) Connect HDMI panel to Kingfisher(CN49)for **Cluster Container**
  1. [eLinux](https://elinux.org/R-Car/AGL)
  1. [Kingfisher Board](https://elinux.org/R-Car/Boards/Kingfisher)
  1. [R-Car M3SK](https://elinux.org/R-Car/Boards/M3SK#Flashing_firmware)
- 1. [agl reference machines](https://docs.automotivelinux.org/en/master/#1_hardware_support/overview/)
+ 1. [agl reference machines](https://docs.automotivelinux.org/en/needlefish/#1_hardware_support/overview/)
  1. [AGL Tech Day Presenation](https://static.sched.com/hosted_files/agltechday2022/3b/agl-techday-202204.pdf)
- 1. [Build AGL Image](https://docs.automotivelinux.org/en/master/#0_Getting_Started/2_Building_AGL_Image/0_Build_Process/)
- 1. [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/master/#0_Getting_Started/2_Building_AGL_Image/5_3_RCar_Gen_3/)
+ 1. [Build AGL Image](https://docs.automotivelinux.org/en/needlefish/#0_Getting_Started/2_Building_AGL_Image/0_Build_Process/)
+ 1. [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/needlefish/#0_Getting_Started/2_Building_AGL_Image/5_3_RCar_Gen_3/)
 

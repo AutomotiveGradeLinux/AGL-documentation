@@ -22,7 +22,7 @@ The `meta-agl-demo` layer has the following base dependencies:
 - Yocto Project Release:
 
     - URI: git://git.yoctoproject.org/poky
-    - Branch: "thud"
+    - Branch: "kirkstone"
     - Tested Revision: See the
       [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
       manifest file for the `AGL-repo` repository for revision information.
@@ -34,7 +34,7 @@ The `meta-agl-demo` layer has the following base dependencies:
 
 - OpenEmbedded `meta-openembedded` Layer:
 
-    - Branch: "thud"
+    - Branch: "kirkstone"
     - Tested Revision: See the
       [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
       manifest file for the `AGL-repo` repository for revision information.
