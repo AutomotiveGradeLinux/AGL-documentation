@@ -24,13 +24,13 @@ The `meta-agl-demo` layer has the following base dependencies:
     - URI: git://git.yoctoproject.org/poky
     - Branch: "thud"
     - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
+      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/octopus/default.xml)
       manifest file for the `AGL-repo` repository for revision information.
 
 - AGL `meta-agl` Layer:
 
     - URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-agl
-    - Branch: "master"
+    - Branch: "octopus"
 
 - OpenEmbedded `meta-openembedded` Layer:
 
@@ -113,7 +113,7 @@ dependencies:
 - AGL's `meta-netboot` Layer within the `meta-agl` Layer:
 
     - URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git
-    - Branch: "master"
+    - Branch: "octopus"
 
 
 ## Packagegroups

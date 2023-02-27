@@ -135,7 +135,7 @@ assigning them panel and/or background roles, and they're fully loaded,
 the client can then issue `ready()` request and the compositor will start
 presenting.
 
-Please consult the [protocol file](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/agl-compositor.git;a=blob_plain;f=protocol/agl-shell.xml;hb=refs/heads/master)
+Please consult the [protocol file](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/agl-compositor.git;a=blob_plain;f=protocol/agl-shell.xml;hb=refs/heads/octopus)
 as that is the authoritative way of getting the latest version.
 
 #### V2 updates
@@ -205,7 +205,7 @@ protocol. These roles serve as hints for the compositor and should be used
 before the actual surface creation takes place, such that the compositor can
 take the necessary steps to satisfy those requirements.
 
-Please consult the [protocol file](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/agl-compositor.git;a=blob_plain;f=protocol/agl-shell-desktop.xml;hb=refs/heads/master)
+Please consult the [protocol file](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/agl-compositor.git;a=blob_plain;f=protocol/agl-shell-desktop.xml;hb=refs/heads/octopus)
 as that is the authoritative way of getting the latest version.
 
 #### Additional surface roles in agl-shell-desktop

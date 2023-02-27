@@ -128,7 +128,7 @@ using mirrors.
 To use mirrors, add this line to your `local.conf` file in the Build directory:
 
 ```sh
-SSTATE_MIRRORS_append = " file://.* https://download.automotivelinux.org/sstate-mirror/master/${DEFAULTTUNE}/PATH \n "
+SSTATE_MIRRORS_append = " file://.* https://download.automotivelinux.org/sstate-mirror/octopus/${DEFAULTTUNE}/PATH \n "
 ```
 
 You can learn more about shared state and how it is used in the
@@ -141,7 +141,7 @@ section of the Yocto Project Reference Manual.
 $ echo "# reuse download directories" >> $AGL_TOP/site.conf
 $ echo "DL_DIR = \"$HOME/downloads/\"" >> $AGL_TOP/site.conf
 $ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
-$ cd $AGL_TOP/master/qemux86-64/
+$ cd $AGL_TOP/octopus/qemux86-64/
 $ ln -sf $AGL_TOP/site.conf conf/
 
 In General;

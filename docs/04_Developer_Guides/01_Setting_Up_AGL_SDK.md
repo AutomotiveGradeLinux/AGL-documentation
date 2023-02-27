@@ -9,19 +9,19 @@ quickstart the service and application development process.
 
     Please open the link below and download .sh file for desired machine.
 
-    **Note:** The links provided are for the master branch. If you want SDK for specific branch than change the name from master to specific branch.
+    **Note:** The links provided are for the octopus branch. If you want SDK for specific branch than change the name from octopus to specific branch.
 
-      - **x86** : [qemux86-64](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/sdk/)
+      - **x86** : [qemux86-64](https://download.automotivelinux.org/AGL/snapshots/octopus/latest/qemux86-64/deploy/sdk/)
 
         **Note:** .sh file will be with name 	"poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-corei7-64-qemux86-64-toolchain-$(version number).sh" where version number is regularly updated on the site.
 
 
-      - **ARM 32 bit** : [qemuarm](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm/deploy/sdk/)
+      - **ARM 32 bit** : [qemuarm](https://download.automotivelinux.org/AGL/snapshots/octopus/latest/qemuarm/deploy/sdk/)
 
         **Note:** .sh file will be with name 	"	poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-armv7vet2hf-neon-vfpv4-qemuarm-toolchain-$(version number).sh" where version number is regularly updated on the site.
 
 
-      - **AARCH64 - ARM 64bit** : [qemuarm64](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm64/deploy/sdk/)
+      - **AARCH64 - ARM 64bit** : [qemuarm64](https://download.automotivelinux.org/AGL/snapshots/octopus/latest/qemuarm64/deploy/sdk/)
 
         **Note:** .sh file will be with name 	"	poky-agl-glibc-x86_64-agl-demo-platform-crosssdk-aarch64-qemuarm64-toolchain-$(version number).sh" where version number is regularly updated on the site.
 

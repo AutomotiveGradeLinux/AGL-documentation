@@ -10,7 +10,7 @@ run to initialize the build environment.
 You can find this script here:
 
 ```sh
-$AGL_TOP/master/meta-agl/scripts/aglsetup.sh
+$AGL_TOP/octopus/meta-agl/scripts/aglsetup.sh
 ```
 
 The script accepts many options that allow you to define build parameters such
@@ -18,7 +18,7 @@ as the target hardware (i.e. the machine), build directory, and so forth.
 Use the following commands to see the available options and script syntax:
 
 ```sh
-$ cd $AGL_TOP/master
+$ cd $AGL_TOP/octopus
 $ source meta-agl/scripts/aglsetup.sh -h
 ```
 
@@ -222,7 +222,7 @@ Common targets are:
 
 Running the script creates the Build Directory if it does not already exist.
 The default Build Directory is `$AGL_TOP/<release-branch-name>/build`, and the nomenclature to be used throughout this doc is going to be `$AGL_TOP/<release-branch-name>/<build-dir>`
-For this example, the Build Directory is `$AGL_TOP/master/qemux86-64`.
+For this example, the Build Directory is `$AGL_TOP/octopus/qemux86-64`.
 
 The script's output also indicates the machine and AGL features selected for the build.
 

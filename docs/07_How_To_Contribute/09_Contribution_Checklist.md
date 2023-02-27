@@ -42,7 +42,7 @@ title: Contribution Checklist
  - [ ] Must have: a .gitreview file.
      - [ ] Option: Can have a .gitignore file.
      - [ ] Option: Can have a .editorconfig file.
- - [ ] All code needs to build against master.
+ - [ ] All code needs to build against octopus.
  - [ ] Is a backport to a release branch required ?
  - [ ] Code contributions submitted need to have a Sign-off-by! (Follow [**DCO**](https://developercertificate.org/).)
 

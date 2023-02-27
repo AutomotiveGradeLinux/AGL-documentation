@@ -61,20 +61,20 @@ and help others ramp up.
 Topic branches are temporary branches that you push to commit a set of
 logically-grouped dependent commits:
 
-To push changes from ``REMOTE/master`` tree to Gerrit for being reviewed as a
+To push changes from ``REMOTE/octopus`` tree to Gerrit for being reviewed as a
 topic in **TopicName** use the following command as an example:
 
 ```sh
-$ git push REMOTE HEAD:refs/for/master/TopicName
+$ git push REMOTE HEAD:refs/for/octopus/TopicName
 ```
 
 The topic will show up in the review ``UI`` and in the ``Open Changes List``.
-Topic branches will disappear from the master tree when its content is merged.
+Topic branches will disappear from the octopus tree when its content is merged.
 
 ## Finding Available Topics
 
 ```sh
-$ ssh -p 29418 <LFID>@gerrit.automotivelinux.org gerrit query \ status:open branch:master| grep topic: | sort -u
+$ ssh -p 29418 <LFID>@gerrit.automotivelinux.org gerrit query \ status:open branch:octopus| grep topic: | sort -u
 ```
 
 -  [gerrit.automotivelinux.org](https://gerrit.automotivelinux.org) is the
@@ -159,13 +159,13 @@ list of commits, **c0...c7**, which were submitted as a topic branch:
 
 ```sh
 
-$ git log REMOTE/master..master
+$ git log REMOTE/octopus..octopus
 
   c0
   ...
   c7
 
-$ git push REMOTE HEAD:refs/for/master/SOMETOPIC
+$ git push REMOTE HEAD:refs/for/octopus/SOMETOPIC
 ```
 
 After you get reviewers' feedback, there are changes in **c3** and **c4** that
@@ -175,7 +175,7 @@ for more information. However, you must keep the same Change-Id and push the
 changes again:
 
 ```sh
-$ git push REMOTE HEAD:refs/for/master/SOMETOPIC
+$ git push REMOTE HEAD:refs/for/octopus/SOMETOPIC
 ```
 
 This new push creates a patches revision, your local history is then cleared.
@@ -193,18 +193,18 @@ you to make the necessary *Change-Ids*. The *Change-Ids* must be kept the same.
 -  **reword:** changes the commit message.
 -  **edit:** changes the commit content.
 -  **reorder:** allows you to interchange the order of the commits.
--  **rebase:** stacks the commits on top of the master.
+-  **rebase:** stacks the commits on top of the octopus.
 
 ## Rebasing During a Pull
 
-Before pushing a rebase to your master, ensure that the history has a
+Before pushing a rebase to your octopus, ensure that the history has a
 consecutive order.
 
-For example, your ``REMOTE/master`` has the list of commits from **a0** to
+For example, your ``REMOTE/octopus`` has the list of commits from **a0** to
 **a4**; Then, your changes **c0...c7** are on top of **a4**; thus:
 
 ```sh
-$ git log --oneline REMOTE/master..master
+$ git log --oneline REMOTE/octopus..octopus
 
   a0
   a1
@@ -217,17 +217,17 @@ $ git log --oneline REMOTE/master..master
   c7
 ```
 
-If ``REMOTE/master`` receives commits **a5**, **a6** and **a7**. Pull with a
+If ``REMOTE/octopus`` receives commits **a5**, **a6** and **a7**. Pull with a
 rebase as follows:
 
 ```sh
-$ git pull --rebase REMOTE master
+$ git pull --rebase REMOTE octopus
 ```
 
 This pulls **a5-a7** and re-apply **c0-c7** on top of them:
 
 ```sh
-$ git log --oneline REMOTE/master..master
+$ git log --oneline REMOTE/octopus..octopus
 a0
 ...
 a7

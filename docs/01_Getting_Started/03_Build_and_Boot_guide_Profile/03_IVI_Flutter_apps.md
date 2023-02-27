@@ -6,7 +6,7 @@ title: IVI Flutter apps
 
 ## 0. Prepare Your Build Host
 
-- Install the required tools to build an AGL Image. For detailed explanation, check [Preparing Your Build host](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/02_Preparing_Your_Build_Host/)
+- Install the required tools to build an AGL Image. For detailed explanation, check [Preparing Your Build host](https://docs.automotivelinux.org/en/octopus/#01_Getting_Started/02_Building_AGL_Image/02_Preparing_Your_Build_Host/)
 
 ## 1. Define Your Top-Level Directory
 
@@ -27,12 +27,12 @@ $ chmod a+x $HOME/bin/repo
 ```
 
 ## 3. Download the AGL Source Files
-To download the latest **master** branch  AGL files, use the following commands:
+To download the latest **octopus** branch  AGL files, use the following commands:
 ```bash
 $ cd $AGL_TOP
-$ mkdir master
-$ cd master
-$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+$ mkdir octopus
+$ cd octopus
+$ repo init -b octopus -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 $ repo sync
 ```
 
@@ -40,18 +40,18 @@ $ repo sync
 To initialize the build environment, we must use the setup script.
 This script is available here:
 ```bash
-$ $AGL_TOP/master/meta-agl/scripts/aglsetup.sh
+$ $AGL_TOP/octopus/meta-agl/scripts/aglsetup.sh
 ```
 Run the script:
 
 ```bash
 $ cd $AGL_TOP
-$ source master/meta-agl/scripts/aglsetup.sh -b build-flutter-dashboard -m qemux86-64 agl-demo agl-devel
+$ source octopus/meta-agl/scripts/aglsetup.sh -b build-flutter-dashboard -m qemux86-64 agl-demo agl-devel
 ```
 
 - Here `-b` is used to specify the build directory and `-m` is used to specify the target platform.
 
-- Running this script, will create a build directory if it does not exist. Default build directory: `$AGL_TOP/master/build-flutter-dashboard`
+- Running this script, will create a build directory if it does not exist. Default build directory: `$AGL_TOP/octopus/build-flutter-dashboard`
 - Default target paltform: `qemux86-64`
 
 ## 5. Using BitBake

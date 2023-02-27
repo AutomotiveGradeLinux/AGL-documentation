@@ -100,7 +100,7 @@ $ blc http://localhost:8000 -ro
 For testing hyperlinks of live website do:
 
 ```sh
-$ blc https://docs.automotivelinux.org/en/master/ -ro
+$ blc https://docs.automotivelinux.org/en/octopus/ -ro
 ```
 
 The ```Broken Link Checker``` output will display the broken link and there location in
