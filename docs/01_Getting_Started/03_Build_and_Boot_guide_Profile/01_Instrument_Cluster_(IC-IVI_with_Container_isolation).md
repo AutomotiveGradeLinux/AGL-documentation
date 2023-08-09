@@ -38,13 +38,13 @@ export AGL_TOP=$HOME/AGL/marlin
 cd $AGL_TOP
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-repo init -b marlin -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b pike -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 ```
-- Optional: Specify the manifest file(marlin_13.0.0.xml) using -m option
+- Optional: Specify the manifest file(pike_16.0.0.xml) using -m option
 
 ```bash
-repo init -b marlin -m marlin_13.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b pike -m pike_16.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 ```
 - Optional: Specify the master branch
 ```bash
@@ -64,7 +64,7 @@ cp R-Car_Gen3_Series_Evaluation_Software_Package_* $XDG_DOWNLOAD_DIR/
 chmod a+rw $XDG_DOWNLOAD_DIR/*.zip
 ```
 ## 5. Define Your Board
-- Supporting Starter Kit Pro/M3 + kingfisher Board (For other supported boards, check [Define Your Board](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards.md))
+- Supporting Starter Kit Pro/M3 + kingfisher Board (For other supported boards, check [Define Your Board](https://docs.automotivelinux.org/en/pike/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards.md))
 ```bash
 export MACHINE=m3ulcb-kf
 ```
@@ -83,7 +83,7 @@ bitbake agl-cluster-demo-lxc-host
 ## 8.Boot the Board (Deploying the AGL Demo Image)
 - To boot your image on the Renesas board, you need to do three things:
 
-a) Update all [firmware](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards/#4-troubleshooting) on R-Car M3 Starter Kit board (Flashing firmware).
+a) Update all [firmware](https://docs.automotivelinux.org/en/pike/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards/#4-troubleshooting) on R-Car M3 Starter Kit board (Flashing firmware).
 
 b) Prepare the MicroSD card and Flash image to the MicroSD card using [Etcher](https://www.balena.io/etcher/)
  (**image file name:** lxc-host-image-demo-m3ulcb-kf.wic.xz), then insert MicroSD card in the R-Car M3SK.  
@@ -121,7 +121,7 @@ B) Connect HDMI panel to Kingfisher(CN49)for **Cluster Container**
  1. [eLinux](https://elinux.org/R-Car/AGL)
  1. [Kingfisher Board](https://elinux.org/R-Car/Boards/Kingfisher)
  1. [R-Car M3SK](https://elinux.org/R-Car/Boards/M3SK#Flashing_firmware)
- 1. [agl reference machines](https://docs.automotivelinux.org/en/master/#02_hardware_support/01_Supported_Hardware_Overview/)
+ 1. [agl reference machines](https://docs.automotivelinux.org/en/pike/#02_hardware_support/01_Supported_Hardware_Overview/)
  1. [AGL Tech Day Presenation](https://static.sched.com/hosted_files/agltechday2022/3b/agl-techday-202204.pdf)
- 1. [Build AGL Image](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/0_Build_Process_Overview/)
- 1. [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards/)
+ 1. [Build AGL Image](https://docs.automotivelinux.org/en/pike/#01_Getting_Started/02_Building_AGL_Image/0_Build_Process_Overview/)
+ 1. [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/pike/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards/)
