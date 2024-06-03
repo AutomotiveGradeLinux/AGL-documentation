@@ -22,6 +22,10 @@ Base Flutter IVI demo image.  Derived from `agl-ivi-image` and includes the Flut
 
 Flutter based IVI demo image, using `flutter-ics-homescreen` application.
 
+### agl-ivi-demo-flutter-simple
+
+Flutter based IVI demo image, using older `flutter-homescreen`, `flutter-dashboard`, and `flutter-hvac` applications.  This image is considered deprecated in favor of `agl-ivi-demo-flutter`.
+
 ### agl-ivi-demo-html5
 
 HTML5 based IVI demo image, using a combination of the Chromium Embedded Framework (CEF) and Web Application Manager (WAM).
@@ -45,6 +49,10 @@ Flutter based IC demo image, using `flutter-cluster-dashboard` application.
 ### agl-cluster-demo-qt
 
 Qt based IC demo image, using `cluster-dashboard` application.
+
+### agl-cluster-demo-qtcompositor
+
+Qt based IC demo image, using `cluster-gauges-qtcompositor` application.  This image uses Qt's built-in compositor instead of AGL's `agl-compositor`, and is considered deprecated.
 
 ### agl-gateway-demo
 
