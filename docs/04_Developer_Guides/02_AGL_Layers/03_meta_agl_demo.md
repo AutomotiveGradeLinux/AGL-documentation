@@ -34,11 +34,6 @@ The `meta-agl-demo` layer has the following base dependencies:
 
 - OpenEmbedded `meta-openembedded` Layer:
 
-    - Branch: "thud"
-    - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
-      manifest file for the `AGL-repo` repository for revision information.
-
     Specifically, out of `meta-openembedded`, these sub-layers are used:
 
     - `meta-oe`
@@ -50,19 +45,6 @@ The `meta-agl-demo` layer has the following base dependencies:
   [OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/master/layers/):
 
     - URI: https://github.com/meta-qt5/meta-qt5.git
-    - Branch:   "kirkstone"
-    - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
-      manifest file for the `AGL-repo` repository for revision information.
-
-### Hardware Dependencies
-
-Aside from the previously listed base dependencies, if you are using a
-[supported Renesas board](../../01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards.md), these dependencies exist:
-
-- AGL's `meta-renesas` Layer:
-
-    - URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-renesas
 
 ### Feature Dependencies
 
@@ -70,29 +52,6 @@ The `meta-agl-demo` layer has the following AGL [feature](../../01_Getting_Start
 dependencies:
 
 - Yocto Project `meta-security` Layer:
-
-    - URI: https://git.yoctoproject.org/cgit/cgit.cgi/meta-security
-    - Branch: "master"
-    - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
-      manifest file for the `AGL-repo` repository for revision information.
-
-- AGL's `meta-app-framework` Layer within the `meta-agl` Layer:
-
-    - URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git
-    - Branch: "master"
-
-**The `agl-sota` Feature:**
-
-- Here Technologies' `meta-updater` Layer:
-
-    - URI: https://github.com/advancedtelematic/meta-updater/
-    - Branch: "kirkstone"
-
-- Here Technologies' `meta-updater-qemux86-64` Layer:
-
-    - URI: https://github.com/advancedtelematic/meta-updater-qemux86-64/
-    - Branch: "kirkstone"
 
 - OpenEmbedded's `meta-openembedded` Layer:
 

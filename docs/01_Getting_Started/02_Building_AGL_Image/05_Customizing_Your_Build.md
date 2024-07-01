@@ -128,7 +128,7 @@ using mirrors.
 To use mirrors, add this line to your `local.conf` file in the Build directory:
 
 ```sh
-SSTATE_MIRRORS_append = " file://.* https://download.automotivelinux.org/sstate-mirror/master/${DEFAULTTUNE}/PATH \n "
+SSTATE_MIRRORS_append = " file://.* https://download.automotivelinux.org/sstate-mirror/ricefish/${DEFAULTTUNE}/PATH \n "
 ```
 
 You can learn more about shared state and how it is used in the

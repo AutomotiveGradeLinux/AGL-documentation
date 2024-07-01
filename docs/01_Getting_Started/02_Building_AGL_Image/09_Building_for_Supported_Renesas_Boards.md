@@ -65,7 +65,7 @@ Follow these steps to download the drivers you need:
 
     | AGL Version | Renesas version |
     |:-:|:-:|
-    | AGL master | 5.9.0 |
+    | AGL ricefish | 5.9.0 |
 
 3. **Download the Files:**
 
@@ -652,8 +652,8 @@ similar to the following:
 
 ```text
 [snip]
---- fragment /home/working/workspace_agl_master/meta-agl/templates/machine/h3ulcb/50_setup.sh
-/home/working/workspace_agl_master /home/working/workspace_agl_master/build_gen3
+--- fragment /home/working/workspace_agl_ricefish/meta-agl/templates/machine/h3ulcb/50_setup.sh
+/home/working/workspace_agl_ricefish /home/working/workspace_agl_ricefish/build_gen3
 The graphics and multimedia acceleration packages for
 the R-Car Gen3 board can be downloaded from:
 https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
@@ -661,11 +661,11 @@ https://www.renesas.com/en-us/solutions/automotive/rcar-demoboard-2.html
 These 2 files from there should be store in your'/home/devel/Downloads' directory.
     R-Car_Gen3_Series_Evaluation_Software_Package_for_Linux-weston8-20200923.zip
     R-Car_Gen3_Series_Evaluation_Software_Package_of_Linux_Drivers-weston8-20200923.zip
-/home/working/workspace_agl_master/build_gen3
---- fragment /home/working/workspace_agl_master/meta-agl/templates/base/99_setup_EULAconf.sh
+/home/working/workspace_agl_ricefish/build_gen3
+--- fragment /home/working/workspace_agl_ricefish/meta-agl/templates/base/99_setup_EULAconf.sh
 --- end of setup script
 OK
-Generating setup file: /home/working/workspace_agl_master/build_gen3/agl-init-build-env ... OK
+Generating setup file: /home/working/workspace_agl_ricefish/build_gen3/agl-init-build-env ... OK
 ------------ aglsetup.sh: Done
 [snip]
 ```
