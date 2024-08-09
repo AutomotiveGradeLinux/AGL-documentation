@@ -84,14 +84,27 @@ $ git config \--global user.name "Your Name"
 
 ### 6th step: Download the AGL Source Files
 
+#### Standard procedure:  Use latest point of the quillback release.
+
 ```bash
 $ cd $AGL_TOP
-$ mkdir master
-$ export AGL_TOP=$HOME/AGL/master
+$ mkdir quillback
+$ export AGL_TOP=$HOME/AGL/quillback
 $ cd $AGL_TOP
-$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo -b quillback
 $ repo sync
 ```
+
+#### Alternative procedure:  Use latest release of the quillback release.
+
+Check a this [release note page](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_oldstable_release).  It describe repo command to download latest release point.
+
+Example
+```bash
+$ repo init -b quillback -m quillback_17.1.1.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+```
+
+When you want to use latest release of the quillback release, please replace repo command from the standard procedure to this.
 
 ### 7th step: Downloading Proprietary Drivers  (AGL RefHW and R-Car H3/M3 with Kingfisher board only procedure)
 
@@ -99,7 +112,7 @@ If your board is Raspberry Pi4, please skip this step.
 
 #### 7-1: Downloading Proprietary Drivers from [Renesas-automotive-products](https://www.renesas.com/us/en/products/automotive-products/automotive-system-chips-socs/r-car-h3-m3-documents-software).
 
-In case of Optimistic Octopus and master, please download this.
+In case of Quirky Quillback, please download this.
 
 ![](images/image3.png)
 
