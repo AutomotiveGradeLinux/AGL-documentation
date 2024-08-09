@@ -31,10 +31,9 @@ table2.
 
 | Board type | Support integration type | status |
 |:---:|:---:|:---:|
-| AGL RefHW | 1,2a,3a,3b | Now break, Fixing now. |
-| R-CarH3 Starter Kit with Kingfisher board | 1,2a,3a,3b | Now break, Fixing now. |
-| Raspberry Pi4 (4G or 8G) | 1,2a,3a,3b | Now break, Fixing now. |
-| NanoPC-T6 (4G or 8G or 16G) | 1,3a,3b | TODO. |
+| AGL RefHW | 1,2a,3a,3b | Tested. |
+| R-CarH3 Starter Kit with Kingfisher board | 1,2a,3a,3b | Not tested. |
+| Raspberry Pi4 (4G or 8G) | 1,2a,3a,3b | Not tested. |
 
 We recommend to choice AGL RefHW or Raspberry Pi4 (4G or 8G).
 
@@ -81,14 +80,27 @@ $ git config \--global user.name "Your Name"
 
 ### 6th step: Download the AGL Source Files
 
+#### Standard procedure:  Use latest point of the ricefish release.
+
 ```bash
 $ cd $AGL_TOP
 $ mkdir ricefish
 $ export AGL_TOP=$HOME/AGL/ricefish
 $ cd $AGL_TOP
-$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo -b ricefish
 $ repo sync
 ```
+
+#### Alternative procedure:  Use latest release of the quillback release.
+
+Check a this [release note page](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_oldstable_release).  It describe repo command to download latest release point.
+
+Example
+```bash
+$ repo init -b ricefish -m ricefish_18.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+```
+
+When you want to use latest release of the quillback release, please replace repo command from the standard procedure to this.
 
 ### 7th step: Downloading Proprietary Drivers  (AGL RefHW and R-Car H3/M3 with Kingfisher board only procedure)
 
