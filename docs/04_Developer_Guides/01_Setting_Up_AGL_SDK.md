@@ -2,27 +2,12 @@
 title: Setting Up AGL SDK
 ---
 
-AGL provides a pre-built ready-made Software Development Kit (SDK) to help
-quickstart the service and application development process.
 
-1. Download the prebuilt SDK :
+You will have to build the agl-ivi-demo-qt-crosssdk image to retrieve the sdk files !
 
-    Please open the link below and download .sh file for desired machine.
+1. Build the SDK :
 
-      - **x86** : [qemux86-64](https://download.automotivelinux.org/AGL/release/ricefish/latest/qemux86-64/deploy/sdk/)
-
-        **Note:** .sh file will be with name 	"poky-agl-glibc-x86_64-agl-ivi-demo-qt-crosssdk-corei7-64-qemux86-64-toolchain-$(version number).sh" where version number is regularly updated on the site.
-
-
-      - **ARM 32 bit** : [qemuarm](https://download.automotivelinux.org/AGL/release/ricefish/latest/qemuarm/deploy/sdk/)
-
-        **Note:** .sh file will be with name 	"	poky-agl-glibc-x86_64-agl-ivi-demo-qt-crosssdk-armv7vet2hf-neon-vfpv4-qemuarm-toolchain-$(version number).sh" where version number is regularly updated on the site.
-
-
-      - **AARCH64 - ARM 64bit** : [qemuarm64](https://download.automotivelinux.org/AGL/release/ricefish/latest/qemuarm64/deploy/sdk/)
-
-        **Note:** .sh file will be with name 	"	poky-agl-glibc-x86_64-agl-ivi-demo-qt-crosssdk-aarch64-qemuarm64-toolchain-$(version number).sh" where version number is regularly updated on the site.
-
+Follow the build setup as before but do build 'agl-ivi-demo-qt-crosssdk' as image.
 
         *Henceforth,* **qemux86-64** *is used in these guides, unless specified
         otherwise. We also use the 'agl-ivi-demo-qt-crosssdk' as example.*

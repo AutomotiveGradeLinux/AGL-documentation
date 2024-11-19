@@ -33,8 +33,13 @@ Following is a list of the available machines (level of support varies!):
 ```sh
 Available machines:
    [meta-agl]
+       am62xx-evm
+       aws-ec2-arm64
+       aws-ec2-x86-64
        bbe                        # BeagleBoneEnhanced
        beaglebone                 # BeagleBone
+       beaglebone-ai64
+       beagleplay
        cubox-i                    # multiple i.MX6 boards
        dragonboard-410c           # Qualcomm Dragonboard 410c
        dragonboard-820c           # Qualcomm Dragonboard 820c
@@ -49,6 +54,7 @@ Available machines:
        imx8mqevk-viv              # i.MX8 w vivante
        intel-corei7-64            # x86-64 (Intel flavour)
        j7-evm                     # TI Jacinto 7 EVM
+       jetson-agx-orin-devkit
        m3-salvator-x              # Renesas RCar Salvator/M3
        m3ulcb                     # Renesas RCar M3
        m3ulcb-kf                  # Renesas RCar M3 w Kingfisher Board
@@ -56,10 +62,12 @@ Available machines:
        nitrogen6x                 # i.MX6 nitrogen board
        qemuarm                    # Qemu ARM
        qemuarm64                  # Qemu AArch 64 (ARM 64bit)
+       qemuriscv64
      * qemux86-64                 # Qemu x86-64
        raspberrypi4               # Raspberry Pi 4
-       virtio-aarch64             # Virtio Guest
-
+       raspberrypi5               # Raspberry Pi 5
+       s4sk
+       unmatched
 ```
 
 ## AGL Features
@@ -108,7 +116,6 @@ Available features:
 
    [meta-agl-devel]                                   # Development layer
        Refer: https://git.automotivelinux.org/AGL/meta-agl-devel/tree/templates/feature
-       agl-basesystem                                 # Toyota basesystem
        agl-drm-lease                                  # DRM lease support
        agl-egvirt                                     # EG-Virt feature
        agl-flutter                                    # Flutter support
