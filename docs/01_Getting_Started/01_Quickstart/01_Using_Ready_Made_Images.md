@@ -44,11 +44,11 @@ AGL provides a number of pre-built ready-made images of various versions.
 
   ```sh
     $ ( sleep 5 && vinagre --vnc-scale localhost ) > /tmp/vinagre.log 2>&1 &
-    $ qemu-system-x86_64 -device virtio-net-pci,netdev=net0,mac=52:54:00:12:35:02 -netdev user,id=net0,hostfwd=tcp::2222-:22 \
-      -drive file=agl-ivi-demo-qt-qemux86-64.ext4,if=virtio,format=raw -show-cursor -usb -usbdevice tablet -device virtio-rng-pci \
+      qemu-system-x86_64 -device virtio-net-pci,netdev=net0,mac=52:54:00:12:35:02 -netdev user,id=net0,hostfwd=tcp::2222-:22 \
+      -drive file=agl-ivi-demo-qt-qemux86-64.ext4,if=virtio,format=raw -usb -usbdevice tablet -device virtio-rng-pci \
       -snapshot -vga virtio \
-      -vnc :0 -soundhw hda -machine q35 -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt -enable-kvm \
-      -m 2048 -serial mon:vc -serial mon:stdio -serial null -kernel bzImage \
+      -vnc :0 -machine q35 -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt -enable-kvm \
+      -m 2048 -smp 4 -serial mon:vc -serial mon:stdio -serial null -kernel bzImage \
       -append 'root=/dev/vda rw console=tty0 mem=2048M ip=dhcp oprofile.timer=1 console=ttyS0,115200n8 verbose fstab=no'
   ```
 
@@ -65,12 +65,12 @@ AGL provides a number of pre-built ready-made images of various versions.
   - To use vnc-viewer instead of vinagre :
     ```sh
     $ ( sleep 5 && vncviewer ) &
-       qemu-system-x86_64 -device virtio-net-pci,netdev=net0,mac=52:54:00:12:35:02 -netdev user,id=net0,hostfwd=tcp::2222-:22 \
-       -drive file=agl-ivi-demo-qt-qemux86-64.ext4,if=virtio,format=raw -show-cursor -usb -usbdevice tablet -device virtio-rng-pci \
-       -snapshot -vga virtio \
-       -vnc :0 -soundhw hda -machine q35 -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt -enable-kvm \
-       -m 2048 -serial mon:vc -serial mon:stdio -serial null -kernel bzImage \
-       -append 'root=/dev/vda rw console=tty0 mem=2048M ip=dhcp oprofile.timer=1 console=ttyS0,115200n8 verbose fstab=no'
+      qemu-system-x86_64 -device virtio-net-pci,netdev=net0,mac=52:54:00:12:35:02 -netdev user,id=net0,hostfwd=tcp::2222-:22 \
+      -drive file=agl-ivi-demo-qt-qemux86-64.ext4,if=virtio,format=raw -usb -usbdevice tablet -device virtio-rng-pci \
+      -snapshot -vga virtio \
+      -vnc :0 -machine q35 -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt -enable-kvm \
+      -m 2048 -smp 4 -serial mon:vc -serial mon:stdio -serial null -kernel bzImage \
+      -append 'root=/dev/vda rw console=tty0 mem=2048M ip=dhcp oprofile.timer=1 console=ttyS0,115200n8 verbose fstab=no'
     ```
 
 ### 2. Virtual Box (Emulation)
@@ -166,7 +166,7 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
     $ ( sleep 5 && vinagre --vnc-scale localhost ) > /tmp/vinagre.log 2>&1 &
         qemu-system-arm -cpu cortex-a15 -machine virt-2.11 -nographic \
         -net nic,model=virtio,macaddr=52:54:00:12:34:58 \
-        -net user -m 2048 -monitor none -soundhw hda -device usb-ehci \
+        -net user -m 2048 -smp 4 -monitor none -device usb-ehci \
         -device virtio-rng-pci -device VGA,vgamem_mb=64,edid=on -vnc :0 \
         -device qemu-xhci -device usb-tablet -device usb-kbd \
         -kernel zImage -append "console=ttyAMA0,115200 root=/dev/vda verbose systemd.log_color=false" \
@@ -189,7 +189,7 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
     $ ( sleep 5 && vncviewer ) &
         qemu-system-arm -cpu cortex-a15 -machine virt-2.11 -nographic \
         -net nic,model=virtio,macaddr=52:54:00:12:34:58 \
-        -net user -m 2048 -monitor none -soundhw hda -device usb-ehci \
+        -net user -m 2048 -smp 4 -monitor none -device usb-ehci \
         -device virtio-rng-pci -device VGA,vgamem_mb=64,edid=on -vnc :0 \
         -device qemu-xhci -device usb-tablet -device usb-kbd \
         -kernel zImage -append "console=ttyAMA0,115200 root=/dev/vda verbose systemd.log_color=false" \
@@ -270,16 +270,23 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
         -snapshot
     ```
 
-### 2. Raspberry Pi 4
+### 2. Raspberry Pi 4 / 5
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/ricefish/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-ivi-demo-qt-raspberrypi4-64.wic.xz).
+  1. Download the [compressed prebuilt image for Pi4](https://download.automotivelinux.org/AGL/release/ricefish/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-ivi-demo-qt-raspberrypi4-64.wic.xz) or
+              the [compressed prebuilt image for Pi5](https://download.automotivelinux.org/AGL/release/ricefish/latest/raspberrypi5/deploy/images/raspberrypi5/agl-ivi-demo-qt-raspberrypi5.wic.xz).
 
   2. Extract the image into the SD card of Raspberry Pi 4 :
 
     ```sh
     $ lsblk
     $ sudo umount <sdcard_device_name>
+
+    # for Pi4
     $ xzcat agl-ivi-demo-qt-raspberrypi4-64.wic.xz | sudo dd of=<sdcard_device_name> bs=4M
+
+    # for Pi5
+    $ xzcat agl-ivi-demo-qt-raspberrypi5.wic.xz | sudo dd of=<sdcard_device_name> bs=4M
+
     $ sync
     ```
 
