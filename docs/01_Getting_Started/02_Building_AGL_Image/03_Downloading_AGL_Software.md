@@ -90,13 +90,9 @@ The remainder of this section provides steps on how to download the AGL source f
 
    ```sh
    $ tree -L 1
-    .
-    ├── bsp
-    ├── external
-    ├── meta-agl
-    ├── meta-agl-cluster-demo
-    ├── meta-agl-demo
-    ├── meta-agl-devel
-    ├── meta-agl-extra
-    └── meta-agl-telematics-demo
+   ... bsp                      # Machine BSP folders in here
+   ... external                 # External dependencies. Do not modify.
+   ... meta-agl                 # Core/essential layers - to be reused
+   ... meta-agl-demo            # Demo UI layers
+   ... meta-agl-devel           # WIP / Development / Staging area
    ```

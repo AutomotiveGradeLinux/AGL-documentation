@@ -1,5 +1,5 @@
 ---
-title: Building for Raspberry Pi 4
+title: Building for Raspberry Pi 4/Pi 5
 ---
 
 The
@@ -21,6 +21,8 @@ section presented generic information for setting up your build environment
 using the `aglsetup.sh` script.
 If you are building the AGL demo image for a Raspberry Pi 4 board, you need to specify some
 specific options when you run the script :
+
+Note: for Pi5 replace "-m raspberrypi4" with "-m raspberrypi5" below.
 
 **Qt based IVI demo :**
 
@@ -95,20 +97,20 @@ Here is example for the Raspberry Pi 4 board for Qt Based demo:
 $ export IMAGE_NAME=agl-ivi-demo-qt-raspberrypi4.rootfs.wic.xz
 ```
 
-**HTML5 Based IVI demo :**
-The target is `agl-ivi-demo-html5`.
+**Flutter Based IVI demo :**
+The target is `agl-ivi-demo-flutter`.
 
 ```sh
-$ time bitbake agl-ivi-demo-html5
+$ time bitbake agl-ivi-demo-flutter
 ```
 
 By default, the build process puts the resulting image in the Build Directory and further exporting that as `$IMAGE_NAME`.
 Here is example for the Raspberry Pi 4 board for HTML5 Based demo:
 
 ```sh
-<build_dir>/tmp/deploy/images/raspberrypi4/agl-ivi-demo-html5-raspberrypi4-64.rootfs.wic.xz
+<build_dir>/tmp/deploy/images/raspberrypi4/agl-ivi-demo-rlutter-raspberrypi4-64.rootfs.wic.xz
 
-$ export IMAGE_NAME=agl-ivi-demo-html5-raspberrypi4-64.rootfs.wic.xz
+$ export IMAGE_NAME=agl-ivi-demo-flutter-raspberrypi4-64.rootfs.wic.xz
 ```
 
 ## 4. Deploying the AGL Demo Image
@@ -189,16 +191,4 @@ the image on the Raspberry Pi 4 board:
       $ sudo screen /dev/ttyUSB0 115200
       ```
 
-5. SOTA
 
-    Follow the step below to build AGL for Raspberry Pi with enabled software over
-    the air (SOTA) updates:
-
-    1. Include **agl-sota** feature.
-
-    2. In **bblayers.conf** replace meta-updater-qemux86-64 with
-    **meta-updater-raspberrypi**.
-
-    3. In **local.conf** set `SOTA_PACKED_CREDENTIALS` and `OSTREE_BRANCHNAME`.
-
-    More details are available [here](https://docs.ota.here.com/getstarted/dev/raspberry-pi.html).

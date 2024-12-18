@@ -28,16 +28,6 @@ $ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
 $ ln -sf $AGL_TOP/site.conf conf/
 ```
 
-**Sample HTML5 based IVI demo :**
-
-```sh
-$ source meta-agl/scripts/aglsetup.sh -f -m qemux86-64 -b qemux86-64 agl-demo agl-devel agl-profile-graphical-html5
-$ echo "# reuse download directories" >> $AGL_TOP/site.conf
-$ echo "DL_DIR = \"$HOME/downloads/\"" >> $AGL_TOP/site.conf
-$ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
-$ ln -sf $AGL_TOP/site.conf conf/
-```
-
 **IVI-EG Flutter based demo :**
 
 ```sh
@@ -83,21 +73,6 @@ By default, the build process puts the resulting image in the Build Directory an
 <build_directory>/tmp/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.vmdk.xz
 
 $ export IMAGE_NAME=agl-ivi-demo-qt-qemux86-64.vmdk.xz
-```
-
-**Sample HTML5 based IVI demo :**
-The target is `agl-ivi-demo-html5`.
-
-```sh
-$ time bitbake agl-ivi-demo-html5
-```
-
-By default, the build process puts the resulting image in the Build Directory and further exporting that as `$IMAGE_NAME`:
-
-```sh
-<build_directory>/tmp/deploy/images/qemux86-64/agl-ivi-demo-html5-qemux86-64.vmdk.xz
-
-$ export IMAGE_NAME=agl-ivi-demo-html5-qemux86-64.vmdk.xz
 ```
 
 **IVI-EG Flutter based demo :**
@@ -188,7 +163,7 @@ export OVMF_PATH=/usr/share/edk2/ovmf/OVMF_CODE.fd
 Once QEMU is installed, boot the image with KVM support:
 
 ```sh
-qemu-system-x86_64 -enable-kvm -m 2048 \
+qemu-system-x86_64 -enable-kvm -m 2048 -smp 4\
     -bios ${OVMF_PATH} \
     -hda ${IMAGE_NAME} \
     -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt \

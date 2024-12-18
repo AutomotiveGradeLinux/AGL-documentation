@@ -33,41 +33,41 @@ Following is a list of the available machines (level of support varies!):
 ```sh
 Available machines:
    [meta-agl]
-       am62xx-evm
-       aws-ec2-arm64
-       aws-ec2-x86-64
-       bbe                        # BeagleBoneEnhanced
-       beaglebone                 # BeagleBone
-       beaglebone-ai64
-       beagleplay
-       cubox-i                    # multiple i.MX6 boards
-       dragonboard-410c           # Qualcomm Dragonboard 410c
-       dragonboard-820c           # Qualcomm Dragonboard 820c
+       am62xx-evm          )*
+       aws-ec2-arm64       )*     # graviton
+       aws-ec2-x86-64      )*     # x86-64
+       beaglebone-ai64     )*     #
+       beagleplay          )*     #
+       cubox-i             )*     # multiple i.MX6 boards
        ebisu                      # Renesas RCar Ebisu
        h3-salvator-x              # Renesas RCar Salvator/H3
        h3ulcb                     # Renesas RCar H3
        h3ulcb-kf                  # Renesas RCar H3 w Kingfisher Board
        h3ulcb-nogfx               # Renesas RCar H3 w/o gfx blobs
-       hsdk                       # ARC HS
-       imx6qdlsabreauto           # i.MX6 sabreauto
-       imx8mqevk                  # i.MX8 w etnaviv
-       imx8mqevk-viv              # i.MX8 w vivante
+       imx6qdlsabreauto    )*     # i.MX6 sabreauto
+       imx8mqevk           )*     # i.MX8 w etnaviv
+       imx8mqevk-viv       )*     # i.MX8 w vivante
        intel-corei7-64            # x86-64 (Intel flavour)
-       j7-evm                     # TI Jacinto 7 EVM
-       jetson-agx-orin-devkit
+       j721e-evm           )*     # TI evm
+       jetson-agx-orin-devkit )*  # nvidia
        m3-salvator-x              # Renesas RCar Salvator/M3
        m3ulcb                     # Renesas RCar M3
        m3ulcb-kf                  # Renesas RCar M3 w Kingfisher Board
        m3ulcb-nogfx               # Renesas RCAR M3 w/o gfx blobs
-       nitrogen6x                 # i.MX6 nitrogen board
+       nanopc-t6           )*     # NanoPC t6
        qemuarm                    # Qemu ARM
        qemuarm64                  # Qemu AArch 64 (ARM 64bit)
-       qemuriscv64
+       qemuriscv64                #
      * qemux86-64                 # Qemu x86-64
        raspberrypi4               # Raspberry Pi 4
        raspberrypi5               # Raspberry Pi 5
-       s4sk
-       unmatched
+       s4sk                       #
+       unmatched           )*     #
+       visionfive2         )*     #
+```
+
+```
+NOTE: Boards marked with )* are supported by community members.
 ```
 
 ## AGL Features
@@ -95,7 +95,9 @@ Available features:
        agl-ci                                    # CI: specific settings for the CI environment
        agl-create-spdx                           # Software Bill of Materials (SBOM) generation
        agl-devel :( agl-package-management )     # Developer Env (root login w/o pass)
+       agl-flutter                               # Flutter UI env
        agl-fossdriver                            # Fossology integration, Scancode, etc.
+       agl-kuksa-val                             # Kuksa.Val support
        agl-localdev                              # inclusion of local development folder ./meta-localdev
        agl-netboot                               # network boot (e.g. in CI)
        agl-package-management                    # include package management (e.g. rpm)
@@ -106,22 +108,24 @@ Available features:
        agl-virt                                  # EG-Virt features
        agl-virt-guest-xen                        # EG-Virt features
        agl-virt-xen                              # EG-Virt features
-       agl-weston-remoting                       # remote streaming support
-       agl-weston-waltham-remoting               # remote streaming support w/ waltham
 
    [meta-agl-demo]                                    # DEMO layer
        Refer: https://git.automotivelinux.org/AGL/meta-agl-demo/tree/templates/feature
        agl-demo                                       # default IVI demo 
+       agl-container-guest-demo                       # Container demo
+       agl-demo-control-panel                         # Demo control panel
+       agl-demo-html5                                 # HTML5 demo - maintainer needed
        agl-kvm                                        # Enables support for building multiconfig based KVM+QEMU demo images
 
    [meta-agl-devel]                                   # Development layer
        Refer: https://git.automotivelinux.org/AGL/meta-agl-devel/tree/templates/feature
        agl-drm-lease                                  # DRM lease support
        agl-egvirt                                     # EG-Virt feature
-       agl-flutter                                    # Flutter support
        agl-ic-container                               # Instrument Cluster EG demo using containers
        agl-offline-voice-agent                        # Feature template for meta-offline-voice-agent layer
        agl-test                                       # Test framework under development
+       agl-rdp                                        # support for screen output over rdp
+       agl-uhmi                                       # Unified HMI support
 
 ```
 

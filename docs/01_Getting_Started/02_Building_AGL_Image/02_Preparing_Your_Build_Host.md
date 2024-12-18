@@ -26,7 +26,7 @@ section for more information on the ready-made images.
 1. **Use a Supported Linux Distribution:** To use the AGL software, it is
    recommended that your build host is a native Linux machine that runs a
    Yocto Project supported distribution as described by the
-   "[Supported Linux Distributions](https://docs.yoctoproject.org/ref-manual/system-requirements.html#supported-linux-distributions)"
+   "[Supported Linux Distributions](https://docs.yoctoproject.org/scarthgap/ref-manual/system-requirements.html#supported-linux-distributions)"
    section in the Yocto Project Reference Manual.
    Basically, you should be running a recent version of Ubuntu, Fedora, openSUSE,
    CentOS, or Debian.
@@ -41,7 +41,7 @@ section for more information on the ready-made images.
       - Python 3.4.0 or greater
 
    If your distribution does not meet these minimal requirements, see the
-   "[Required Git, tar, and Python Versions](https://docs.yoctoproject.org/ref-manual/system-requirements.html#required-git-tar-python-and-gcc-versions)"
+   "[Required Git, tar, and Python Versions](https://docs.yoctoproject.org/scarthgap/ref-manual/system-requirements.html#required-git-tar-python-and-gcc-versions)"
    section in the Yocto Project Reference Manual for steps that you can
    take to be sure you have these tools.
 
@@ -50,13 +50,13 @@ section for more information on the ready-made images.
    Depending on the Linux distribution you are using, the list of
    host packages differ.
    See
-   "[The Build Host Packages](https://docs.yoctoproject.org/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
+   "[The Build Host Packages](https://docs.yoctoproject.org/scarthgap/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
    section of the Yocto Project Quick Start for information on the packages you need.
 
    **NOTE:** If you are using the CentOS distribution, you need to
    separately install the epel-release package and run the `makecache` command as
    described in
-   "[The Build Host Packages](https://docs.yoctoproject.org/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
+   "[The Build Host Packages](https://docs.yoctoproject.org/scarthgap/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
    section of the Yocto Project Quick Start.
 
    Aside from the packages listed in the previous section, you need the following:

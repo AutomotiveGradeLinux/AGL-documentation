@@ -22,10 +22,6 @@ Base Flutter IVI demo image.  Derived from `agl-ivi-image` and includes the Flut
 
 Flutter based IVI demo image, using `flutter-ics-homescreen` application.
 
-### agl-ivi-demo-html5
-
-HTML5 based IVI demo image, using a combination of the Chromium Embedded Framework (CEF) and Web Application Manager (WAM).
-
 ### agl-ivi-demo-qt
 
 Qt based IVI demo image, using `homescreen` and `launcher` as well as other Qt applications.
