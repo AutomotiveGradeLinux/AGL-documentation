@@ -103,7 +103,7 @@ repeat the ``git review`` command.
       ```sh
       $ cd documentation                              # Working Repository
       $ git remote -v update                          # Updating wrt remote
-      $ git checkout -b mytopicbranch origin/master   # Creating new branch
+      $ git checkout -b mytopicbranch origin/salmon   # Creating new branch
       ### CODE the CHANGES
       $ git add  <file>                               # Track the changed files
       $ git commit -s                                 # Signed Commit Message
@@ -119,7 +119,7 @@ repeat the ``git review`` command.
       $ git add  <file>                               # Track the changed files
       $ git commit -s                                 # Signed Commit Message
       $ git review                                    # Submit Changes to review
-      $ git checkout master                           # Return to master branch
+      $ git checkout salmon                           # Return to salmon branch
       ```
 
 ## Reviewing Using Gerrit

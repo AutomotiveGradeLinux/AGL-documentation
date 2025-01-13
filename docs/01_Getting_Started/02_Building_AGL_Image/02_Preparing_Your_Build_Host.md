@@ -17,7 +17,7 @@ the Yocto Project documentation
 **NOTE:** This entire section presumes you want to build an image.
 You can skip the entire build process if you want to use a ready-made
 development image.
-The [supported images](https://download.automotivelinux.org/AGL/snapshots/master/latest/) exist for several boards as
+The [supported images](https://download.automotivelinux.org/AGL/release/salmon/latest/) exist for several boards as
 well as for the Quick EMUlator (QEMU).
 See the
 "[Quickstart](../01_Quickstart/01_Using_Ready_Made_Images.md)"
@@ -56,7 +56,7 @@ section for more information on the ready-made images.
    **NOTE:** If you are using the CentOS distribution, you need to
    separately install the epel-release package and run the `makecache` command as
    described in
-   "[The Build Host Packages](https://docs.yoctoproject.org/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
+   "[The Build Host Packages](https://docs.yoctoproject.org/OAref-manual/system-requirements.html#required-packages-for-the-build-host)"
    section of the Yocto Project Quick Start.
 
    Aside from the packages listed in the previous section, you need the following:

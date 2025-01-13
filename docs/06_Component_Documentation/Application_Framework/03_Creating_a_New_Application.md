@@ -93,7 +93,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=ae6497158920d9524cf208c09cc4c984"
 
 PV = "1.0+git${SRCREV}"
 
-SRC_URI = "git://git.automotivelinux.org/apps/foo;protocol=https;branch=master"
+SRC_URI = "git://git.automotivelinux.org/apps/foo;protocol=https;branch=${AGL_BRANCH}"
 SRCREV = "abcdef012"
 
 S = "${WORKDIR}/git"

@@ -59,8 +59,8 @@ The remainder of this section provides steps on how to download the AGL source f
 
      ```sh
      $ cd $AGL_TOP
-     $ mkdir <<branch name>>
-     $ cd <<branch name>>
+     $ mkdir <<branch name>>  # e.g. 'salmon' 
+     $ cd <<branch name>>     # e.g. 'salmon'
      $ repo init -b <<branch name>> -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
      $ repo sync
      ```

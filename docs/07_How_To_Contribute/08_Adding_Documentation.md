@@ -26,6 +26,7 @@ $ git clone "ssh://<LFID>@gerrit.automotivelinux.org:29418/AGL/documentation" &&
 
     ```sh
     $ cd documentation
+    $ git checkout salmon || git checkout -b salmon origin/salmon
     ```
 
 2. Install MkDocs and rtd-dropdown theme
@@ -106,7 +107,7 @@ $ blc http://localhost:8000 -ro
 For testing hyperlinks of live website do:
 
 ```sh
-$ blc https://docs.automotivelinux.org/en/master/ -ro
+$ blc https://docs.automotivelinux.org/en/salmon/ -ro
 ```
 
 The ```Broken Link Checker``` output will display the broken link and there location in

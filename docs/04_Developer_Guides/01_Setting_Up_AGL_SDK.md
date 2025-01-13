@@ -2,6 +2,8 @@
 title: Setting Up AGL SDK
 ---
 
+FIXME!
+
 AGL provides a pre-built ready-made Software Development Kit (SDK) to help
 quickstart the service and application development process.
 

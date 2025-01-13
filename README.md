@@ -26,6 +26,7 @@ $ git clone "ssh://$USER@gerrit.automotivelinux.org:29418/AGL/documentation" && 
 
     ```sh
     $ cd documentation
+    $ git checkout salmon || git checkout -b salmon origin/salmon
     ```
 
 2. Install MkDocs and rtd-dropdown theme

@@ -44,10 +44,10 @@ Build environment for AGL IC container integration is same as AGL other
 profile build environment. 
 
 ### 1st step:
-Please read [[Build Process Overview]](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/) in AGL doc.
+Please read [[Build Process Overview]](https://docs.automotivelinux.org/en/salmon/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/) in AGL doc.
 
 ### 2nd step:
-Please read [[Preparing Your Build Host]](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/02_Preparing_Your_Build_Host/) in AGL doc.
+Please read [[Preparing Your Build Host]](https://docs.automotivelinux.org/en/salmon/#01_Getting_Started/02_Building_AGL_Image/02_Preparing_Your_Build_Host/) in AGL doc.
 
 ### 3rd step: 
 Define Your Top-Level Directory.
@@ -81,8 +81,8 @@ $ git config \--global user.name "Your Name"
 
 ```bash
 $ cd $AGL_TOP
-$ mkdir master
-$ export AGL_TOP=$HOME/AGL/master
+$ mkdir salmon
+$ export AGL_TOP=$HOME/AGL/salmon
 $ cd $AGL_TOP
 $ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 $ repo sync
@@ -94,7 +94,7 @@ If your board is Raspberry Pi4, please skip this step.
 
 #### 7-1: Downloading Proprietary Drivers from [Renesas-automotive-products](https://www.renesas.com/us/en/products/automotive-products/automotive-system-chips-socs/r-car-h3-m3-documents-software).
 
-In case of master, please download this.
+In case of salmon, please download this.
 
 ***Note.  Latest AGL use same binary as kirkstone.***
 
@@ -183,7 +183,7 @@ work flow that depend to Renesas propriety license limitation.
 We recommend to open new terminal to do this extra section.
 
 ```bash
-$ export AGL_TOP=$HOME/AGL/master
+$ export AGL_TOP=$HOME/AGL/salmon
 $ cd $AGL_TOP
 ```
 
@@ -238,31 +238,31 @@ OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/path/to/deploy/"
 
 ex.  When your board is AGL RefHW and your home directory is "/home/user/".
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-refhw/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/salmon/build-ivi-refhw/tmp/deploy"
 ```
 
 ex.  When your board is R- CarH3 Starter Kit with Kingfisher board and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-h3kf/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/salmon/build-ivi-h3kf/tmp/deploy"
 ```
 
 ex.  When your board is NanoPC T6 board and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-nanopc-t6/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/salmon/build-ivi-nanopc-t6/tmp/deploy"
 ```
 
 ex.  When your board is Raspberry Pi 4 and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-rpi4/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/salmon/build-ivi-rpi4/tmp/deploy"
 ```
 
 ex.  When your board is Raspberry Pi 5 and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-rpi5/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/salmon/build-ivi-rpi5/tmp/deploy"
 ```
 
 #### 4th step: Build all in one image (2b).
@@ -516,7 +516,7 @@ Upstream:
  1. [eLinux](https://elinux.org/R-Car/AGL)
  1. [Kingfisher Board](https://elinux.org/R-Car/Boards/Kingfisher)
  1. [R-Car M3SK](https://elinux.org/R-Car/Boards/M3SK#Flashing_firmware)
- 1. [agl reference machines](https://docs.automotivelinux.org/en/master/#02_hardware_support/01_Supported_Hardware_Overview/)
+ 1. [agl reference machines](https://docs.automotivelinux.org/en/salmon/#02_hardware_support/01_Supported_Hardware_Overview/)
  1. [AGL Tech Day Presenation](https://static.sched.com/hosted_files/agltechday2022/3b/agl-techday-202204.pdf)
- 1. [Build AGL Image](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/0_Build_Process_Overview/)
- 1. [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards/)
+ 1. [Build AGL Image](https://docs.automotivelinux.org/en/salmon/#01_Getting_Started/02_Building_AGL_Image/0_Build_Process_Overview/)
+ 1. [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/salmon/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards/)
