@@ -24,19 +24,19 @@ The `meta-agl-demo` layer has the following base dependencies:
     - URI: git://git.yoctoproject.org/poky
     - Branch: "kirkstone"
     - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
+      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/trout/default.xml)
       manifest file for the `AGL-repo` repository for revision information.
 
 - AGL `meta-agl` Layer:
 
     - URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-agl
-    - Branch: "master"
+    - Branch: "trout"
 
 - OpenEmbedded `meta-openembedded` Layer:
 
-    - Branch: "thud"
+    - Branch: "scarthgap"
     - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
+      [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml?h=trout)
       manifest file for the `AGL-repo` repository for revision information.
 
     Specifically, out of `meta-openembedded`, these sub-layers are used:
@@ -46,13 +46,13 @@ The `meta-agl-demo` layer has the following base dependencies:
     - `meta-networking`
     - `meta-python`
 
-- Yocto Project `meta-qt5` Layer from the
+- Yocto Project `meta-qt6` Layer from the
   [OpenEmbedded Layer Index](https://layers.openembedded.org/layerindex/branch/master/layers/):
 
-    - URI: https://github.com/meta-qt5/meta-qt5.git
-    - Branch:   "kirkstone"
+    - URI: https://code.qt.io/cgit/yocto/meta-qt6
+    - Branch:   "6.x"
     - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
+      [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml?h=trout)
       manifest file for the `AGL-repo` repository for revision information.
 
 ### Hardware Dependencies
@@ -74,7 +74,8 @@ dependencies:
     - URI: https://git.yoctoproject.org/cgit/cgit.cgi/meta-security
     - Branch: "master"
     - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
+      [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml?h=trout)
+
       manifest file for the `AGL-repo` repository for revision information.
 
 - AGL's `meta-app-framework` Layer within the `meta-agl` Layer:
@@ -82,24 +83,13 @@ dependencies:
     - URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git
     - Branch: "master"
 
-**The `agl-sota` Feature:**
-
-- Here Technologies' `meta-updater` Layer:
-
-    - URI: https://github.com/advancedtelematic/meta-updater/
-    - Branch: "kirkstone"
-
-- Here Technologies' `meta-updater-qemux86-64` Layer:
-
-    - URI: https://github.com/advancedtelematic/meta-updater-qemux86-64/
-    - Branch: "kirkstone"
-
 - OpenEmbedded's `meta-openembedded` Layer:
 
     - URI: https://github.com/openembedded/meta-openembedded
-    - Branch: "kirkstone"
+    - Branch: "scarthgap"
     - Tested Revision: See the
-      [`default.xml`](https://github.com/leon-anavi/AGL-repo/blob/master/default.xml)
+      [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml?h=trout)
+
       manifest file for the `AGL-repo` repository for revision information.
 
     Specifically, out of `meta-openembedded`, these sub-layers are used:
@@ -113,7 +103,7 @@ dependencies:
 - AGL's `meta-netboot` Layer within the `meta-agl` Layer:
 
     - URI: https://gerrit.automotivelinux.org/gerrit/gitweb?p=AGL/meta-agl.git
-    - Branch: "master"
+    - Branch: "trout"
 
 ## Maintenance
 

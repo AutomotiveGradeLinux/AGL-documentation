@@ -93,7 +93,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=ae6497158920d9524cf208c09cc4c984"
 
 PV = "1.0+git${SRCREV}"
 
-SRC_URI = "git://git.automotivelinux.org/apps/foo;protocol=https;branch=master"
+SRC_URI = "git://git.automotivelinux.org/apps/foo;protocol=https;branch=${AGL_BRANCH}"
 SRCREV = "abcdef012"
 
 S = "${WORKDIR}/git"
@@ -153,7 +153,7 @@ LIC_FILES_CHKSUM = "file://License.md;md5=f712ede8d4f845976061925d1416fc40"
 
 PV = "1.0+git${SRCREV}"
 
-SRC_URI = "git://git.automotivelinux.org/apps/flutter-foo;protocol=https;branch=master"
+SRC_URI = "git://git.automotivelinux.org/apps/flutter-foo;protocol=https;branch=${AGL_BRANCH}"
 SRCREV = "abcdef012"
 
 S = "${WORKDIR}/git"
@@ -216,7 +216,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57"
 
 PV = "1.0+git${SRCREV}"
 
-SRC_URI = "git://git.automotivelinux.org/apps/web-foo;protocol=https;branch=master"
+SRC_URI = "git://git.automotivelinux.org/apps/web-foo;protocol=https;branch=${AGL_BRANCH}"
 SRCREV = "abcdef012"
 
 S = "${WORKDIR}/git"

@@ -54,14 +54,11 @@ The remainder of this section provides steps on how to download the AGL source f
      To download the [latest stable release branch](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release), use
      the following commands:
 
-     **Note:** In this below command please change the branch name to the [latest stable release branch](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release). For example, for Nifty Needlefish branch use the last name i.e. "needlefish" as branch.
-
-
      ```sh
      $ cd $AGL_TOP
-     $ mkdir <<branch name>>
-     $ cd <<branch name>>
-     $ repo init -b <<branch name>> -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+     $ mkdir trout
+     $ cd trout
+     $ repo init -b trout -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
      $ repo sync
      ```
 

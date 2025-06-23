@@ -17,7 +17,7 @@ the Yocto Project documentation
 **NOTE:** This entire section presumes you want to build an image.
 You can skip the entire build process if you want to use a ready-made
 development image.
-The [supported images](https://download.automotivelinux.org/AGL/snapshots/master/latest/) exist for several boards as
+The [supported images](https://download.automotivelinux.org/AGL/release/trout/latest/) exist for several boards as
 well as for the Quick EMUlator (QEMU).
 See the
 "[Quickstart](../01_Quickstart/01_Using_Ready_Made_Images.md)"
