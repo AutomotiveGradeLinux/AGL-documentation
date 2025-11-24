@@ -84,7 +84,7 @@ $ cd $AGL_TOP
 $ mkdir salmon
 $ export AGL_TOP=$HOME/AGL/salmon
 $ cd $AGL_TOP
-$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+$ repo init -b salmon -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 $ repo sync
 ```
 
