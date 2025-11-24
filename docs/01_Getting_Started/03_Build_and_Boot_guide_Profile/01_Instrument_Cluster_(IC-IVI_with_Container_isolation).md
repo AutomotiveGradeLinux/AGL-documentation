@@ -84,7 +84,7 @@ $ cd $AGL_TOP
 $ mkdir trout
 $ export AGL_TOP=$HOME/AGL/trout
 $ cd $AGL_TOP
-$ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+$ repo init -b trout -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 $ repo sync
 ```
 
