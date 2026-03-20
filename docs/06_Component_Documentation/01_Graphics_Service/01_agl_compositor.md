@@ -188,9 +188,6 @@ problems and regression over time. Not only that the amount of complexity in
 the compositor is unwarranted and can simplified by telling the shell client
 handle any window management interaction on its own.
 
-Further more, with this protocol update we also includes some events already
-present in the agl-shell-desktop protocol like  deactivate and terminate.
-
 #### V4 updates
 
 Version 4 of the agl-shell protocol brings a new request,
@@ -265,55 +262,12 @@ and new activated window will be put in front. Making the split window sticky
 would avoid doing that. Obviously trying to activate a window already active,
 which has the sticky role won't be possible (it is already displayed).
 
-### agl-shell-desktop (deprecated, will be removed in future, see gRPC proxy)
-
-This extension is targeted at keeping some of the functionally already
-established in AGL as to a) allow applications display/activate other
-surfaces/application window, and b) set further roles, specially dialog/window
-pop-ups and split-type of surfaces.
-
-Clients can make use of this protocol to set further roles, like independently
-positioned pop-up dialog windows, split type of surfaces or fullscreen ones.
-Additional roles, and implicitly functionality can be added by extending the
-protocol. These roles serve as hints for the compositor and should be used
-before the actual surface creation takes place, such that the compositor can
-take the necessary steps to satisfy those requirements.
-
-Please consult the [protocol file](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/agl-compositor.git;a=blob_plain;f=protocol/agl-shell-desktop.xml;hb=refs/heads/master)
-as that is the authoritative way of getting the latest version.
-
-#### Additional surface roles in agl-shell-desktop
-
-Like mentioned earlier, the compositor is already making use of some (internal)
-roles, and with this extension we add some further ones. These are:
-
-* split (there's vertical and a horizontal one)
-* fullscreen
-* dialog/pop-up
-
-Internally these are encoded with different values such that there's a
-translation needed, between the protocol values and the internal ones.  Besides
-the roles, additional data can to be passed on, but only depending on the role.
-It is highly recommend **to avoid** using the protocol to pass down information
-between different applications using this communication channel. It is only
-intended to help out with demo applications. Other sharing mechanism are
-available in the AGL project that can satisfy those requirements.
-
-#### Receiving application state events from (other) applications
-
-agl-shell-desktop exposes two events which client can install handlers for, one
-that signals when regular xdg application have been created, and one that
-signals state changes (active/hidden) as well as destroyed/no longer present
-surfaces. These events can be useful to add additional functionality if
-needed.
-
 #### Activating (other) applications
 
-Both agl-shell and agl-shell-desktop have requests to activate other
-application based on their xdg-shell app_id. In case the application is
-present/running, it will attempt to make the surface backing that application
-the current activate one, with each output having independently active
-surfaces.
+agl-shell protocol has requests to activate other application based on their
+xdg-shell app_id. In case the application is present/running, it will attempt
+to make the surface backing that application the current activate one, with
+each output having independently active surfaces.
 
 ## gRPC proxy for window management
 
