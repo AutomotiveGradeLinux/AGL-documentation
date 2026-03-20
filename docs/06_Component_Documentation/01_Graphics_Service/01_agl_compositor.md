@@ -418,8 +418,33 @@ message AppStateResponse {
 };
 ```
 
+### Demo clients using agl-shell and the gRPC interface
+
 A C++ client implementation the gRPC API can be found in [agl-shell-activator](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/agl-shell-activator.git;a=tree;h=refs/heads/master;hb=refs/heads/master)
-or in [window-management-client-grpc](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/window-management-client-grpc.git;a=tree;h=refs/heads/master;hb=refs/heads/master).
+project or in [window-management-client-grpc](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/window-management-client-grpc.git;a=tree;h=refs/heads/master;hb=refs/heads/master) one.
+
+agl-shell-activator is a simple gRPRC client written to exercise code paths in
+the gRPC proxy server and to illustrate how can window management be
+acompolished with gRPC. It has most of following function available in terms
+window management functionality, like:
+
+- activate/deactivate (show/hide) a certain application
+- change orientation of a certain application window by make it
+  split with other or with the main shell application
+- change window type to float, fullscreen or back to normal in the maximized state
+- change window position by making it a float type of window and move its
+  position to a desired x, y position
+- listen for window state events - the compositor emits window state events which
+  are further relayed to the gRPC proxy server
+- sticky window - keep one window always displayed which switching between
+  different windows
+
+window-management-client-grpc is a Qt demo applications which demonstrates how
+the client can communicate with the gRPC protocol to inform the compositor that
+it wants to position itself to a custom position or be in a different state
+that the normal maximized one. More specifically the following window states
+are available: float, fullscreen, split, independently positioned, on other
+outputs or scaled.
 
 ## Explicit output
 
