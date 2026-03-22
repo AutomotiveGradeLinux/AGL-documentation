@@ -32,7 +32,7 @@ section for more information on the ready-made images.
    CentOS, or Debian.
 
 2. **Be Sure Your Build Host Has Enough Free Disk Space:**
-   Your build host should have at least 100 Gbytes.
+   Your build host should have at least 100 Gbytes of free disk space for minimal images. For full demo images with Flutter support (e.g. agl-ivi-demo-flutter), plan for at least 300 Gbytes.
 
 3. **Be Sure Tools are Recent:**  You need to have recent versions for the following tools:
 
