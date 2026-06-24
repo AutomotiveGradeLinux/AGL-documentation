@@ -122,14 +122,14 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
   **NOTE :** UEFI enabled system is required.
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.wic.xz).
+  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.wic.zst).
 
   2. Extract the image into USB drive :
 
      ```sh
      $ lsblk
      $ sudo umount <usb_device_name>
-     $ xzcat agl-ivi-demo-qt-qemux86-64.wic.xz | sudo dd of=<usb_device_name> bs=4M
+     $ zstdcat -d agl-ivi-demo-qt-qemux86-64.wic.zst | sudo dd of=<usb_device_name> bs=4M
      $ sync
      ```
 
@@ -211,14 +211,14 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
 ### Raspberry Pi 4
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-ivi-demo-qt-raspberrypi4-64.wic.xz).
+  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/snapshots/master/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-ivi-demo-qt-raspberrypi4-64.wic.zst).
 
   2. Extract the image into the SD card of Raspberry Pi 4 :
 
     ```sh
     $ lsblk
     $ sudo umount <sdcard_device_name>
-    $ xzcat agl-ivi-demo-qt-raspberrypi4-64.wic.xz | sudo dd of=<sdcard_device_name> bs=4M
+    $ zstdcat -d agl-ivi-demo-qt-raspberrypi4-64.wic.zst | sudo dd of=<sdcard_device_name> bs=4M
     $ sync
     ```
 

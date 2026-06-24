@@ -319,7 +319,7 @@ image to the SD card, you need to use xzcat and dd commands on your
 build PC.
 
 ```bash
-$ sudo bash -c "xzcat /path/to/image/directory/agl-instrument-cluster-container-demo-XXXXX.rootfs.wic.xz | dd of=/dev/sdXXX bs=128M"
+$ sudo bash -c "zstdcat -d /path/to/image/directory/agl-instrument-cluster-container-demo-XXXXX.rootfs.wic.zst | dd of=/dev/sdXXX bs=128M"
 ```
 
 **If you are missing to set SD card device "/dev/sdXXX", it cause

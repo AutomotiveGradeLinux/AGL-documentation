@@ -349,7 +349,7 @@ card with a new image.
 
     ```sh
     cd $AGL_TOP/build/tmp/deploy/images/$MACHINE
-    bmaptool copy ./agl-ivi-demo-qt-$MACHINE.rootfs.wic.xz <boot_device_name>
+    bmaptool copy ./agl-ivi-demo-qt-$MACHINE.rootfs.wic.zst <boot_device_name>
     ```
 
     Alternatively, you can leave the image in an uncompressed state and write it
@@ -357,7 +357,7 @@ card with a new image.
 
     ```sh
     sudo umount <boot_device_name>
-    xzcat ./agl-ivi-demo-qt-$MACHINE.rootfs.wic.xz | sudo dd of=<boot_device_name> bs=4M
+    zstdcat -d ./agl-ivi-demo-qt-$MACHINE.rootfs.wic.zst | sudo dd of=<boot_device_name> bs=4M
     sync
     ```
 

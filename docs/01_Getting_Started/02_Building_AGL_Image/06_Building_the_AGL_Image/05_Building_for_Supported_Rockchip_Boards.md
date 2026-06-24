@@ -59,9 +59,9 @@ By default, the build process puts the resulting image in the Build Directory an
 Here is example for the NanoPC T6 board for Flutter Based demo:
 
 ```sh
-<build_dir>/tmp/deploy/images/rockchip-rk3588-nanopc-t6/agl-ivi-demo-flutter-rockchip-rk3588-nanopc-t6.rootfs.wic.xz
+<build_dir>/tmp/deploy/images/rockchip-rk3588-nanopc-t6/agl-ivi-demo-flutter-rockchip-rk3588-nanopc-t6.rootfs.wic.zst
 
-$ export IMAGE_NAME=agl-ivi-demo-flutter-rockchip-rk3588-nanopc-t6.rootfs.wic.xz
+$ export IMAGE_NAME=agl-ivi-demo-flutter-rockchip-rk3588-nanopc-t6.rootfs.wic.zst
 ```
 
 **Qt Based IVI demo :**
@@ -75,9 +75,9 @@ By default, the build process puts the resulting image in the Build Directory an
 Here is example for the NanoPC T6 board for Qt Based demo:
 
 ```sh
-<build_dir>/tmp/deploy/images/rockchip-rk3588-nanopc-t6/agl-ivi-demo-qt-rockchip-rk3588-nanopc-t6.rootfs.wic.xz
+<build_dir>/tmp/deploy/images/rockchip-rk3588-nanopc-t6/agl-ivi-demo-qt-rockchip-rk3588-nanopc-t6.rootfs.wic.zst
 
-$ export IMAGE_NAME=agl-ivi-demo-qt-rockchip-rk3588-nanopc-t6.rootfs.wic.xz
+$ export IMAGE_NAME=agl-ivi-demo-qt-rockchip-rk3588-nanopc-t6.rootfs.wic.zst
 ```
 
 ## 4. Deploying the AGL Demo Image
@@ -99,7 +99,7 @@ the image on the NanoPC T6 board:
       ```sh
       $ lsblk
       $ sudo umount <sdcard_device_name>
-      $ xzcat ${IMAGE_NAME} | sudo dd of=<sdcard_device_name> bs=4M
+      $ zstdcat -d ${IMAGE_NAME} | sudo dd of=<sdcard_device_name> bs=4M
       $ sync
       ```
 

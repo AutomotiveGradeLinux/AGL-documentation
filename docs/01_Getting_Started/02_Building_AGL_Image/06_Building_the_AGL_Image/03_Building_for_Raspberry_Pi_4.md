@@ -90,9 +90,9 @@ By default, the build process puts the resulting image in the Build Directory an
 Here is example for the Raspberry Pi 4 board for Qt Based demo:
 
 ```sh
-<build_dir>/tmp/deploy/images/raspberrypi4/agl-ivi-demo-qt-raspberrypi4.rootfs.wic.xz
+<build_dir>/tmp/deploy/images/raspberrypi4/agl-ivi-demo-qt-raspberrypi4.rootfs.wic.zst
 
-$ export IMAGE_NAME=agl-ivi-demo-qt-raspberrypi4.rootfs.wic.xz
+$ export IMAGE_NAME=agl-ivi-demo-qt-raspberrypi4.rootfs.wic.zst
 ```
 
 **HTML5 Based IVI demo :**
@@ -106,9 +106,9 @@ By default, the build process puts the resulting image in the Build Directory an
 Here is example for the Raspberry Pi 4 board for HTML5 Based demo:
 
 ```sh
-<build_dir>/tmp/deploy/images/raspberrypi4/agl-ivi-demo-html5-raspberrypi4-64.rootfs.wic.xz
+<build_dir>/tmp/deploy/images/raspberrypi4/agl-ivi-demo-html5-raspberrypi4-64.rootfs.wic.zst
 
-$ export IMAGE_NAME=agl-ivi-demo-html5-raspberrypi4-64.rootfs.wic.xz
+$ export IMAGE_NAME=agl-ivi-demo-html5-raspberrypi4-64.rootfs.wic.zst
 ```
 
 ## 4. Deploying the AGL Demo Image
@@ -130,7 +130,7 @@ the image on the Raspberry Pi 4 board:
       ```sh
       $ lsblk
       $ sudo umount <sdcard_device_name>
-      $ xzcat ${IMAGE_NAME} | sudo dd of=<sdcard_device_name> bs=4M
+      $ zstdcat -d ${IMAGE_NAME} | sudo dd of=<sdcard_device_name> bs=4M
       $ sync
       ```
 
