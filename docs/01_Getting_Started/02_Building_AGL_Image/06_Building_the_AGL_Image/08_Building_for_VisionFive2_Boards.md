@@ -125,3 +125,11 @@ Connect the cable's UART side TX line to pin 10.
 
 The UART speed of VisionFive2 is 115200bps.
 
+### Firmware Update
+
+**Attention! If you want to use both Vimba and Unagi on the same board, you should not update the firmware. The new firmware does not have backward compatibility.**
+
+During the Vimba release timeframe, the Vision Five 2 board changed from a vendored u-boot to upstream u-boot. Vimba and newer versions build a new firmware.
+
+If you want to update the firmware, please refer to [U-Boot document Vision Five 2 page](https://docs.u-boot.org/en/latest/board/starfive/visionfive2.html).
+
