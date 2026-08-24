@@ -785,3 +785,14 @@ Retrieving device attributes could be done archaically using `lsusb` or `lspci`
 or using `udevadm info -a /dev/input/event*` which can provide with a multitude
 of attributes to use. In our above example we only relied `idVendor` and
 `idProduct` but potentially other attributes might be used.
+
+### Multiple touch devices with same udev attributes
+
+Latest libweston release provides an API which can be used by compositor plugins
+or compositor frontends to be able to bind a touch device to a
+[specific output](https://wayland.pages.freedesktop.org/weston/toc/libweston/compositor.html#_CPPv431weston_touch_device_bind_outputP19weston_touch_deviceP13weston_output).
+
+You can grab a list of available
+[list](https://wayland.pages.freedesktop.org/weston/toc/libweston/compositor.html#_CPPv435weston_compositor_get_touch_devicesP17weston_compositor)
+of touch devices and search for a particular output with a serial string value
+matching a weston head owning that output.
