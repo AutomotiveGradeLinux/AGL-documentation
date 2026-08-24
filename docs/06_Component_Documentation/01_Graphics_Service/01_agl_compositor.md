@@ -2,21 +2,21 @@
 title: agl-compositor
 ---
 
-# Wayland compositor
+# History and Wayland compositor
 
-When the AGL project was started, weston was chosen as the compositor, which is
+When the AGL project was started, Weston was chosen as the compositor, which was
 the reference implementation of a Wayland compositor, while for window management
 functionality it relied on *ivi-shell* (In-Vehicle Infotainment) together
-with an extension, called [wayland-ivi-exension](https://github.com/GENIVI/wayland-ivi-extension).
+with an extension, called [wayland-ivi-exension](https://github.com/COVESA/wayland-ivi-extension).
 
-A demo platform image of AGL comes with a handful of demo applications, done
-with the Qt, which abstracts the protocol communication between the client and
-the compositor. Additional functionality was in place under the form of
-library, to control and signal back to the compositor when applications were
-started, among other things.
+The demo platform image of AGL comes with a handful of demo applications, done
+with either the Qt toolkit, or the Flutter SDK, which abstracts the protocol
+communication between the client and the compositor. Additional functionality
+was in place under the form of library, to control and signal back to the
+compositor when applications were started, among other things.
 
 Management of applications, starting, running and stopping them is done in AGL
-with AppFW [Application Framework Management](Application_Framework/01_Introduction.md),
+with the AppFW [Application Framework Management](20_IVI_Application_Framework/01_Introduction.md),
 which is an umbrella name to denote the suite of tools and daemons that handle
 all of that. It is integrated with systemd and with the current security model.
 Applications can use AppFW to hang off data, and to pass it down to
@@ -29,19 +29,23 @@ which application to activate or to switch to.
 Trimming down these abstractions, simplifying the way clients interact with the
 compositor, and avoid using modules that aren't really maintained upstream were
 the reasons behind looking at alternatives to ivi-shell. On the desktop,
-[xdg-shell](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/raw/master/stable/xdg-shell/xdg-shell.xml)
+[xdg-shell](https://wayland.app/protocols/xdg-shell)
 is currently de-facto protocol for handling all window management related
 functionality.
 
-Wayland protocol has a window-like interface embedded into its protocol (called
-wl_shell), but *xdg-shell* has long time ago deprecated it and instead
-of adding it in the wayland protocol namespace, it was integrated
-together with some other useful protocols, into
-[wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols)
+### Protocols and other Wayland protocols
+
+Wayland protocol had as well a protocol interface embedded into its protocol
+(called wl_shell), which used to perform window management operations, but it
+has been has deprecated for quite some time. xdg-shell is a protocol that lives
+under [wayland-protocols](https://gitlab.freedesktop.org/wayland/wayland-protocols)
 project.  The whole purpose of wayland-protocols is to enhance the Wayland
 protocol with new functionality and bring new extensions entirely.  Compositors
 are free to implement, modify, enhance, and add new extensions to
 wayland-protocols but they need to do so in consensus.
+
+
+### Additional protocols
 
 Besides the core wayland protocol and extended functionality from
 wayland-protocols, a compositor can provide and implement additional protocol
@@ -50,25 +54,26 @@ align with the AGL project and its requirements, without compromising specific
 functionality and allows to add or improve the current ones. With that in mind,
 the approach was to create a new compositor, called
 [agl-compositor](https://gerrit.automotivelinux.org/gerrit/admin/repos/src/agl-compositor)
-and implement dedicated private extensions, rather than trying to modify weston
+and implement dedicated private extensions, rather than trying to modify Weston
 itself, which AGL project would have been required to keep and maintain for
 itself, as a fork.
 
 ## A compositor based on libweston
 
-The compositor used currently in AGL, just like weston, is built on top of
+The compositor used currently in AGL, just like Weston, is built on top of
 *libweston* and *libweston-desktop*. The latter, among other things, is required
 as it provides the server side implementation of the xdg-shell protocol which
-underlying toolkits (like Qt/Chromium project) makes use of to deliver
+underlying toolkits (like Qt/Flutter/Chromium project) makes use of to deliver
 desktop-like functionality. The former is used to provide back-ends and
 rendering support, effectively managing the HW, besides implementing the
-wayland protocol.
+wayland protocol. Later versions of Weston has integrated libweston-deskop
+inside libweston but decided to keep the older name for posterity.
 
 The high-level goal of [libweston](https://wayland.pages.freedesktop.org/weston/toc/libweston.html) is
 to decouple the compositor from the shell implementation.
 
 Traditionally, clients were entirely separated from the window manager, the
-desktop environment and the display server. In wayland all these are
+desktop environment and the display server. In Wayland eco-system all these are
 conceptually under the same entity though they are implemented as different
 (UNIX) processes, or as a different namespaces with front and back-end APIs,
 exposed by libraries. The compositor and the shell driving the UI should be
@@ -90,12 +95,10 @@ compositor will attempt to start it.
 command=/path/to/your/client/shell
 ```
 
+## Private extension and protocols
 
-
-## Private extensions
-
-Compositors can define and implement custom extensions to further control
-application behaviour. For AGL, we have two private extensions defined.
+Compositors can define and implement custom extensions/protocols to further
+control application behaviour. For AGL, we had two private extensions defined.
 One targeted at defining surface roles commonly found in desktop environments
 (like panels, and backgrounds), which a shell client would bind to, and one
 targeted at regular application(s) that might require additional functionality:
@@ -113,6 +116,9 @@ that the surfaces have been created, and the capability of delaying
 presentation for the client shell. Doing so, all the information is displayed
 at once, rather than waiting for the toolkit to map/show the surface.
 
+Note that second protocol extension was deprecated and removed and is now has
+been superseded by a gRPC API further detailed below.
+
 An application identification mechanism was required to be able to activate
 other clients windows/surfaces. A string-based identifier name was chosen
 which can be used by the client to set an application-based identifier using
@@ -123,7 +129,7 @@ client, if one would want to activate/display it at some time in the future.
 
 ### agl-shell
 
-Client shellls can make use of this protocol to define panels and background
+Client shells can make use of this protocol to define panels and background
 roles for different surfaces. It includes to ability to activate other
 applications, assuming that those are already running. Activation happens by
 using using the app_id, respectively using set_app_id request as defined by the
@@ -548,9 +554,9 @@ dedicated client that basically displays or mimics being fullscreen
 Quite a common feature, in the infotainment market, is the ability to stream
 out buffers/data to remote outputs. For instance, super-imposing the navigation
 application, between the speedometer and tachometer, in the IC (Instrument
-Cluster) of a car is such a scenario. Just like weston, the AGL compositor is
+Cluster) of a car is such a scenario. Just like Weston, the AGL compositor is
 capable of loading up libweston modules and make use of them. And just like
-weston, the AGL compositor loads up the remoting-plugin to achieve the same
+Weston, the AGL compositor loads up the remoting-plugin to achieve the same
 thing.
 
 The remoting-plugin uses the DRM virtual output API from libweston together
