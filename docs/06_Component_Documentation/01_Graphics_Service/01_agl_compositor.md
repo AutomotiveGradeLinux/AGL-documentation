@@ -53,7 +53,7 @@ extensions (custom to that compositor). By using such private extensions we
 align with the AGL project and its requirements, without compromising specific
 functionality and allows to add or improve the current ones. With that in mind,
 the approach was to create a new compositor, called
-[agl-compositor](https://gerrit.automotivelinux.org/gerrit/admin/repos/src/agl-compositor)
+[agl-compositor](https://git.automotivelinux.org/src/agl-compositor)
 and implement dedicated private extensions, rather than trying to modify Weston
 itself, which AGL project would have been required to keep and maintain for
 itself, as a fork.
@@ -141,7 +141,7 @@ assigning them panel and/or background roles, and they're fully loaded,
 the client can then issue `ready()` request and the compositor will start
 presenting.
 
-Please consult the [protocol file](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/agl-compositor.git;a=blob_plain;f=protocol/agl-shell.xml;hb=refs/heads/master)
+Please consult the [protocol file](https://git.automotivelinux.org/src/agl-compositor/tree/protocol/agl-shell.xml)
 as that is the authoritative way of getting the latest version.
 
 #### V2 updates
@@ -426,8 +426,8 @@ message AppStateResponse {
 
 ### Demo clients using agl-shell and the gRPC interface
 
-A C++ client implementation the gRPC API can be found in [agl-shell-activator](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/agl-shell-activator.git;a=tree;h=refs/heads/master;hb=refs/heads/master)
-project or in [window-management-client-grpc](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/window-management-client-grpc.git;a=tree;h=refs/heads/master;hb=refs/heads/master) one.
+A C++ client implementation the gRPC API can be found in [agl-shell-activator](https://git.automotivelinux.org/src/agl-shell-activator/)
+project or in [window-management-client-grpc](https://git.automotivelinux.org/src/window-management-client-grpc) one.
 
 agl-shell-activator is a simple gRPRC client written to exercise code paths in
 the gRPC proxy server and to illustrate how can window management be
@@ -515,14 +515,14 @@ Chromium/CEF and Flutter platform do not explicitly expose the windowing system
 Further more, depending on the needs, one would also need to either use the
 gRPC proxy API or just agl-shell protocol on its own. For instance for Qt and
 Flutter we now use a combination of both. In Qt, we use QPA and Wayland native
-code to set the [background surface](https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps/homescreen.git;a=blob;f=homescreen/src/main.cpp;h=a98a15bb0113f3b28c1766e79c5d3f2d0b20fac4;hb=refs/heads/master#l255),
+code to set the [background surface](https://git.automotivelinux.org/apps/homescreen),
 while activation/deactivation and anything else is handled using gRPC API,
-but in the [same application](https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps/homescreen.git;a=blob;f=homescreen/src/main.cpp;h=a98a15bb0113f3b28c1766e79c5d3f2d0b20fac4;hb=refs/heads/master#l355).
+but in the [same application](https://git.automotivelinux.org/apps/homescreen).
 
 In Flutter because we can't reach Wayland code
 from within the client, we handle the Wayland part in the
 [flutter embedder](https://github.com/toyota-connected/ivi-homescreen/blob/agl/shell/wayland/window.cc#L95-L121)
-whereas the activation is handled in [flutter-ics-homescreen](https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps/flutter-ics-homescreen.git;a=blob;f=lib/data/data_providers/app_launcher.dart;h=8762643dba7f5a6e3ad2051749e30239743e759a;hb=HEAD)
+whereas the activation is handled in [flutter-ics-homescreen](https://git.automotivelinux.org/apps/flutter-ics-homescreen)
 
 Similarly, CEF/Chromium has the same thing, the background and ready to present
 request is handled at the lower levels.
@@ -535,7 +535,7 @@ means the client needs to manage everything, including redrawing the
 background surface.
 
 An example of that is
-[native-shell-client](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/native-shell-client.git;a=summary)
+[native-shell-client](hthttps://git.automotivelinux.org/src/native-shell-client)
 that is being used in the kvm images as a barebone shell client. Because that
 just sets a black background matching the entire output you can have a
 dedicated client that basically displays or mimics being fullscreen
@@ -624,7 +624,7 @@ happens with the deny-all policy, which is able to retrieve the client's
 SMACK label and compares it with the ones statically defined.
 
 In the works, there's a new policy model, called [Role Based
-Arbitration](https://gerrit.automotivelinux.org/gerrit/admin/repos/staging/rba).
+Arbitration](https://git.automotivelinux.org/staging/rba).
 Internally, how it works, should be found at [RBA](04_Rule_Based_Arbitrator.md).
 While the other two policies are embedded into the compositor, the RBA policy
 model is an off the-shell policy.  Obviously, vendors and users can hook up
