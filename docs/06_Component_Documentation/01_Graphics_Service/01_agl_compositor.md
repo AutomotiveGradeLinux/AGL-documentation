@@ -473,19 +473,18 @@ client shell having to handle it in the code.
 ## Available toolkits, application conversions and available eco-systems
 
 Users and OEM vendors alike have the possibility, depending on their use-cases,
-to either use some kind of a toolkit (Qt/GTK) for writing  application,
+to either use some kind of a toolkit (Qt/GTK/Flutter) for writing  application,
 or use plain C and the wayland library to communicate with the compositor
 directly, without any toolkit abstraction.
 
-Currently, the demo applications in AGL use the Qt platform with Chromium being
-at this phase, a second-class citizen, being currently in the works of
-achieving the same level of integration as QtWayland (the underlying library that
-abstracts the Wayland interaction) has at this moment. The Qt platform has
-long been favoured in embedded systems so it feels natural why AGL project
-chose it over other alternatives.  In the same time, as web applications are
-for quite some time now permeating the application development scene, it also
-felt natural to add support for a runtime that gives that option, which in AGL
-was achieved with the help of the Chromium project.
+Currently, the demo applications in AGL use the Flutter embedder/SDK platform
+alonside Qt/QtWayland. It used to also support Chromium/CEF but currently that was
+deprecated and discontinued.  The Qt platform has long been favoured in
+embedded systems so it feels natural why AGL project chose it over other
+alternatives.  For Web applications scene, it also felt natural to add support
+for a runtime that gives that option, which in AGL was achieved with the help
+of the Chromium project. In later years Flutter has gained quite a lot traction,
+with the embedder capable of running under AGL.
 
 For normal applications, not needing the ability to activate or displaying
 other's application surface, would basically mean that it would use what the
@@ -495,17 +494,10 @@ Wayland primitives, and implicitly is being able use the private extensions.
 
 ![Architecture Diagram](images/agl-compositor/arch_diagram.png)
 
-On the Chromium side of things, that happens indirectly, as Chromium doesn't
-expose the Wayland primitives. Not only that, but on the Chromium platform,
-there's another mid-layer component, called [WAM](https://github.com/webosose/wam)
-(WebApplicationManager) with the purpose of handling web applications life-cycle.
-
-So, controlling and passing information from a web application, that resembles
-that of a shell client, has to travel more than a few levels in the software
-stack, until it reaches the lower layers in Chromium where the Wayland
-communication and interaction takes place. Support for the private extension
-was done at the Ozone interface abstraction, which Chromium projects uses now
-to handle the display/graphical interaction with the lower stack levels.
+On the Flutter side of things, that happens indirectly, as Flutter doesn't
+expose the Wayland primitives.  Support for the private extension was done at
+the Flutter embeder level where it handle the display/graphical interaction
+with the lower stack levels.
 
 ## How to integrate or incorporate your own UI
 
@@ -517,17 +509,17 @@ This means that the toolkits need to provides access to Wayland primitives,
 exposing them in a such that they can reach the client code. For instance,
 Qt uses [QPA](https://wiki.qt.io/Qt_Platform_Abstraction), while
 GTK can also expose it through similar ways.
-Chromium/CEF and flutter platform do not explicitly expose the windowing system
+Chromium/CEF and Flutter platform do not explicitly expose the windowing system
 (and implictly Wayland) and have that implemented at a lower level.
 
 Further more, depending on the needs, one would also need to either use the
 gRPC proxy API or just agl-shell protocol on its own. For instance for Qt and
-flutter we now use a combination of both. In Qt, we use QPA and Wayland native
+Flutter we now use a combination of both. In Qt, we use QPA and Wayland native
 code to set the [background surface](https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps/homescreen.git;a=blob;f=homescreen/src/main.cpp;h=a98a15bb0113f3b28c1766e79c5d3f2d0b20fac4;hb=refs/heads/master#l255),
 while activation/deactivation and anything else is handled using gRPC API,
 but in the [same application](https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps/homescreen.git;a=blob;f=homescreen/src/main.cpp;h=a98a15bb0113f3b28c1766e79c5d3f2d0b20fac4;hb=refs/heads/master#l355).
 
-In flutter because we can't reach Wayland code
+In Flutter because we can't reach Wayland code
 from within the client, we handle the Wayland part in the
 [flutter embedder](https://github.com/toyota-connected/ivi-homescreen/blob/agl/shell/wayland/window.cc#L95-L121)
 whereas the activation is handled in [flutter-ics-homescreen](https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps/flutter-ics-homescreen.git;a=blob;f=lib/data/data_providers/app_launcher.dart;h=8762643dba7f5a6e3ad2051749e30239743e759a;hb=HEAD)
