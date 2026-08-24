@@ -543,17 +543,20 @@ dedicated client that basically displays or mimics being fullscreen
 
 ## Streaming buffers and receiving events to and from remote outputs
 
-Quite a common feature, in the infotainment market, is the ability to stream
+A common feature, in the infotainment market, is the ability to stream
 out buffers/data to remote outputs. For instance, super-imposing the navigation
 application, between the speedometer and tachometer, in the IC (Instrument
-Cluster) of a car is such a scenario. Just like Weston, the AGL compositor is
-capable of loading up libweston modules and make use of them. And just like
-Weston, the AGL compositor loads up the remoting-plugin to achieve the same
-thing.
+Cluster) of a car is such a scenario.
+
+### Using deprecated plug-ins
+
+Just like Weston, the AGL compositor is capable of loading up libweston modules
+and make use of them. And just like Weston, the AGL compositor loads up the
+remoting-plugin to stream out an output.
 
 The remoting-plugin uses the DRM virtual output API from libweston together
-with gstreamer pipeline to capture, using DMA buffers, the DRM output and to
-stream it, remotely to another machine. They can be over the network, or
+with gstreamer pipeline to capture (using DMA buffers) the DRM output and to
+stream it remotely to another machine. They can be over the network, or
 locally.
 
 Further more, to cope with situations where the output is just a
@@ -571,6 +574,44 @@ the same functionality.
 
 Together, they provide proper means to achieve a seamless integration with
 other display devices in the car cabin.
+
+Note that both the remoting-pluging and the Waltham protocol have long been
+deprecated with plans to remove them entirely. Users should focus instead of
+using dedicated back-ends to achieve the same functionality (see the next
+paragraph).
+
+### Using virtual backends for streaming and screen sharing
+
+More recent versions of Weston added the ability to load multiple backends at
+the same time. This comes with an interesting feature where outputs from a backend
+could be superimposed on outputs from another backends, making this achieve
+screen share functionality avoiding the need to copy data from output to another.
+This also doesn't tie to a particular technology for streaming content.
+One could use either PipeWire, VNC or the RDP backend.  Both RDP and VNC can
+cary input events so one could stream this virtual output with a client using
+it and, in the same time, receive input events to act upon, much like Waltham
+protocol was used to handle.
+
+For a more custom-oriented scenario the PipeWire could be used instead.
+PipeWire doesn't carry input events but allows allows to customize encoding and
+compression on the video stream as opposed to VNC or RDP. Input events need
+to be handled independently and currently there's no easy way to inject
+these input events back into libweston.  Upstream needs to implement
+[libei library](https://libinput.pages.freedesktop.org/libei/api/index.html) used
+by libinput for testing and validation.
+
+Starting AGL compositor with another backend (besides the native, DRM backend)
+creates automatically an output. You can configure local Wayland clients to
+start on that particular output. On the remote side you develop your
+application to use libraries that would remotely talk this backend,
+something like [neatvnc](https://github.com/any1/neatvnc) or you can actually use
+Wayland clients and position them accordingly to match a custom UI solution.
+For instance for VNC this [VNC client](https://github.com/any1/wlvncc) has no
+client decorations, and would could be used to blend easily between gauges of
+an instrument cluster.
+
+Starting AGL compositor with multiple backends is similar to Weston by using
+`-B` and passing by backend names split by comma.
 
 ## Policies and Role Base Arbitration
 
