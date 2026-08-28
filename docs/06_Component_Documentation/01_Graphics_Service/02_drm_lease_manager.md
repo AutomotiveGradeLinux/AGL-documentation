@@ -52,6 +52,8 @@ Run the help command for details.
   drm-lease-manager --help
 ```
 
+More details of DRM Lease Manager configuration, please check a [configuration guide](https://git.automotivelinux.org/src/drm-lease-manager/tree/doc/configuration-guide.md). 
+
 ### Running weston
 
 weston can be started on any available DRM lease by running with the
