@@ -29,12 +29,11 @@ table 2.
 
 | Board type | Support integration type | status |
 |:---:|:---:|:---:|
-| AGL RefHW | 1,2a,2b | Tested. |
-| R-CarH3 Starter Kit with Kingfisher board | 1,2a,2b | Not tested. |
 | NanoPC-T6 (4G or 8G or 16G) | 1,2a,2b | Tested by 16G board. |
 | Raspberry Pi4/5 (4G or 8G) | 1,2a,2b | Tested. |
+| R-Car V4H SBC "Sparrow Hawk" (8G or 16G) | 1,2a,2b | Tested. |
 
-We recommend choosing AGL RefHW or Raspberry Pi4 (4G or 8G) or NanoPC-T6 (4G or 8G or 16G). 
+We recommend choosing Sparrow Hawk or Raspberry Pi5 (4G or 8G) or NanoPC-T6 (4G or 8G or 16G). 
 
 **Typical Hardware Set is shown in Appendix.1. **
 
@@ -88,30 +87,6 @@ $ repo init -b master -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 $ repo sync
 ```
 
-### 7th step: Downloading Proprietary Drivers  (AGL RefHW and R-Car H3/M3 with Kingfisher board only procedure)
-
-If your board is Raspberry Pi4, please skip this step.
-
-#### 7-1: Downloading Proprietary Drivers from [Renesas-automotive-products](https://www.renesas.com/us/en/products/automotive-products/automotive-system-chips-socs/r-car-h3-m3-documents-software).
-
-In case of master, please download this.
-
-***Note.  Latest AGL use same binary as kirkstone.***
-
-![](images/image3.png)
-
-#### 7-2: To check the files to download.
-```bash
-$ grep -rn ZIP_.= $AGL_TOP/meta-agl/meta-agl-bsp/meta-rcar-gen3/scripts/setup_mm_packages.sh
-$ export XDG_DOWNLOAD_DIR=$HOME/Downloads
-```
-
-#### 7-3: Download and copy Proprietary Drivers files (Run commands at downloaded files directory).
-
-```bash
-$ cp R-Car_Gen3_Series_Evaluation_Software_Package_* $XDG_DOWNLOAD_DIR/
-$ chmod a+rw $XDG_DOWNLOAD_DIR/*.zip
-```
 
 ## 3. Configure to target board and build.
 
@@ -121,16 +96,10 @@ $ chmod a+rw $XDG_DOWNLOAD_DIR/*.zip
 $ cd $AGL_TOP
 ```
 
-When your board is AGL RefHW.
+When your board is R-Car V4H SBC "Sparrow Hawk".
 
 ```bash
-$ source meta-agl/scripts/aglsetup.sh -f -m h3ulcb -b build-ic-refhw agl-ic-container agl-refhw-h3
-```
-
-When your board is R- CarH3 Starter Kit with Kingfisher board.
-
-```bash
-$ source meta-agl/scripts/aglsetup.sh -f -m h3ulcb-kf -b build-ic-h3kf agl-ic-container
+$ source meta-agl/scripts/aglsetup.sh -f -m sparrow-hawk -b build-ic-sparrow-hawk agl-ic-container
 ```
 
 When your board is NanoPC T6
@@ -187,16 +156,10 @@ $ export AGL_TOP=$HOME/AGL/master
 $ cd $AGL_TOP
 ```
 
-When your board is AGL RefHW.
+When your board is R-Car V4H SBC "Sparrow Hawk".
 
 ```bash
-$ source meta-agl/scripts/aglsetup.sh -f -m h3ulcb -b build-ivi-refhw agl-container-guest-demo agl-demo agl-refhw-h3
-```
-
-When your board is R- CarH3 Starter Kit with Kingfisher board.
-
-```bash
-$ source meta-agl/scripts/aglsetup.sh -f -m h3ulcb-kf -b build-ivi-h3kf agl-container-guest-demo agl-demo
+$ source meta-agl/scripts/aglsetup.sh -f -m sparrow-hawk -b build-sparrow-hawk agl-container-guest-demo agl-demo
 ```
 
 When your board is NanoPC T6
@@ -236,15 +199,10 @@ Add to
 OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/path/to/deploy/"
 ```
 
-ex.  When your board is AGL RefHW and your home directory is "/home/user/".
-```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-refhw/tmp/deploy"
-```
-
-ex.  When your board is R- CarH3 Starter Kit with Kingfisher board and your home directory is "/home/user/".
+ex.  When your board is R-Car V4H SBC "Sparrow Hawk" and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-h3kf/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-sparrow-hawk/tmp/deploy"
 ```
 
 ex.  When your board is NanoPC T6 board and your home directory is "/home/user/".
@@ -273,49 +231,13 @@ Back to terminal for ic build.
 $ bitbake agl-instrument-cluster-container-demo
 ```
 
-### 4.2. Extra step for type 2b using pre build image.
-
-The 4.2 can select Raspberry Pi 4 board only, this limitation depend to
-Renesas propriety license limitation.
-
-#### 1st step: Download stable prebuild image from AGL site.
-
-Download IVI guest images from this link.
-
-[[Prebuild AGL Demo IVI container images for Raspberry Pi
-4.]]()
-
-Extract download tar.bz2 archive to any directory.
-
-```bash
-$ cd /path/to/directory/
-$ tar xvJf /path/to/download/agl-demo-ivi-container-guest-raspberrypi4-64.tar.bz2
-```
-
-#### 2nd step: Set deploy path of AGL IVI Demo to IC side config.
-
-Set extracted directory using OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR in
-local.conf (or site.conf).
-
-```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR="/path/to/directory/prebuild/"
-```
-
-#### 3rd step: Build all in one image (2b).
-
-Back to terminal for ic build.
-
-```bash
-$ bitbake agl-instrument-cluster-container-demo
-```
-
 ## 5. Write image to SD card.
 
 The 2a and 2b image is constructed by wic image, that include partition
 table and each partition data into one image file.
 
-In default setting, that wic image is compressed xz.  When that wic
-image to the SD card, you need to use xzcat and dd commands on your
+In default setting, that wic image is compressed zstd.  When that wic
+image to the SD card, you need to use zstdcat and dd commands on your
 build PC.
 
 ```bash
@@ -408,14 +330,14 @@ $ cmcontrol --force-reboot-guest-role=ivi
 
 ## Appendix.1.  Typical Hardware set.
 
-### AGL Reference Hardware.
+### NanoPC-T6
 
 ![](images/image6.png)
 
 
 | **No** | **Name** | **num** | **Where to buy** |
 |---|---|---|---|
-| 1 | AGL Ref HW | 1 | Ask to Panasonic. [Contact about purchase](https://confluence.automotivelinux.org/display/RHSA/Contact+about+purchase) |
+| 1 | NanoPC-T6 | 1 | [Friendly Elec](https://www.friendlyelec.com/index.php?route=product/product&product_id=292) |
 | 2 | Touch Display (Full HD) | 1 | [https://amzn.asia/d/7URb6r8](https://amzn.asia/d/7URb6r8) |
 | 3 | Cluster Display (1920x720 or Full HD) | 1 | [https://amzn.asia/d/bGircST](https://amzn.asia/d/bGircST) |
 | 4 | HDMI Cable (Need to check how to connect this cable to Touch/Cluster Display, that depend to display side connector) | 2 | [https://amzn.asia/d/auuhnTK](https://amzn.asia/d/auuhnTK) |
@@ -513,10 +435,6 @@ Upstream:
 | G | Flutter IVI |
 
 # Reference webpages
- 1. [eLinux](https://elinux.org/R-Car/AGL)
- 1. [Kingfisher Board](https://elinux.org/R-Car/Boards/Kingfisher)
- 1. [R-Car M3SK](https://elinux.org/R-Car/Boards/M3SK#Flashing_firmware)
- 1. [agl reference machines](https://docs.automotivelinux.org/en/master/#02_hardware_support/01_Supported_Hardware_Overview/)
+
  1. [AGL Tech Day Presentation](https://static.sched.com/hosted_files/agltechday2022/3b/agl-techday-202204.pdf)
  1. [Build AGL Image](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/0_Build_Process_Overview/)
- 1. [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/09_Building_for_Supported_Renesas_Boards/)
