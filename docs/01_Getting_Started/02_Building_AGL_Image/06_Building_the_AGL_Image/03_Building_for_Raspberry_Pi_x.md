@@ -1,10 +1,11 @@
 ---
-title: Building for Raspberry Pi 4
+title: Building for Raspberry Pi 5 and 4
 ---
 
 The
 [Raspberry Pi](https://www.raspberrypi.org/help/what-%20is-a-raspberry-pi/) is a small computer that is ideal for learning computing and computer languages.
 The AGL Project supports building images for the
+[Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) board and 
 [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) board.
 These boards come in a variety of models.
 See the
@@ -19,10 +20,20 @@ The
 "[Initializing Your Build Environment](../04_Initializing_Your_Build_Environment.md)"
 section presented generic information for setting up your build environment
 using the `aglsetup.sh` script.
-If you are building the AGL demo image for a Raspberry Pi 4 board, you need to specify some
+If you are building the AGL demo image for a Raspberry Pi 5/4 board, you need to specify some
 specific options when you run the script :
 
-**Qt based IVI demo :**
+**Raspberry Pi5 :**
+
+  ```sh
+  $ source meta-agl/scripts/aglsetup.sh -f -m raspberrypi5 -b raspberrypi5 agl-demo agl-devel
+  $ echo "# reuse download directories" >> $AGL_TOP/site.conf
+  $ echo "DL_DIR = \"$HOME/downloads/\"" >> $AGL_TOP/site.conf
+  $ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
+  $ ln -sf $AGL_TOP/site.conf conf/
+  ```
+
+**Raspberry Pi4 :**
 
   ```sh
   $ source meta-agl/scripts/aglsetup.sh -f -m raspberrypi4 -b raspberrypi4 agl-demo agl-devel
@@ -31,19 +42,6 @@ specific options when you run the script :
   $ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
   $ ln -sf $AGL_TOP/site.conf conf/
   ```
-
-**HTML5 based IVI demo :**
-
-  ```sh
-  $ source meta-agl/scripts/aglsetup.sh -f -m raspberrypi4 -b raspberrypi4 agl-demo agl-devel agl-profile-graphical-html5
-  $ echo "# reuse download directories" >> $AGL_TOP/site.conf
-  $ echo "DL_DIR = \"$HOME/downloads/\"" >> $AGL_TOP/site.conf
-  $ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
-  $ ln -sf $AGL_TOP/site.conf conf/
-  ```
-
-In each case, the "-m" option specifies the machine and the list of AGL features used with script are appropriate for development of
-the AGL demo image suited for Raspberry Pi 4.
 
 ## 2. Configuring the Build to Include Packages Under a Commercial License
 
@@ -79,6 +77,22 @@ Start the build using the `bitbake` command.
 CPU and Internet connection speeds.
 The build also takes approximately 100G-bytes of free disk space.
 
+**Flutter Based IVI demo :**
+The target is `agl-ivi-demo-flutter`.
+
+```sh
+$ time bitbake agl-ivi-demo-flutter
+```
+
+By default, the build process puts the resulting image in the Build Directory and further exporting that as `$IMAGE_NAME`.
+Here is example for the Raspberry Pi 5 board for Flutter Based demo:
+
+```sh
+<build_dir>/tmp/deploy/images/raspberrypi5/agl-ivi-demo-flutter-raspberrypi5.rootfs.wic.zst
+
+$ export IMAGE_NAME=agl-ivi-demo-flutter-raspberrypi5.rootfs.wic.zst
+```
+
 **Qt Based IVI demo :**
 The target is `agl-ivi-demo-qt`.
 
@@ -95,35 +109,19 @@ Here is example for the Raspberry Pi 4 board for Qt Based demo:
 $ export IMAGE_NAME=agl-ivi-demo-qt-raspberrypi4.rootfs.wic.zst
 ```
 
-**HTML5 Based IVI demo :**
-The target is `agl-ivi-demo-html5`.
-
-```sh
-$ time bitbake agl-ivi-demo-html5
-```
-
-By default, the build process puts the resulting image in the Build Directory and further exporting that as `$IMAGE_NAME`.
-Here is example for the Raspberry Pi 4 board for HTML5 Based demo:
-
-```sh
-<build_dir>/tmp/deploy/images/raspberrypi4/agl-ivi-demo-html5-raspberrypi4-64.rootfs.wic.zst
-
-$ export IMAGE_NAME=agl-ivi-demo-html5-raspberrypi4-64.rootfs.wic.zst
-```
-
 ## 4. Deploying the AGL Demo Image
 
 Deploying the AGL demo image consists of copying the image on a MicroSD card,
 plugging the card into the Raspberry Pi board, and then booting the board.
 
 Follow these steps to copy the image to a MicroSD card and boot
-the image on the Raspberry Pi 4 board:
+the image on the Raspberry Pi 5/4 board:
 
   1. Plug your MicroSD card into your Build Host (i.e. the system that has your build output).
 
   2. Extract the image into the SD card of Raspberry Pi 4 :
 
-    **NOTE:** For Raspberry Pi 4, the image is at `<build-dir>/tmp/deploy/images/raspberrypi4/${IMAGE_NAME}`.
+    **NOTE:** For Raspberry Pi 5, the image is at `<build-dir>/tmp/deploy/images/raspberrypi5/${IMAGE_NAME}`.
 
       Be sure you are root, provide the actual device name for *sdcard_device_name*, and the actual image name for *image_name*.
 
@@ -188,17 +186,3 @@ the image on the Raspberry Pi 4 board:
       ```sh
       $ sudo screen /dev/ttyUSB0 115200
       ```
-
-5. SOTA
-
-    Follow the step below to build AGL for Raspberry Pi with enabled software over
-    the air (SOTA) updates:
-
-    1. Include **agl-sota** feature.
-
-    2. In **bblayers.conf** replace meta-updater-qemux86-64 with
-    **meta-updater-raspberrypi**.
-
-    3. In **local.conf** set `SOTA_PACKED_CREDENTIALS` and `OSTREE_BRANCHNAME`.
-
-    More details are available [here](https://docs.ota.here.com/getstarted/dev/raspberry-pi.html).
