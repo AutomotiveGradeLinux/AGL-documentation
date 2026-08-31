@@ -36,7 +36,7 @@ In order to test out video playback, use the following gstreamer pipeline:
 	$ gst-launch-1.0 v4l2src device=/dev/video0 ! \
 						video/x-raw,width=640,height=480 ! waylandsink fullscreen=true
 
-Alternatively, using [camera-gstreamer](https://gerrit.automotivelinux.org/gerrit/gitweb?p=apps/camera-gstreamer.git;a=summary)
+Alternatively, using [camera-gstreamer](https://git.automotivelinux.org/apps/camera-gstreamer)
 application could might be another possibility, but you'll have to build it
 yourself and add it in the image.
 

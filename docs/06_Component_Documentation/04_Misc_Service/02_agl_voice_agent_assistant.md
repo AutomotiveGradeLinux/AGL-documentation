@@ -229,16 +229,16 @@ Then run the following command to re-train the model:
 $ snips-sdk train path/to/dataset.json path/to/model
 ```
 
-Finally, you can use the [`snips-inference-agl`](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/snips-inference-agl.git;a=summary) module to process commands and extract the associated intents.
+Finally, you can use the [`snips-inference-agl`](https://git.automotivelinux.org/src/snips-inference-agl) module to process commands and extract the associated intents.
 
 ### Usage
 To set up and run the Snips NLU Intent Engine, follow these steps:
 
-1. Train your model by following the steps laid earlier or just clone a pre-existing model from [here](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/snips-model-agl.git;a=summary).
+1. Train your model by following the steps laid earlier or just clone a pre-existing model from [here](https://git.automotivelinux.org/src/snips-model-agl).
 
-2. Install and set up the [`snips-inference-agl`](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/snips-inference-agl.git;a=summary) module on your local machine. This module is an extension of the original Snips NLU with upgraded Python support and is specifically designed for inference purposes only.
+2. Install and set up the [`snips-inference-agl`](https://git.automotivelinux.org/src/snips-inference-agl) module on your local machine. This module is an extension of the original Snips NLU with upgraded Python support and is specifically designed for inference purposes only.
 
-3. Once you have the [`snips-inference-agl`](https://gerrit.automotivelinux.org/gerrit/gitweb?p=src/snips-inference-agl.git;a=summary) module installed, you can load the pre-trained model located in the model/ folder. This model contains the trained data and parameters necessary for intent extraction. You can use the following command to process commands and extract the associated intents:
+3. Once you have the [`snips-inference-agl`](https://git.automotivelinux.org/src/snips-inference-agl) module installed, you can load the pre-trained model located in the model/ folder. This model contains the trained data and parameters necessary for intent extraction. You can use the following command to process commands and extract the associated intents:
     ```shell
     $ snips-inference parse path/to/model -q "your command here"
     ```
