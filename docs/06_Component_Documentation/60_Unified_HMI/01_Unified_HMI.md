@@ -55,7 +55,7 @@ Reference implementations of gRPC Client for each UCL/ULA are released [here](ht
 
 To run Unified HMI frameworks, you need to prepare three Json files correctly for your execution environment.
 
-1. virtual-screen-def.json: Execution environment such as display and node (SoCs/VMs/PCs) informations. Please put this file on all related host.
+1. virtual-screen-def.json: Execution environment such as display and node (SoCs/VMs/PCs) information. Please put this file on all related host.
 ![Virtual_Screen_Def_Json_Info](images/Unified-HMI/Virtual_Screen_Def_Json.png)
 
 2. app.json: Application execution information which can also take a sender/receiver relationship. Please put this file on one of the sender/receiver or a host that can be communicate with them via network.

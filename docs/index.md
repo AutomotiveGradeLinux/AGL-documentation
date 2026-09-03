@@ -83,7 +83,7 @@ Note: Keep timezones in mind, ask your question and *stay* on the channel.
 
 Platforms
 ---------
-AGL uses variety of Platforms for different puposes.
+AGL uses variety of Platforms for different purposes.
 
 **Marketing**
 
@@ -91,7 +91,7 @@ AGL uses variety of Platforms for different puposes.
 
 - [Twitter]( https://twitter.com/autogradelinux)
 
-- [LinkdIn](https://www.linkedin.com/company/automotive-grade-linux/)
+- [LinkedIn](https://www.linkedin.com/company/automotive-grade-linux/)
 
 - [Youtube](https://www.youtube.com/channel/UC1axavgir413w00rwBHPAtQ)
 
@@ -105,7 +105,7 @@ AGL uses variety of Platforms for different puposes.
 
 - [Wiki](https://wiki.automotivelinux.org/) for coordinating dynamic content.
 
-- [Confluence](https://confluence.automotivelinux.org) for AGL desing work.
+- [Confluence](https://confluence.automotivelinux.org) for AGL design work.
 
 - [Git](https://git.automotivelinux.org/) for hosting AGL repositories.
 

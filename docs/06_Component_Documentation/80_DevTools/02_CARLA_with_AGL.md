@@ -5,7 +5,7 @@ title: CARLA with AGL
 
 ![Playback Demo](images/AGL-Demo-Control-Panel/CARLA_CAN.gif)
 
-As part of the [agl-demo-control-panel](https://gerrit.automotivelinux.org/gerrit/admin/repos/src/agl-demo-control-panel,general) application, `carla_to_CAN` and `record_playback.py` scripts provide a way to record CAN messages generated during a CARLA simulation. The `can_messages.txt` playback file generated, can then be used to to playback the messages via CLI or GUI.
+As part of the [agl-demo-control-panel](https://gerrit.automotivelinux.org/gerrit/admin/repos/src/agl-demo-control-panel,general) application, `carla_to_CAN` and `record_playback.py` scripts provide a way to record CAN messages generated during a CARLA simulation. The `can_messages.txt` playback file generated, can then be used to playback the messages via CLI or GUI.
 
 ![Playback Demo](images/AGL-Demo-Control-Panel/PlaybackDemo.gif)
 
@@ -77,7 +77,7 @@ class KeyboardControl(object):
 
 ## Converting CARLA data into CAN
 
-The `carla_to_CAN.py` script can be run run alongside an existing CARLA simulation to fetch data and convert it into CAN messages based on the [agl-vcar.dbc](https://git.automotivelinux.org/src/agl-dbc/plain/agl-vcar.dbc) file.
+The `carla_to_CAN.py` script can be run alongside an existing CARLA simulation to fetch data and convert it into CAN messages based on the [agl-vcar.dbc](https://git.automotivelinux.org/src/agl-dbc/plain/agl-vcar.dbc) file.
 
 While the `record_playback.py` script is responsible for recording amd playing back the CAN data for later sessions.
 

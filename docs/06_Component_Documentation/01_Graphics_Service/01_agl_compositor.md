@@ -132,7 +132,7 @@ client, if one would want to activate/display it at some time in the future.
 Client shells can make use of this protocol to define panels and background
 roles for different surfaces. It includes to ability to activate other
 applications, assuming that those are already running. Activation happens by
-using using the app_id, respectively using set_app_id request as defined by the
+using the app_id, respectively using set_app_id request as defined by the
 xdg-shell protocol. Established client-side implementation of the xdg-shelll
 protocol will have a function exposed which can be used to set an application
 identifier.  Further more, the compositor will not present/display anything to
@@ -146,7 +146,7 @@ as that is the authoritative way of getting the latest version.
 
 #### V2 updates
 
-Version 2 of the agl-shell protocol, while it is is not obligatory to be
+Version 2 of the agl-shell protocol, while it is not obligatory to be
 supported by the shell client, it adds two new events: bound_ok and bound_fail
 events.
 
@@ -157,7 +157,7 @@ agl-shell protocol might result in terminating the wayland connection.
 
 That happens because we can't have multiple clients bind to the agl-shell
 protocol interface and was particularly visible when using regular
-flutter applications with other shell clients (Qt homescreen, or WAM/chromum),
+flutter applications with other shell clients (Qt homescreen, or WAM/chromium),
 basically mashing together different kind of toolkits in the same image. Once
 a client has already bound to the agl-shell protocol interface any other client
 that attempts to do same will get its wayland connection severed and the
@@ -229,7 +229,7 @@ original surface role, as maximized.
 
 Version 7 of the agl-shell protocol, brings one new request, "set_app_fullscreen".
 This is similar to "set_app_float", but it changes the surface role to fullscreen.
-Going back to the orignal, maximized role should be with "set_app_normal".
+Going back to the original, maximized role should be with "set_app_normal".
 
 #### V8 updates
 
@@ -496,7 +496,7 @@ Wayland primitives, and implicitly is being able use the private extensions.
 
 On the Flutter side of things, that happens indirectly, as Flutter doesn't
 expose the Wayland primitives.  Support for the private extension was done at
-the Flutter embeder level where it handle the display/graphical interaction
+the Flutter embedder level where it handle the display/graphical interaction
 with the lower stack levels.
 
 ## How to integrate or incorporate your own UI
@@ -510,7 +510,7 @@ exposing them in a such that they can reach the client code. For instance,
 Qt uses [QPA](https://wiki.qt.io/Qt_Platform_Abstraction), while
 GTK can also expose it through similar ways.
 Chromium/CEF and Flutter platform do not explicitly expose the windowing system
-(and implictly Wayland) and have that implemented at a lower level.
+(and implicitly Wayland) and have that implemented at a lower level.
 
 Further more, depending on the needs, one would also need to either use the
 gRPC proxy API or just agl-shell protocol on its own. For instance for Qt and
@@ -593,7 +593,7 @@ it and, in the same time, receive input events to act upon, much like Waltham
 protocol was used to handle.
 
 For a more custom-oriented scenario the PipeWire could be used instead.
-PipeWire doesn't carry input events but allows allows to customize encoding and
+PipeWire doesn't carry input events but allows to customize encoding and
 compression on the video stream as opposed to VNC or RDP. Input events need
 to be handled independently and currently there's no easy way to inject
 these input events back into libweston.  Upstream needs to implement
@@ -718,14 +718,14 @@ By default the compositor will attempt to use the GL-renderer, and implicitly
 the GPU. One could instead use the CPU, by making use of the Pixman library. To
 use it in the compositor append `--use-pixman` to the command line. This purely
 software approach has the benefit that would not rely at all on any GL
-implementatation or library. In constrast, even if the GL-renderer is used,
+implementation or library. In contrast, even if the GL-renderer is used,
 in some situations it won't be able to use the GPU supported implementation
-and fallback to sofware based one, and for instance that might happen when
+and fallback to software based one, and for instance that might happen when
 running in virtualized environments.
 
 Both approaches could end up not actually using the GPU, but the latter does
 actually use the GL library and perform the operations in software, while the
-former does not use any GL whatsover. All back-ends support disabling the
+former does not use any GL whatsoever. All back-ends support disabling the
 GL-render to make sure it does not interfere with the composing process.
 
 ## Multiple output set-up and touch input devices

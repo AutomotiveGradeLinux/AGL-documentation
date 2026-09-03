@@ -49,7 +49,7 @@ technologies and/or software components. They include:
 - [systemd](https://www.freedesktop.org/wiki/Software/systemd/): system
   services and user session services management
 
-- [gRPC](https://grpc.io/about): inter-process communication, new recommmended
+- [gRPC](https://grpc.io/about): inter-process communication, new recommended
   system-wide IPC, which should be used instead of D-Bus.
 
 Note that while there are many open source software projects in the desktop Linux

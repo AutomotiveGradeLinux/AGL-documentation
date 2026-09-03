@@ -105,7 +105,7 @@ Package [ID] {
 Description example:
 ```shell
 Package SamplePackage {
-	description: "This is a sample Packege"
+	description: "This is a sample Package"
 	Area SampleArea {
 		arbitrationPolicy: DEFAULT
 		sizeReference: SampleSize1
@@ -593,7 +593,7 @@ description:"Offset"
 }
 ```
 
-### 8. Constraint defination
+### 8. Constraint definition
 
 Constraints can be defined according to the state of the Area/Zone and the state of the ViewContent/SoundContent. The syntax can be used for Constraints is shown below.
 
@@ -663,9 +663,9 @@ Constraints can be defined according to the state of the Area/Zone and the state
 |All Area|	ALL_AREAS|	A set of all the Areas defined in the Model.|
 |All ViewContent|	ALL_VIEWCONTENTS|	A set of all the ViewContents defined in the Model.|
 |IF-THEN-ELSE Syntax|	IF (<Bool expression\>)THEN <Expression\>ELSE <Expression\>|	The type of the expression must be identical, for the THEN clause, if the Bool expression is true, for THEN and ELSE clause ,if the Bool expression is false.|
-|Let　Expression|	let <Variable name\> = <Object expression\>|	Evaluate <Object expression\>　as variable <variabl name>, which can then be referenced in subsequent expressions|
+|Let　Expression|	let <Variable name\> = <Object expression\>|	Evaluate <Object expression\>　as variable <variable name>, which can then be referenced in subsequent expressions|
 |||Can only be used inside the expression. For-All, Exists, Max, Min, Select|
-|Pre-arbitration value specifier|	(pre)<Area \| ViewContent \| Scene\| Scene.Property\> |	Refere to the state before arbitration of Area, ViewContent, Property.|
+|Pre-arbitration value specifier|	(pre)<Area \| ViewContent \| Scene\| Scene.Property\> |	Refer to the state before arbitration of Area, ViewContent, Property.|
 
 **The syntax precedence and associativity are shown below:**
 
@@ -692,7 +692,7 @@ Constraints can be defined according to the state of the Area/Zone and the state
 
 #### 8.1 Constraint
 
-Constraint describes constraint expressions. There are two types of constraint expressions Runtime constraints and Offline constraints. A Runtime constraint is a constraint expression that should be be true at the time of arbitration and controls the behavior of arbitration. An Offline constraint is a constraint expression that should be satisfied after arbitration and tests the arbitration result.
+Constraint describes constraint expressions. There are two types of constraint expressions Runtime constraints and Offline constraints. A Runtime constraint is a constraint expression that should be true at the time of arbitration and controls the behavior of arbitration. An Offline constraint is a constraint expression that should be satisfied after arbitration and tests the arbitration result.
 
 Syntax:
 ```shell
@@ -774,7 +774,7 @@ Constraint SampleConstraint {
 - For-All
 
 For-All targets a set, and it is true if all element of the set satisfies a lambda expression ({element name declaration | element condition}).
-For the set, you can specify a defined set or an One-time set. (Refer to “Group definition” for more informations.)
+For the set, you can specify a defined set or an One-time set. (Refer to “Group definition” for more information.)
 <br>Example: If SampleContent1 is displayed, all Areas of AreaGroup1 is not displayed.
 <br> It is assumed that "AreaGroup1" is defined as AreaSet.
 
@@ -789,7 +789,7 @@ For-All AreaGroup1 { x | x.isHidden() }
 - Exists
 
 Exists targets a set, and it is true if even one element of the set satisfies a Lambda expression ({element name declaration | element condition}).
-<br>For the set, you can specify a defined set or an One-time set. (Refer to “Group definition” for more informations.)
+<br>For the set, you can specify a defined set or an One-time set. (Refer to “Group definition” for more information.)
 <br>Example: If any Content of ContentGroup1 is displayed, all Areas of AreaGroup1 is not displayed.
 <br> It is assumed that "ContentGroup1" is defined as ContentSet.
 <br> It is assumed that "AreaGroup1" is defined as AreaSet.
@@ -1120,7 +1120,7 @@ int RiskSeverity: 3
 
 Syntax:
 ```shell
-StereoType<[Target Model Name]> [ID] ([valiable]) @BEGIN@
+StereoType<[Target Model Name]> [ID] ([variable]) @BEGIN@
 description: [String]
     [Propaties of Element]
 @END@
@@ -1131,7 +1131,7 @@ description: [String]
 |description: 	0..1|	Description|
 |[Target Model Name]	1|	Identify the applicable model by describing the model element keywords|
 ||It can be applied to the Area, ViewContent models|
-|[valiable]	0..*|	Describe an arbitrary variable as the parameter to be replaced, which will be set in the property of the model element specified in [Target Model Name].If there are multiple variables, separate them with commas.|
+|[variable]	0..*|	Describe an arbitrary variable as the parameter to be replaced, which will be set in the property of the model element specified in [Target Model Name].If there are multiple variables, separate them with commas.|
 |[Properties of Element]	1..*|	Describe the properties of the model element specified in [Target Model Name].In the property, the value to be replaced is written in @{[variable]} .|
 ||The variables must match the variables described in ().|
 
@@ -1144,7 +1144,7 @@ Stereotype<ViewContent> display_warnning (name,allocatable,priority) @BEGIN@
         width: 300
         height: 100
     }
-    State NORMAL { piority: @{priority} }
+    State NORMAL { priority: @{priority} }
 
 @END@
 ```
@@ -1181,7 +1181,7 @@ Stereotype<ViewContent> display_warnning (name,allocatable,priority) @BEGIN@
         width: 300
         height: 100
     }
-    State NORMAL { piority: @{priority} }
+    State NORMAL { priority: @{priority} }
 @END@
 ```
 
