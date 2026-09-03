@@ -277,7 +277,7 @@ nlu:
 ```
 
 ### Training
-To train the RASA NLU intent engine model you need to curate a dataset for your sepcific use case. You can also use the [RASA NLU Trainer](https://rasahq.github.io/rasa-nlu-trainer/) to curate your dataset. Once you have your dataset ready, now you need to create a `config.yml` file. This file contains the configuration for the RASA NLU engine. A sample `config.yml` file is given below:
+To train the RASA NLU intent engine model you need to curate a dataset for your specific use case. You can also use the [RASA NLU Trainer](https://rasahq.github.io/rasa-nlu-trainer/) to curate your dataset. Once you have your dataset ready, now you need to create a `config.yml` file. This file contains the configuration for the RASA NLU engine. A sample `config.yml` file is given below:
 
 ```yaml
 language: en  # your 2-letter language code

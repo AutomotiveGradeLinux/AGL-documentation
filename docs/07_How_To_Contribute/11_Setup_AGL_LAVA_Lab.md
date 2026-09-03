@@ -75,7 +75,7 @@ instructions. You will need the following:
 
 - uart idvendor, idproduct, devpath
 
-- power on, off and reset commads for the power switch
+- power on, off and reset commands for the power switch
 
 
 

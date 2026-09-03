@@ -31,7 +31,7 @@ executable call...), and therefore can't send notifications for those.*
 ## Application Discovery
 
 Applications are enumerated from systemd's list of available units based on the
-pattern `agl-app*@*.service`, and are started and controled using their systemd
+pattern `agl-app*@*.service`, and are started and controlled using their systemd
 unit.  Please note `applaunchd` allows only one instance of a given
 application.
 
