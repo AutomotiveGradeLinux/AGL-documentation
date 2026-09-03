@@ -151,7 +151,7 @@ This can be useful, for example, when switching between graphical applications:
 Application start-up, activation and application switching are sometimes
 conflated into a single operation but underneath some of these are distinct
 steps, and a bit flaky in some circumstances.
-The [AGL compositor](../02_agl_compositor.md) has
+The [AGL compositor](../01_Graphics_Service/01_agl_compositor.md) has
 some additional events which one can use when creating an application
 start-up & switching scheme in different run-times.
 
@@ -203,7 +203,7 @@ the following application state events:
 The `started` event can be used in correlation with the `StartApplication`
 method from `applaunchd` such that upon received the `started` even, it can
 explicitly activate that particular appid in order for the compositor to
-display it. See [AGL compositor](../02_agl_compositor.md)
+display it. See [AGL compositor](../01_Graphics_Service/01_agl_compositor.md)
 about how activation should be handled.
 
 *Note: These can only be received if by the client shell which binds to the

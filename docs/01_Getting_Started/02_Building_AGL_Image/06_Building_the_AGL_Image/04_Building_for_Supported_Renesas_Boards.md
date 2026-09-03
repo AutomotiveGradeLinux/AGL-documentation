@@ -589,7 +589,7 @@ In general, the defaults along with the configuration fragments the
 `aglsetup.sh` script applies in the `local.conf` file are good enough.
 However, you can customize aspects by editing the `local.conf` file.
 See the
-"[Customizing Your Build](05_Customizing_Your_Build.md)"
+"[Customizing Your Build](../05_Customizing_Your_Build.md)"
 section for common configurations you might want to consider.
 
 **NOTE:** For detailed explanations of the configurations you can make
