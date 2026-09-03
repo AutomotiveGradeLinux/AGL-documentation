@@ -54,7 +54,7 @@ The remainder of this section provides steps on how to download the AGL source f
      To download the [latest stable release branch](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release), use
      the following commands:
 
-     **Note:** In this below command please change the branch name to the [latest stable release branch](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release). For example, for Nifty Needlefish branch use the last name i.e. "needlefish" as branch.
+     **Note:** In this below command please change the branch name to the [latest stable release branch](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release). For example, for the Vibrant Vimba branch use the last name i.e. "vimba" as branch.
 
 
      ```sh

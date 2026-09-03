@@ -100,7 +100,7 @@ The script required to upload the resulting image is part of meta-aws in the sub
 
 **It has a few requirements that you need to setup first.**
 
-**These are documented in the [Readme there](https://github.com/aws4embeddedlinux/meta-aws/blob/scarthgap/scripts/ec2-ami/README.md).**
+**These are documented in the [Readme there](https://github.com/aws4embeddedlinux/meta-aws/blob/wrynose/scripts/ec2-ami/README.md).**
 
 **Read it and set it up accordingly.**
 

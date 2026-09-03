@@ -37,18 +37,18 @@ The `meta-agl-demo` layer has the following base dependencies:
 * Yocto Project Release:
 
   - URI: git://git.yoctoproject.org/poky
-  - Branch: "scarthgap"
+  - Branch: "wrynose"
   - Tested Revision: See the [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml)
     manifest file for the `AGL-repo` repository for revision information.
 
 * AGL `meta-agl` Layer:
 
   - URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-agl
-  - Branch: "master"
+  - Branch: "vimba"
 
 * OpenEmbedded `meta-openembedded` Layer:
 
-  - Branch: "scarthgap"
+  - Branch: "wrynose"
   - Tested Revision: See the [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml)
     manifest file for the `AGL-repo` repository for revision
     information.
@@ -64,7 +64,7 @@ The `meta-agl-demo` layer has the following base dependencies:
   [code.qt.io](https://code.qt.io/cgit/yocto/meta-qt6.git/):
 
   - URI: https://code.qt.io/yocto/meta-qt6.git
-  - Branch: "6.8"
+  - Branch: "6.12"
   - Tested Revision: See the [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml)
     manifest file for the `AGL-repo` repository for revision
     information.
@@ -73,7 +73,7 @@ The `meta-agl-demo` layer has the following base dependencies:
   [github/meta-flutter](https://github.com/meta-flutter):
 
   - URI: https://github.com/meta-flutter/meta-flutter.git
-  - Branch: "scarthgap"
+  - Branch: "wrynose"
   - Tested Revision: See the [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml)
     manifest file for the `AGL-repo` repository for revision
     information.
@@ -88,7 +88,7 @@ dependencies:
 * Yocto Project `meta-security` Layer:
 
   - URI: https://git.yoctoproject.org/cgit/cgit.cgi/meta-security
-  - Branch: "scarthgap"
+  - Branch: "wrynose"
   - Tested Revision: See the [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml)
     manifest file for the `AGL-repo` repository for revision
     information.
@@ -96,12 +96,12 @@ dependencies:
 * `meta-agl` sub layers:
 
   - URI: https://gerrit.automotivelinux.org/gerrit/AGL/meta-agl
-  - Branch: "master"
+  - Branch: "vimba"
 
 * OpenEmbedded's `meta-openembedded` Layer:
 
   - URI: https://github.com/openembedded/meta-openembedded
-  - Branch: "scarthgap"
+  - Branch: "wrynose"
   - Tested Revision: See the [`default.xml`](https://git.automotivelinux.org/AGL/AGL-repo/tree/default.xml)
     manifest file for the `AGL-repo` repository for revision
     information.

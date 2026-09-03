@@ -11,12 +11,12 @@ Note: RASA NLU is currently not available as it is not supported by Python 3.12,
 
 
 # Installation and Usage
-Before diving into the detailed components documentation, let's first look at how to install and use the voice agent service. All of the features of the voice agent service are encapsulated in the `meta-offline-voice-agent` sub-layer, which can be found under the `meta-agl-devel layer`. These features are currently available in the `master` branch only. You can build this sub-layer into the final image using the following commands:
+Before diving into the detailed components documentation, let's first look at how to install and use the voice agent service. All of the features of the voice agent service are encapsulated in the `meta-offline-voice-agent` sub-layer, which can be found under the `meta-agl-devel layer`. These features are currently available in the `vimba` branch only. You can build this sub-layer into the final image using the following commands:
 
 ### Building for QEMU x86-64
 
 ```shell
-$ source master/meta-agl/scripts/aglsetup.sh -m qemux86-64 -b build-master agl-demo agl-devel agl-offline-voice-agent
+$ source vimba/meta-agl/scripts/aglsetup.sh -m qemux86-64 -b build-vimba agl-demo agl-devel agl-offline-voice-agent
 $ source agl-init-build-env
 $ bitbake agl-ivi-demo-flutter
 ```
@@ -26,7 +26,7 @@ $ bitbake agl-ivi-demo-flutter
 Whisper AI does not work on the emulator; therefore, building and running on a physical device like the Raspberry Pi 5 is recommended. You can set up the build environment specifically for Raspberry Pi 5 using:
 
 ```shell
-$ source master/meta-agl/scripts/aglsetup.sh -m raspberrypi5 -b build-master agl-demo agl-devel agl-offline-voice-agent
+$ source vimba/meta-agl/scripts/aglsetup.sh -m raspberrypi5 -b build-vimba agl-demo agl-devel agl-offline-voice-agent
 $ source agl-init-build-env
 $ bitbake agl-ivi-demo-flutter
 ```

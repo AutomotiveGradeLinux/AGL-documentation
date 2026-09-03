@@ -6,10 +6,10 @@ Preparing your build host so that it can build an AGL image means
 making sure your system is set up to use the
 [Yocto Project](https://yoctoproject.org) OpenEmbedded build system,
 which is based on
-[BitBake](https://docs.yoctoproject.org/bitbake.html).
+[BitBake](https://docs.yoctoproject.org/wrynose/bitbake.html).
 
 This section presents minimal information so you can prepare the build host
-to use the "Dunfell" version of the Yocto Project (i.e. version 3.1.2).
+to use the "Wrynose" version of the Yocto Project (i.e. version 6.0.x).
 If you want more details on how the Yocto Project works, you can reference
 the Yocto Project documentation
 [here](https://www.yoctoproject.org/docs/).
@@ -17,7 +17,7 @@ the Yocto Project documentation
 **NOTE:** This entire section presumes you want to build an image.
 You can skip the entire build process if you want to use a ready-made
 development image.
-The [supported images](https://download.automotivelinux.org/AGL/snapshots/master/latest/) exist for several boards as
+The [supported images](https://download.automotivelinux.org/AGL/release/vimba/latest/) exist for several boards as
 well as for the Quick EMUlator (QEMU).
 See the
 "[Quickstart](../01_Quickstart/01_Using_Ready_Made_Images.md)"
@@ -26,7 +26,7 @@ section for more information on the ready-made images.
 1. **Use a Supported Linux Distribution:** To use the AGL software, it is
    recommended that your build host is a native Linux machine that runs a
    Yocto Project supported distribution as described by the
-   "[Supported Linux Distributions](https://docs.yoctoproject.org/ref-manual/system-requirements.html#supported-linux-distributions)"
+   "[Supported Linux Distributions](https://docs.yoctoproject.org/wrynose/ref-manual/system-requirements.html#supported-linux-distributions)"
    section in the Yocto Project Reference Manual.
    Basically, you should be running a recent version of Ubuntu, Fedora, openSUSE,
    CentOS, or Debian.
@@ -41,7 +41,7 @@ section for more information on the ready-made images.
       - Python 3.4.0 or greater
 
    If your distribution does not meet these minimal requirements, see the
-   "[Required Git, tar, and Python Versions](https://docs.yoctoproject.org/ref-manual/system-requirements.html#required-git-tar-python-and-gcc-versions)"
+   "[Required Git, tar, and Python Versions](https://docs.yoctoproject.org/wrynose/ref-manual/system-requirements.html#required-git-tar-python-make-and-gcc-versions)"
    section in the Yocto Project Reference Manual for steps that you can
    take to be sure you have these tools.
 
@@ -50,13 +50,13 @@ section for more information on the ready-made images.
    Depending on the Linux distribution you are using, the list of
    host packages differ.
    See
-   "[The Build Host Packages](https://docs.yoctoproject.org/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
+   "[The Build Host Packages](https://docs.yoctoproject.org/wrynose/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
    section of the Yocto Project Quick Start for information on the packages you need.
 
    **NOTE:** If you are using the CentOS distribution, you need to
    separately install the epel-release package and run the `makecache` command as
    described in
-   "[The Build Host Packages](https://docs.yoctoproject.org/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
+   "[The Build Host Packages](https://docs.yoctoproject.org/wrynose/ref-manual/system-requirements.html#required-packages-for-the-build-host)"
    section of the Yocto Project Quick Start.
 
    Aside from the packages listed in the previous section, you need the following:

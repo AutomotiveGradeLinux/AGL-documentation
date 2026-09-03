@@ -72,11 +72,11 @@ Json files need to be created correctly for your execution environment.
 
 ## How to install Unified HMI frameworks in your Build
 
-Follow the [AGL documentation](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/) for the build process, and set up the "[Initializing Your Build Environment](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/04_Initializing_Your_Build_Environment/)" section as described below to enable the AGL feature 'agl-uhmi'. 
+Follow the [AGL documentation](https://docs.automotivelinux.org/en/vimba/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/) for the build process, and set up the "[Initializing Your Build Environment](https://docs.automotivelinux.org/en/vimba/#01_Getting_Started/02_Building_AGL_Image/04_Initializing_Your_Build_Environment/)" section as described below to enable the AGL feature 'agl-uhmi'. 
 
 For example:
 ```
-$ cd $AGL_TOP/master
+$ cd $AGL_TOP/vimba
 $ source ./meta-agl/scripts/aglsetup.sh -m qemux86-64 -b qemux86-64 agl-demo agl-devel agl-uhmi
 ```
 
@@ -100,9 +100,9 @@ Replace the `<image_name>` with the appropriate values you want. We have confirm
 ## How to setup and boot
 
 For Environment setup instructions for each platform, refer to the following links in the AGL Documentation:
-* [Building for x86(Emulation and Hardware)](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/06_Building_the_AGL_Image/02_Building_for_x86_%28Emulation_and_Hardware%29/)
-* [Building for Raspberry Pi 4](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/06_Building_the_AGL_Image/03_Building_for_Raspberry_Pi_4/)
-* [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/06_Building_the_AGL_Image/04_Building_for_Supported_Renesas_Boards/)
+* [Building for x86(Emulation and Hardware)](https://docs.automotivelinux.org/en/vimba/#01_Getting_Started/02_Building_AGL_Image/06_Building_the_AGL_Image/02_Building_for_x86_%28Emulation_and_Hardware%29/)
+* [Building for Raspberry Pi 4](https://docs.automotivelinux.org/en/vimba/#01_Getting_Started/02_Building_AGL_Image/06_Building_the_AGL_Image/03_Building_for_Raspberry_Pi_x/)
+* [Building for Supported Renesas Boards](https://docs.automotivelinux.org/en/vimba/#01_Getting_Started/02_Building_AGL_Image/06_Building_the_AGL_Image/04_Building_for_Supported_Renesas_Boards/)
 
 ## Preconfigured Images for using Unified HMI
 

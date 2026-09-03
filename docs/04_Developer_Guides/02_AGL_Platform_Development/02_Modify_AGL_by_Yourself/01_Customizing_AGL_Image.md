@@ -133,4 +133,4 @@ Prerequire: You already created agl-image-weston.bbappend followed as 'Method 2:
 
 ### Additional Resources
 
-- [Yocto Mega Manual - IMAGE_ROOTFS_SIZE](https://docs.yoctoproject.org/ref-manual/variables.html#var-IMAGE_ROOTFS_SIZE)
+- [Yocto Mega Manual - IMAGE_ROOTFS_SIZE](https://docs.yoctoproject.org/wrynose/ref-manual/variables.html#term-IMAGE_ROOTFS_SIZE)
