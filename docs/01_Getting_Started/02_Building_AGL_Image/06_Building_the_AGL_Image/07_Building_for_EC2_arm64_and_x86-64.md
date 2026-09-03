@@ -100,7 +100,9 @@ The script required to upload the resulting image is part of meta-aws in the sub
 
 **It has a few requirements that you need to setup first.**
 
-**These are documented in the [Readme there](https://github.com/aws4embeddedlinux/meta-aws/blob/wrynose/scripts/ec2-ami/README.md).**
+<!-- meta-aws is a third-party repo; its branch naming tracking the Yocto
+     codename is not guaranteed each cycle -- verify this link on release. -->
+**These are documented in the [Readme there](https://github.com/aws4embeddedlinux/meta-aws/blob/{{ yocto.codename }}/scripts/ec2-ami/README.md).**
 
 **Read it and set it up accordingly.**
 

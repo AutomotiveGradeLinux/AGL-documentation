@@ -1,11 +1,11 @@
-# agl-docs (vimba)
+# agl-docs ({{ agl.codename }})
 Revamping and restructuring Automotive Grade Linux's documentation site under
 GSoD'20.
 
 The [documentation gerrit
 repository](https://gerrit.automotivelinux.org/gerrit/admin/repos/AGL/documentation)
 contains AGL documentation website template and content, rendering is visible at
-[https://docs.automotivelinux.org/en/vimba/](https://docs.automotivelinux.org/en/vimba/).
+[https://docs.automotivelinux.org/en/{{ agl.codename }}/](https://docs.automotivelinux.org/en/{{ agl.codename }}/).
 The documentation site is hosted on
 [readthedocs](https://readthedocs.org/projects/automotivegradelinux/) and
 corresponding builds are mentioned

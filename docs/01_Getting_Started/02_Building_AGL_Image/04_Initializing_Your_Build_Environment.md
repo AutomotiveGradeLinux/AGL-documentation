@@ -10,7 +10,7 @@ run to initialize the build environment.
 You can find this script here:
 
 ```sh
-$AGL_TOP/vimba/meta-agl/scripts/aglsetup.sh
+$AGL_TOP/{{ agl.codename }}/meta-agl/scripts/aglsetup.sh
 ```
 
 The script accepts many options that allow you to define build parameters such
@@ -18,7 +18,7 @@ as the target hardware (i.e. the machine), build directory, and so forth.
 Use the following commands to see the available options and script syntax:
 
 ```sh
-$ cd $AGL_TOP/vimba
+$ cd $AGL_TOP/{{ agl.codename }}
 $ source meta-agl/scripts/aglsetup.sh -h
 ```
 
@@ -161,22 +161,22 @@ for the machine, and chooses the "agl-demo" feature, which also includes the "ag
 $ source meta-agl/scripts/aglsetup.sh -m qemux86-64 -b qemux86-64 agl-demo
 ------------ aglsetup.sh: Starting
 Generating configuration files:
-   Build dir: /agl/vimba/tree/qemux86-64
+   Build dir: /agl/{{ agl.codename }}/tree/qemux86-64
    Machine: qemux86-64
    Features: agl-app-framework agl-demo agl-flutter agl-kuksa-val agl-pipewire agl-selinux
-   Running /agl/vimba/tree/external/poky/oe-init-build-env
-   Templates dir: /agl/vimba/tree/meta-agl/meta-agl-core/conf/templates/base
-   Config: /agl/vimba/tree/qemux86-64/conf/bblayers.conf
-   Config: /agl/vimba/tree/qemux86-64/conf/local.conf
-   Setup script: /cross/sata/agl/vimba/tree/qemux86-64/conf/setup.sh
+   Running /agl/{{ agl.codename }}/tree/external/poky/oe-init-build-env
+   Templates dir: /agl/{{ agl.codename }}/tree/meta-agl/meta-agl-core/conf/templates/base
+   Config: /agl/{{ agl.codename }}/tree/qemux86-64/conf/bblayers.conf
+   Config: /agl/{{ agl.codename }}/tree/qemux86-64/conf/local.conf
+   Setup script: /cross/sata/agl/{{ agl.codename }}/tree/qemux86-64/conf/setup.sh
    Executing setup script ... --- beginning of setup script
---- fragment /agl/vimba/tree/meta-agl/templates/base/01_setup_EULAfunc.sh
---- fragment /agl/vimba/tree/meta-agl/templates/base/01_setup_pkg_revision.sh
---- fragment /agl/vimba/tree/meta-agl/templates/base/99_setup_EULAconf.sh
+--- fragment /agl/{{ agl.codename }}/tree/meta-agl/templates/base/01_setup_EULAfunc.sh
+--- fragment /agl/{{ agl.codename }}/tree/meta-agl/templates/base/01_setup_pkg_revision.sh
+--- fragment /agl/{{ agl.codename }}/tree/meta-agl/templates/base/99_setup_EULAconf.sh
 --- end of setup script
 OK
-Generating setup manifest: /agl/vimba/tree/qemux86-64/aglsetup.manifest ... OK
-Generating setup file: /agl/vimba/tree/qemux86-64/agl-init-build-env ... OK
+Generating setup manifest: /agl/{{ agl.codename }}/tree/qemux86-64/aglsetup.manifest ... OK
+Generating setup file: /agl/{{ agl.codename }}/tree/qemux86-64/agl-init-build-env ... OK
 ------------ aglsetup.sh: Done
 Common targets are:
 - meta-agl layer:
@@ -201,20 +201,20 @@ Common targets are:
   * agl-ivi-demo-control-panel    (demo/test control panel image)
 
   More details:
-  https://docs.automotivelinux.org/en/vimba/#01_Getting_Started/02_Building_AGL_Image/07_Available_Demo_Images
+  https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/07_Available_Demo_Images
 
 - meta-agl-demo-shared:
   * agl-instrument-cluster-standalone-demo
     (IC EG non-container cluster test image)
 
 Build guide:
-https://docs.automotivelinux.org/en/vimba/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/
+https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/
 
 ```
 
 Running the script creates the Build Directory if it does not already exist.
 The default Build Directory is `$AGL_TOP/<release-branch-name>/build`, and the nomenclature to be used throughout this doc is going to be `$AGL_TOP/<release-branch-name>/<build-dir>`
-For this example, the Build Directory is `$AGL_TOP/vimba/qemux86-64`.
+For this example, the Build Directory is `$AGL_TOP/{{ agl.codename }}/qemux86-64`.
 
 The script's output also indicates the machine and AGL features selected for the build.
 
@@ -238,10 +238,10 @@ You can find lots of information on configuring builds in the Yocto Project
 documentation set.
 Here are some references if you want to dig into configuration further:
 
-* [Customizing Images Using local.conf](https://docs.yoctoproject.org/wrynose/dev-manual/customizing-images.html#customizing-images-using-local-conf)
-* [Local](https://docs.yoctoproject.org/wrynose/ref-manual/varlocality.html#local)
-* [build/conf/local.conf](https://docs.yoctoproject.org/wrynose/ref-manual/structure.html#build-conf-local-conf)
-* [build/conf/bblayers.conf](https://docs.yoctoproject.org/wrynose/ref-manual/structure.html#build-conf-bblayers-conf)
-* [BBLAYERS](https://docs.yoctoproject.org/wrynose/ref-manual/variables.html#term-BBLAYERS)
-* [User Configuration](https://docs.yoctoproject.org/wrynose/ref-manual/structure.html#build)
-* [Enabling Your Layer](https://docs.yoctoproject.org/wrynose/dev-manual/layers.html#enabling-your-layer)
+* [Customizing Images Using local.conf](https://docs.yoctoproject.org/{{ yocto.codename }}/dev-manual/customizing-images.html#customizing-images-using-local-conf)
+* [Local](https://docs.yoctoproject.org/{{ yocto.codename }}/ref-manual/varlocality.html#local)
+* [build/conf/local.conf](https://docs.yoctoproject.org/{{ yocto.codename }}/ref-manual/structure.html#build-conf-local-conf)
+* [build/conf/bblayers.conf](https://docs.yoctoproject.org/{{ yocto.codename }}/ref-manual/structure.html#build-conf-bblayers-conf)
+* [BBLAYERS](https://docs.yoctoproject.org/{{ yocto.codename }}/ref-manual/variables.html#term-BBLAYERS)
+* [User Configuration](https://docs.yoctoproject.org/{{ yocto.codename }}/ref-manual/structure.html#build)
+* [Enabling Your Layer](https://docs.yoctoproject.org/{{ yocto.codename }}/dev-manual/layers.html#enabling-your-layer)

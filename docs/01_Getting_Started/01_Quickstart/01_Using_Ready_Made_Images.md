@@ -20,9 +20,9 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ### QEMU x86-64
 
-1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/vimba/latest/qemux86-64/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.ext4.xz).
+1. Download the [compressed prebuilt image]({{ agl_download_base }}/latest/qemux86-64/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.ext4.xz).
 
-2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/release/vimba/latest/qemux86-64/deploy/images/qemux86-64/bzImage).
+2. Download the [compressed kernel image]({{ agl_download_base }}/latest/qemux86-64/deploy/images/qemux86-64/bzImage).
 
 3. Install [QEMU](https://www.qemu.org/download/) :
 
@@ -90,7 +90,7 @@ AGL provides a number of pre-built ready-made images of various versions.
 **NOTE :** Please note [https://www.virtualbox.org/ticket/19873](https://www.virtualbox.org/ticket/19873) as this affects the VMs resolution.
 The AGL demo images do require 1920x1080. The instructions below have been adapted.
 
-  1. Download the [compressed vbox disk image](https://download.automotivelinux.org/AGL/release/vimba/latest/qemux86-64/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.wic.vmdk.xz).
+  1. Download the [compressed vbox disk image]({{ agl_download_base }}/latest/qemux86-64/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.wic.vmdk.xz).
 
   2. Install and set up [Virtual Box](https://www.virtualbox.org/wiki/Linux_Downloads).
 
@@ -122,7 +122,7 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
   **NOTE :** UEFI enabled system is required.
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/vimba/latest/qemux86-64/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.wic.zst).
+  1. Download the [compressed prebuilt image]({{ agl_download_base }}/latest/qemux86-64/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.wic.zst).
 
   2. Extract the image into USB drive :
 
@@ -140,9 +140,9 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
 ### QEMU aarch64
 
-1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/vimba/latest/qemuarm64/deploy/images/qemuarm64/agl-ivi-demo-qt-qemuarm64.ext4.xz).
+1. Download the [compressed prebuilt image]({{ agl_download_base }}/latest/qemuarm64/deploy/images/qemuarm64/agl-ivi-demo-qt-qemuarm64.ext4.xz).
 
-2. Download the [compressed kernel image](https://download.automotivelinux.org/AGL/release/vimba/latest/qemuarm64/deploy/images/qemuarm64/Image).
+2. Download the [compressed kernel image]({{ agl_download_base }}/latest/qemuarm64/deploy/images/qemuarm64/Image).
 
 3. Install [QEMU](https://www.qemu.org/download/) :
 
@@ -211,7 +211,7 @@ The AGL demo images do require 1920x1080. The instructions below have been adapt
 
 ### Raspberry Pi 4
 
-  1. Download the [compressed prebuilt image](https://download.automotivelinux.org/AGL/release/vimba/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-ivi-demo-qt-raspberrypi4-64.wic.zst).
+  1. Download the [compressed prebuilt image]({{ agl_download_base }}/latest/raspberrypi4/deploy/images/raspberrypi4-64/agl-ivi-demo-qt-raspberrypi4-64.wic.zst).
 
   2. Extract the image into the SD card of Raspberry Pi 4 :
 

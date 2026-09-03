@@ -47,7 +47,7 @@ BUILDHISTORY_COMMIT = "1"
 ```
 
 See the
-"[Maintaining Build Output Quality](https://docs.yoctoproject.org/wrynose/dev-manual/build-quality.html#maintaining-build-output-quality)"
+"[Maintaining Build Output Quality](https://docs.yoctoproject.org/{{ yocto.codename }}/dev-manual/build-quality.html#maintaining-build-output-quality)"
 section in the Yocto Project Reference Manual for a complete discussion on
 build history.
 
@@ -64,7 +64,7 @@ INHERIT += "rm_work"
 ```
 
 You can read about the class in the
-"[rm_work.bbclass](https://docs.yoctoproject.org/wrynose/dev-manual/disk-space.html#conserving-disk-space-during-builds)"
+"[rm_work.bbclass](https://docs.yoctoproject.org/{{ yocto.codename }}/dev-manual/disk-space.html#conserving-disk-space-during-builds)"
 section of the Yocto Project Reference Manual for more information.
 
 ##  Pointing at Shared State Cache Locations
@@ -96,7 +96,7 @@ SSTATE_MIRRORS ?= "\
 ```
 
 If you want to know more about the Yocto Project sstate mechanism, see the
-"[Shared State Cache](https://docs.yoctoproject.org/wrynose/overview-manual/concepts.html#shared-state-cache)"
+"[Shared State Cache](https://docs.yoctoproject.org/{{ yocto.codename }}/overview-manual/concepts.html#shared-state-cache)"
 section in the Yocto Project Reference Manual.
 
 ## Preserving the Download Directory
@@ -106,7 +106,7 @@ from various upstream projects.
 Downloading these files can take a while, particularly if your network
 connection is slow.
 The process downloads files into a
-"[download directory](https://docs.yoctoproject.org/wrynose/ref-manual/variables.html#term-DL_DIR)".
+"[download directory](https://docs.yoctoproject.org/{{ yocto.codename }}/ref-manual/variables.html#term-DL_DIR)".
 The `DL_DIR` variable defines the download directory.
 For subsequent builds, you can preserve this directory to speed up the download
 part of a build.
@@ -128,11 +128,11 @@ using mirrors.
 To use mirrors, add this line to your `local.conf` file in the Build directory:
 
 ```sh
-SSTATE_MIRRORS_append = " file://.* https://download.automotivelinux.org/sstate-mirror/vimba/${DEFAULTTUNE}/PATH \n "
+SSTATE_MIRRORS_append = " file://.* https://download.automotivelinux.org/sstate-mirror/{{ agl.codename }}/${DEFAULTTUNE}/PATH \n "
 ```
 
 You can learn more about shared state and how it is used in the
-"[Shared State Cache](https://docs.yoctoproject.org/wrynose/overview-manual/concepts.html#shared-state-cache)"
+"[Shared State Cache](https://docs.yoctoproject.org/{{ yocto.codename }}/overview-manual/concepts.html#shared-state-cache)"
 section of the Yocto Project Reference Manual.
 
 ## Common Settings using Symbolic Link with site.conf
@@ -141,7 +141,7 @@ section of the Yocto Project Reference Manual.
 $ echo "# reuse download directories" >> $AGL_TOP/site.conf
 $ echo "DL_DIR = \"$HOME/downloads/\"" >> $AGL_TOP/site.conf
 $ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
-$ cd $AGL_TOP/vimba/qemux86-64/
+$ cd $AGL_TOP/{{ agl.codename }}/qemux86-64/
 $ ln -sf $AGL_TOP/site.conf conf/
 
 In General;

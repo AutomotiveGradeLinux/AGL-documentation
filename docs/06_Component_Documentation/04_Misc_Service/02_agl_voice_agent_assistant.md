@@ -16,7 +16,7 @@ Before diving into the detailed components documentation, let's first look at ho
 ### Building for QEMU x86-64
 
 ```shell
-$ source vimba/meta-agl/scripts/aglsetup.sh -m qemux86-64 -b build-vimba agl-demo agl-devel agl-offline-voice-agent
+$ source {{ agl.codename }}/meta-agl/scripts/aglsetup.sh -m qemux86-64 -b build-{{ agl.codename }} agl-demo agl-devel agl-offline-voice-agent
 $ source agl-init-build-env
 $ bitbake agl-ivi-demo-flutter
 ```
@@ -26,7 +26,7 @@ $ bitbake agl-ivi-demo-flutter
 Whisper AI does not work on the emulator; therefore, building and running on a physical device like the Raspberry Pi 5 is recommended. You can set up the build environment specifically for Raspberry Pi 5 using:
 
 ```shell
-$ source vimba/meta-agl/scripts/aglsetup.sh -m raspberrypi5 -b build-vimba agl-demo agl-devel agl-offline-voice-agent
+$ source {{ agl.codename }}/meta-agl/scripts/aglsetup.sh -m raspberrypi5 -b build-{{ agl.codename }} agl-demo agl-devel agl-offline-voice-agent
 $ source agl-init-build-env
 $ bitbake agl-ivi-demo-flutter
 ```
