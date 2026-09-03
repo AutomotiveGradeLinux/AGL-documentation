@@ -1,4 +1,5 @@
 site/
+__pycache__/
 .DS_Store
 theme/.DS_Store
 docs/.DS_Store

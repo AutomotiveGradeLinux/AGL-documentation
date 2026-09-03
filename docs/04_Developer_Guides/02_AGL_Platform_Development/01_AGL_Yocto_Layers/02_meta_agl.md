@@ -66,7 +66,7 @@ in `meta-agl`:
 ## Packagegroups
 
 This section describes the AGL
-[packagegroup](https://docs.yoctoproject.org/dev-manual/common-tasks.html#customizing-images-using-custom-package-groups)
+[packagegroup](https://docs.yoctoproject.org/{{ yocto.codename }}/dev-manual/customizing-images.html#customizing-images-using-custom-package-groups)
 design:
 
 ### core non-ui packagegroups

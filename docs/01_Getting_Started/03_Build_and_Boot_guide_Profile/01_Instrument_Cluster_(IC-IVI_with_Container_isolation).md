@@ -43,10 +43,10 @@ Build environment for AGL IC container integration is same as AGL other
 profile build environment. 
 
 ### 1st step:
-Please read [[Build Process Overview]](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/) in AGL doc.
+Please read [[Build Process Overview]](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/) in AGL doc.
 
 ### 2nd step:
-Please read [[Preparing Your Build Host]](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/02_Preparing_Your_Build_Host/) in AGL doc.
+Please read [[Preparing Your Build Host]](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/02_Preparing_Your_Build_Host/) in AGL doc.
 
 ### 3rd step: 
 Define Your Top-Level Directory.
@@ -80,10 +80,10 @@ $ git config \--global user.name "Your Name"
 
 ```bash
 $ cd $AGL_TOP
-$ mkdir master
-$ export AGL_TOP=$HOME/AGL/master
+$ mkdir {{ agl.codename }}
+$ export AGL_TOP=$HOME/AGL/{{ agl.codename }}
 $ cd $AGL_TOP
-$ repo init -b master -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+$ repo init -b {{ agl.codename }} -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 $ repo sync
 ```
 
@@ -152,7 +152,7 @@ work flow due to Renesas proprietary license limitation.
 We recommend to open new terminal to do this extra section.
 
 ```bash
-$ export AGL_TOP=$HOME/AGL/master
+$ export AGL_TOP=$HOME/AGL/{{ agl.codename }}
 $ cd $AGL_TOP
 ```
 
@@ -202,25 +202,25 @@ OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/path/to/deploy/"
 ex.  When your board is R-Car V4H SBC "Sparrow Hawk" and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-sparrow-hawk/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/{{ agl.codename }}/build-sparrow-hawk/tmp/deploy"
 ```
 
 ex.  When your board is NanoPC T6 board and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-nanopc-t6/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/{{ agl.codename }}/build-ivi-nanopc-t6/tmp/deploy"
 ```
 
 ex.  When your board is Raspberry Pi 4 and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-rpi4/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/{{ agl.codename }}/build-ivi-rpi4/tmp/deploy"
 ```
 
 ex.  When your board is Raspberry Pi 5 and your home directory is "/home/user/".
 
 ```bash
-OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/master/build-ivi-rpi5/tmp/deploy"
+OUT_OF_TREE_CONTAINER_IMAGE_DEPLOY_DIR = "/home/user/AGL/{{ agl.codename }}/build-ivi-rpi5/tmp/deploy"
 ```
 
 #### 4th step: Build all in one image (2b).
@@ -437,4 +437,4 @@ Upstream:
 # Reference webpages
 
  1. [AGL Tech Day Presentation](https://static.sched.com/hosted_files/agltechday2022/3b/agl-techday-202204.pdf)
- 1. [Build AGL Image](https://docs.automotivelinux.org/en/master/#01_Getting_Started/02_Building_AGL_Image/0_Build_Process_Overview/)
+ 1. [Build AGL Image](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/)

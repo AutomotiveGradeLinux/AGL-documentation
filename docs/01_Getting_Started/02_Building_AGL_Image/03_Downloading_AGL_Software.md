@@ -44,7 +44,7 @@ The remainder of this section provides steps on how to download the AGL source f
 
 3. **Download the AGL Source Files:**
    Depending on your development goals, you can either download the
-   latest stable AGL release branch, or the "cutting-edge" (i.e. "master"
+   latest stable AGL release branch, or the "cutting-edge" (i.e. "{{ agl.codename }}"
    branch) files.
 
    * **Stable Release:**
@@ -54,7 +54,7 @@ The remainder of this section provides steps on how to download the AGL source f
      To download the [latest stable release branch](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release), use
      the following commands:
 
-     **Note:** In this below command please change the branch name to the [latest stable release branch](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release). For example, for Nifty Needlefish branch use the last name i.e. "needlefish" as branch.
+     **Note:** In this below command please change the branch name to the [latest stable release branch](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release). For example, for the {{ agl.full_name }} branch use the last name i.e. "{{ agl.codename }}" as branch.
 
 
      ```sh
@@ -67,7 +67,7 @@ The remainder of this section provides steps on how to download the AGL source f
 
    * **Cutting-Edge Files:**
      Using the "cutting-edge" AGL files gives you a snapshot of the
-     "master" branch.
+     "{{ agl.codename }}" branch.
      The resulting local repository you download is dynamic and changes frequently depending on community contributions.
      The advantage of using "cutting-edge" AGL files is that you have the
      absolute latest features, which are often under development, for AGL.
@@ -76,8 +76,8 @@ The remainder of this section provides steps on how to download the AGL source f
 
      ```sh
      $ cd $AGL_TOP
-     $ mkdir master
-     $ cd master
+     $ mkdir {{ agl.codename }}
+     $ cd {{ agl.codename }}
      $ repo init -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
      $ repo sync
      ```

@@ -9,13 +9,13 @@ quickstart the service and application development process.
 
     Please open the link below and download .sh file for desired machine.
 
-    **Note:** The links provided are for the master branch. If you want SDK for specific branch than change the name from master to specific branch.
+    **Note:** The links provided are for the {{ agl.codename }} branch. If you want SDK for a specific branch then change the name from {{ agl.codename }} to the specific branch.
 
-      - **x86** : [qemux86-64](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemux86-64/deploy/sdk/)
+      - **x86** : [qemux86-64]({{ agl_download_base }}/latest/qemux86-64/deploy/sdk/)
 
         **Note:** .sh file will be with name 	"poky-agl-glibc-x86_64-agl-ivi-demo-qt-crosssdk-corei7-64-qemux86-64-toolchain-$(version number).sh" where version number is regularly updated on the site.
 
-      - **AARCH64 - ARM 64bit** : [qemuarm64](https://download.automotivelinux.org/AGL/snapshots/master/latest/qemuarm64/deploy/sdk/)
+      - **AARCH64 - ARM 64bit** : [qemuarm64]({{ agl_download_base }}/latest/qemuarm64/deploy/sdk/)
 
         **Note:** .sh file will be with name 	"	poky-agl-glibc-x86_64-agl-ivi-demo-qt-crosssdk-aarch64-qemuarm64-toolchain-$(version number).sh" where version number is regularly updated on the site.
 

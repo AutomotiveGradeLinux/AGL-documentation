@@ -50,4 +50,4 @@ The Application Framework layer provides the APIs for creating both managing and
 applications on an AGL system. The Services layer contains user space services that all
 applications can access. The Operating System (OS) layer provides the Linux kernel and device
 drivers along with standard OS utilities. For IVI (In Vehicle Infotainment)
-system a full fledged demo is [available](https://docs.automotivelinux.org/en/master/#01_Getting_Started/01_Quickstart/01_Using_Ready_Made_Images/).
+system a full fledged demo is [available](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/01_Quickstart/01_Using_Ready_Made_Images/).

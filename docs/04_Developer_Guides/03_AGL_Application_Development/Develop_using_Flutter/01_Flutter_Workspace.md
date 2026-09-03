@@ -21,7 +21,7 @@ The following steps are the gist of the full process. The detailed explanation f
 #Use in-tree version in  ./external/workspace-automation/
 #Call:
 ./flutter_workspace.py \
-	    --enable agl-ivi-demo-flutter-qemu-unagi \
+	    --enable agl-ivi-demo-flutter-qemu-{{ agl.codename }} \
 	    [ --flutter-version 3.38.3 ]
 … wait …
 
@@ -32,7 +32,7 @@ run-agl-ivi-demo-flutter-qemu
 
 cd <path_to_your_flutter_project>
 
-flutter run [-d agl-qemu-unagi]
+flutter run [-d agl-qemu-{{ agl.codename }}]
 ```
 
 ## Case 1: Basic Setup (no AGL APIs, same as 'Linux Desktop')
@@ -66,14 +66,14 @@ Pros and cons:
 
 ```
 ./flutter_workspace.py \ 
---enable agl-ivi-demo-flutter-qemu-unagi \ 
+--enable agl-ivi-demo-flutter-qemu-{{ agl.codename }} \ 
 [ --flutter-version 3.38.3 ]
 source setup_env.sh
 run-agl-ivi-demo-flutter-qemu
 cd <path_to_your_flutter_project>
 flutter doctor -v 
-should show: "AGL unagi-latest QEMU Image (mobile)" 
-flutter run -d agl-qemu-unagi
+should show: "AGL {{ agl.codename }}-latest QEMU Image (mobile)" 
+flutter run -d agl-qemu-{{ agl.codename }}
 ```
 
 Pros and cons:
@@ -93,16 +93,16 @@ Pros and cons:
 
 ```
 ./flutter_workspace.py \ 
---enable agl-ivi-demo-flutter-qemu-unagi \
+--enable agl-ivi-demo-flutter-qemu-{{ agl.codename }} \
 [--flutter-version 3.38.3]
 source setup_env.sh
 run-agl-ivi-demo-flutter-qemu
 cd <path_to_your_flutter_project>
 flutter doctor -v 
-should show: "AGL unagi-latest QEMU Image (mobile)" 
+should show: "AGL {{ agl.codename }}-latest QEMU Image (mobile)" 
 code .
 select run config under flutter and choose
-"agl-unagi latest"
+"agl-{{ agl.codename }} latest"
 ```
 
 Pros and cons:

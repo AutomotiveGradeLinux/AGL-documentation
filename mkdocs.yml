@@ -13,6 +13,7 @@ theme:
 plugins:
   - search:
       separator: '[\s\-\_]+'
+  - macros
 
 markdown_extensions:
   - toc:
@@ -21,4 +22,18 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
-
+# Release-identity variables, updated once per AGL release cut instead of
+# find/replacing hardcoded branch/codename strings across docs/**/*.md.
+# See main.py for the one derived value (agl_download_base) computed from
+# these at build time.
+extra:
+  agl:
+    codename: master
+    full_name: "Wacky Walleye"
+  yocto:
+    codename: wrynose
+    version: "6.0.x"
+  qt_layer_branch: "6.12"
+  # "release" (post branch-cut, published artifacts) or "snapshots"
+  # (pre-cut / rolling CI builds, which always live under .../master/).
+  artifact_kind: snapshots
