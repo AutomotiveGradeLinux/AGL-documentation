@@ -111,7 +111,7 @@ Available features:
    [meta-agl-demo]                               # DEMO layer
        Refer: https://git.automotivelinux.org/AGL/meta-agl-demo/tree/templates/feature
        agl-container-guest-demo                  # Enable container guest support in each IVI demo image
-       agl-demo                                  # default IVI demo 
+       agl-demo                                  # default IVI demo
        agl-kvm                                   # Enables support for building multiconfig based KVM+QEMU demo images
 
    [meta-agl-devel]                              # Development layer

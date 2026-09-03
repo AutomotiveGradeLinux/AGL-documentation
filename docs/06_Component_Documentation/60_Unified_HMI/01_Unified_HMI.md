@@ -72,7 +72,7 @@ Json files need to be created correctly for your execution environment.
 
 ## How to install Unified HMI frameworks in your Build
 
-Follow the [AGL documentation](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/) for the build process, and set up the "[Initializing Your Build Environment](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/04_Initializing_Your_Build_Environment/)" section as described below to enable the AGL feature 'agl-uhmi'. 
+Follow the [AGL documentation](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview/) for the build process, and set up the "[Initializing Your Build Environment](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/02_Building_AGL_Image/04_Initializing_Your_Build_Environment/)" section as described below to enable the AGL feature 'agl-uhmi'.
 
 For example:
 ```
@@ -185,11 +185,11 @@ $ systemctl restart ucl-node
 Also, please restart the following system services only in one node indicated as **ucl_lifecycle_manager** or **ula_client_manager** in virtual-screen-def.json.
 ```
 $ systemctl restart ucl_lifecycle_manager
-``` 
+```
 
 ```
 $ systemctl restart ula_client_manager
-``` 
+```
 
 After restarting these services, your system should be ready to use DDFW commands with the new configuration.
 
@@ -237,7 +237,7 @@ Example of `app.json`:
 }
 ```
 
-In this example, the application glmark2-es2-wayland is configured to launch on the sender node `agl-host0` and display its output on the receiver nodes `agl-host0` and `agl-host1`. The `scanout_x`, `scanout_y`, `scanout_w`, `scanout_h` parameters define the size of the window. 
+In this example, the application glmark2-es2-wayland is configured to launch on the sender node `agl-host0` and display its output on the receiver nodes `agl-host0` and `agl-host1`. The `scanout_x`, `scanout_y`, `scanout_w`, `scanout_h` parameters define the size of the window.
 
 Please set `listen_port` correctly to match with one defined as **framework_node** keys in virtual-screen-def.json, ensuring the communication between sender and receivers.
 

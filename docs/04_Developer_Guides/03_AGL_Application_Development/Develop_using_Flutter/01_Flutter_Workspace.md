@@ -1,6 +1,6 @@
 # Flutter and meta-flutter
 
-Flutter is an open-source UI software development kit (SDK) created by Google for building natively compiled, multi-platform applications from a single codebase. Using the Dart programming language, it enables fast development for mobile (iOS, Android), web, desktop (Windows, macOS, Linux), and embedded devices. It features a "hot reload" function, allowing developers to view code changes 
+Flutter is an open-source UI software development kit (SDK) created by Google for building natively compiled, multi-platform applications from a single codebase. Using the Dart programming language, it enables fast development for mobile (iOS, Android), web, desktop (Windows, macOS, Linux), and embedded devices. It features a "hot reload" function, allowing developers to view code changes
 instantly without losing app state.
 
 # Flutter in AGL
@@ -36,7 +36,7 @@ flutter run [-d agl-qemu-{{ agl.codename }}]
 ```
 
 ## Case 1: Basic Setup (no AGL APIs, same as 'Linux Desktop')
-* This will compile and run your flutter application on the 
+* This will compile and run your flutter application on the
 Linux desktop (aka Ubuntu 22.x in our case).
 * You can develop, debug, run all on your PC.
 * No IDE
@@ -65,14 +65,14 @@ Pros and cons:
 * No IDE, yet.
 
 ```
-./flutter_workspace.py \ 
---enable agl-ivi-demo-flutter-qemu-{{ agl.codename }} \ 
+./flutter_workspace.py \
+--enable agl-ivi-demo-flutter-qemu-{{ agl.codename }} \
 [ --flutter-version 3.38.3 ]
 source setup_env.sh
 run-agl-ivi-demo-flutter-qemu
 cd <path_to_your_flutter_project>
-flutter doctor -v 
-should show: "AGL {{ agl.codename }}-latest QEMU Image (mobile)" 
+flutter doctor -v
+should show: "AGL {{ agl.codename }}-latest QEMU Image (mobile)"
 flutter run -d agl-qemu-{{ agl.codename }}
 ```
 
@@ -92,14 +92,14 @@ Pros and cons:
 * Within IDE ;)
 
 ```
-./flutter_workspace.py \ 
+./flutter_workspace.py \
 --enable agl-ivi-demo-flutter-qemu-{{ agl.codename }} \
 [--flutter-version 3.38.3]
 source setup_env.sh
 run-agl-ivi-demo-flutter-qemu
 cd <path_to_your_flutter_project>
-flutter doctor -v 
-should show: "AGL {{ agl.codename }}-latest QEMU Image (mobile)" 
+flutter doctor -v
+should show: "AGL {{ agl.codename }}-latest QEMU Image (mobile)"
 code .
 select run config under flutter and choose
 "agl-{{ agl.codename }} latest"

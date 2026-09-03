@@ -5,7 +5,7 @@ title: Building for Raspberry Pi 5 and 4
 The
 [Raspberry Pi](https://www.raspberrypi.org/help/what-%20is-a-raspberry-pi/) is a small computer that is ideal for learning computing and computer languages.
 The AGL Project supports building images for the
-[Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) board and 
+[Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) board and
 [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) board.
 These boards come in a variety of models.
 See the

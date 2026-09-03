@@ -98,7 +98,7 @@ By default, `agl-image-weston` has a predefined size. To increase the image size
    ```conf
    IMAGE_ROOTFS_SIZE = "409600"
    ```
-   
+
    This example sets the base size to 400 MB. Adjust the value as needed for your use case.
 
 3. To increase by 2 GB, modify the value:

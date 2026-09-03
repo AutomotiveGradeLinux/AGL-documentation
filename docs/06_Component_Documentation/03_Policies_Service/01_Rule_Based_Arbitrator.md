@@ -1,5 +1,5 @@
 ---
-title: Rule Based Arbitrator 
+title: Rule Based Arbitrator
 ---
 
 # RBA

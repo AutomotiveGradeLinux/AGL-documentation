@@ -6,14 +6,14 @@ AGL provides a number of pre-built ready-made images of various versions.
 
 ## Pre-built ready environment
 
-- [x86-64](#x86-64)  
--- [QEMU x86-64](#qemu-x86-64)  
--- [Virtual Box](#virtual-box)  
+- [x86-64](#x86-64)<br>
+-- [QEMU x86-64](#qemu-x86-64)<br>
+-- [Virtual Box](#virtual-box)<br>
 -- [x86-64 physical system](#x86-64-physical-system)
 
-- [ARM 64bit](#arm-64bit)  
--- [QEMU aarch64](#qemu-aarch64)  
--- [Raspberry Pi 4](#raspberry-pi-4)  
+- [ARM 64bit](#arm-64bit)<br>
+-- [QEMU aarch64](#qemu-aarch64)<br>
+-- [Raspberry Pi 4](#raspberry-pi-4)
 
 
 ## x86-64

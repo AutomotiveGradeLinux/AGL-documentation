@@ -40,7 +40,7 @@ FEATURE_PACKAGES_agl-offline-voice-agent:append = " \
 "
 ```
 
-The voice agent service will automatically start on startup with the default configuration located at 
+The voice agent service will automatically start on startup with the default configuration located at
 `/etc/default/voice-agent-config.ini.`
 
 
@@ -146,7 +146,7 @@ Most of the above configuration variable are self explanatory, however, I'll div
                     "intents":["volume_control_action"],
                     "synonyms": ["increase", "up", "raise", "louder"],
                     "modifier_intents": ["to_or_by"]
-                }, 
+                },
                 "decrease": {
                     "intents": ["volume_control_action"],
                     "synonyms": ["decrease", "lower", "down", "quieter", "reduce"],
@@ -217,7 +217,7 @@ The Snips NLU engine uses a dataset to understand and recognize user intents. Th
 To train the NLU Intent Engine model, a pre-processing step is required to convert the dataset into a format compatible with the Snips NLU engine. Once the model is trained, it can be used to parse user queries and extract the intent and relevant slots for further processing.
 
 ### Training
-To train the NLU Intent Engine for your specific use case, you can modify the dataset files `intents.yaml` and `entities.yaml` to add new intents, slots, or entity values. You need to re-generate the dataset if you modify `intent.yaml` or `entities.yaml`, for this purpose you need to install [`snips-sdk-agl`](https://github.com/malik727/snips-sdk-agl) module. This module is an extension of the original Snips NLU with upgraded Python support and is specifically designed for data pre-processing and training purposes only. 
+To train the NLU Intent Engine for your specific use case, you can modify the dataset files `intents.yaml` and `entities.yaml` to add new intents, slots, or entity values. You need to re-generate the dataset if you modify `intent.yaml` or `entities.yaml`, for this purpose you need to install [`snips-sdk-agl`](https://github.com/malik727/snips-sdk-agl) module. This module is an extension of the original Snips NLU with upgraded Python support and is specifically designed for data pre-processing and training purposes only.
 
 After installation run the following command to generate the updated `dataset.json` file:
 ```shell

@@ -210,16 +210,16 @@ If you do not use A/B mode, blockdev value should set 2nd value same as 1st valu
 | `redundancy` | String | Optional | Redundancy setting | `"failover"`, `"ab"`, `"fsck"`, `"mkfs"`, default: `"failover"` |
 | `blockdev` | Array | Required | Block devices (up to 2 elements, first is required) | `["/dev/mmcblk1p4"]` or `["/dev/mmcblk1p4", "/dev/mmcblk1p5"]` |
 
-If you set `failover` to `redundancy`:  
+If you set `failover` to `redundancy`:<br>
 If mount operation is failed, it failover. It uses only first device on `blockdev`.
 
-If you set `ab` to `redundancy`:  
+If you set `ab` to `redundancy`:<br>
 Block device selection of `blockdev` is depend on 'aglabboot' settings.
 
-If you set `fsck` to `redundancy`:  
+If you set `fsck` to `redundancy`:<br>
 If mount operation is failed, it execs fsck. It uses only first device on `blockdev`.
 
-If you set `mkfs` to `redundancy`:  
+If you set `mkfs` to `redundancy`:<br>
 If mount operation is failed, it execs mkfs. It uses only first device on `blockdev`.
 
 #### `extended` (Optional)
@@ -465,7 +465,7 @@ The array for environment variable to set in guest.
 
 #### devdir (Device Directory)
 - Entire device directory
-- 
+-
 | Item | Type | Required | Description | Example Values |
 |------|------|----------|-------------|-----------------|
 | `type` | String | Required | Device type | `"devdir"` |

@@ -33,7 +33,7 @@ table 2.
 | Raspberry Pi4/5 (4G or 8G) | 1,2a,2b | Tested. |
 | R-Car V4H SBC "Sparrow Hawk" (8G or 16G) | 1,2a,2b | Tested. |
 
-We recommend choosing Sparrow Hawk or Raspberry Pi5 (4G or 8G) or NanoPC-T6 (4G or 8G or 16G). 
+We recommend choosing Sparrow Hawk or Raspberry Pi5 (4G or 8G) or NanoPC-T6 (4G or 8G or 16G).
 
 **Typical Hardware Set is shown in Appendix.1. **
 
@@ -270,7 +270,7 @@ IC container integration has three method for container exchange.
 
 ### 7a. How to change guest using command line interface
 
-The cmcontrol is a command line interface for the container manager.  It supports container listing, shutdown, reboot, force reboot, and active guest change. 
+The cmcontrol is a command line interface for the container manager.  It supports container listing, shutdown, reboot, force reboot, and active guest change.
 
 ```bash
 $ cmcontrol

@@ -61,7 +61,7 @@ developing a new protobuf specification.
 ### Application Enumeration
 
 The `ListApplications` method allows clients to retrieve the list of available
-applications. 
+applications.
 
 The `ListRequest` is an empty message, while `ListResponse` contains the following:
 
