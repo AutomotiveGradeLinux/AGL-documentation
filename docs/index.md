@@ -53,7 +53,7 @@ You can use the "Getting Started" sections to do the following:
   through fundamental steps that show you how to build for various supported
   hardware targets (e.g. Raspberry PI boards).
 
-<!-- 
+<!--
 FIXME: ... ideas are: Setup Flutter dev env and QT dev env
 
 * [Learn How to Create an Application](./04_Developer_Guides/01_Setting_Up_AGL_SDK.md) using the

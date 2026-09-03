@@ -52,7 +52,7 @@ The device driver download link is described in this document.  Let's download a
 ![sw-driver](images/sw-driver.png)
 ![sw-driver2](images/sw-driver2.png)
 
-As a result, this device can see at device manager. When your device has SLCAN firmware, this device can see at device manager another name. 
+As a result, this device can see at device manager. When your device has SLCAN firmware, this device can see at device manager another name.
 
 ![sw-driver3](images/sw-driver3.png)
 

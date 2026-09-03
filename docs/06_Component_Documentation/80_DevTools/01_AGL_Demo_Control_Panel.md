@@ -14,7 +14,7 @@ It also supports file playback from CARLA based CAN messages. Refer to the [CARL
 To use the control panel, you need to connect the main machine that runs the control panel to the target machine that runs the AGL image(s) using a **LAN/ethernet cable**. You also need to configure the IP address of the Kuksa server and set your preferences in the tool’s settings menu.
 
 ![Layers_And_Extensions](images/AGL-Demo-Control-Panel/Application-Logic.png)
-## Installation  
+## Installation
 
 - Step 1
 ```bash
@@ -53,7 +53,7 @@ To set up the CAN interface between the Host system and the target machine(s) we
 	$ sudo ip link set up can0
 	```
 
-3. Install cannelloni from its [GitHub repository](https://github.com/mguentner/cannelloni) and run cannelloni with the following commands. 
+3. Install cannelloni from its [GitHub repository](https://github.com/mguentner/cannelloni) and run cannelloni with the following commands.
 
 	_Note_: `cannelloni` is available in AGL, just add `IMAGE_INSTALL:append = " cannelloni"`	to your `conf/local.conf`
 
@@ -75,7 +75,7 @@ Run the `kuksa-val-server`/`databroker` on `0.0.0.0` by either restarting the se
 Now, you can create a custom configuration to save your specific preferences for the settings page by creating the `*.ini*` files in the,
 -  `/etc/agl-demo-control-panel.ini`
 - `$HOME/.local/share/agl-demo-control-panel/config.ini`
-	
+
 ```python
 [default]
 fullscreen-mode = true			# launches app in fullscreen mode
@@ -136,7 +136,7 @@ _Note_: While generating the playback file, it is recommended to run both **reco
 		- Secure Mode: if toggled **"on"**, specify the `CA.pem File`
 		- Protocol: websocket ← ? → gRPC
 		- TLS Server Name
-		- JWT/Auth Token path 
+		- JWT/Auth Token path
 		- CA.pem certificate path
 	- Start/Stop
 	- Reconnect

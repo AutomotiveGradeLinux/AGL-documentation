@@ -36,7 +36,7 @@ You copy 'example' to the target root filesystem on the SD card.  The 'example' 
 After the target device was booting,  you execute 'example' in the console.
 
 
-## Build autoconf/automake 
+## Build autoconf/automake
 
 For example, you have a autoconf/automake based source tree.
 

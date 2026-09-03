@@ -17,7 +17,7 @@ Upstream documentation for these components can be found at the links below:
 
 - [PipeWire documentation](https://docs.pipewire.org/)
 
-- [WirePlumber documentation](https://pipewire.pages.freedesktop.org/wireplumber/) 
+- [WirePlumber documentation](https://pipewire.pages.freedesktop.org/wireplumber/)
 
 - [PipeWire Wiki](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/home)
 
@@ -29,14 +29,14 @@ The main entry point for applications to access the audio system is the API offe
 *libpipewire*. The functionality offered by *libpipewire* is vast and it is beyond the
 scope of this document to describe it all.
 
-For playback and capture, applications should use *struct pw_stream* and its associated methods. 
+For playback and capture, applications should use *struct pw_stream* and its associated methods.
 See [PipeWire: Tutorial - Part 4: Playing a tone](https://docs.pipewire.org/page_tutorial4.html)
 for a starting point.
 
 ### GStreamer (Recommended)
 
-For convenience, applications that use GStreamer can use the PipeWire GStreamer elements to 
-plug the functionality offered by *struct pw_stream* directly in the GStreamer pipeline. These 
+For convenience, applications that use GStreamer can use the PipeWire GStreamer elements to
+plug the functionality offered by *struct pw_stream* directly in the GStreamer pipeline. These
 elements are called *pipewiresrc* and *pipewiresink*
 
 Example:
@@ -89,16 +89,16 @@ See the separate [agl-service-audiomixer](https://git.automotivelinux.org/apps/a
 
 ### libwireplumber
 
-The WirePlumber library provides API that wraps libpipewire and makes it easier to work with 
-when you are writing control applications, such as a volume mixer. The audiomixer service is in 
+The WirePlumber library provides API that wraps libpipewire and makes it easier to work with
+when you are writing control applications, such as a volume mixer. The audiomixer service is in
 fact implemented using *libwireplumber*.
 
-WirePlumber also provides support for lua-based scripting. Standalone scripts, executed with the 
+WirePlumber also provides support for lua-based scripting. Standalone scripts, executed with the
 *wpexec* tool, may be used  as a means to rapidly make use of the API provided by *libwireplumber*
 
 ## Tools
 
-* **wpctl**: allows inspecting the devices, choosing which source & sink are the default ones 
+* **wpctl**: allows inspecting the devices, choosing which source & sink are the default ones
   and allows volume/mute adjustments to be made on the command line. Try `wpctl status` and
   `wpctl help` to get started with it
 
@@ -146,7 +146,7 @@ Similarly, the WirePlumber daemon can be configured to be more verbose by editin
 
 All messages will be available in the systemd journal, inspectable with journalctl.
 
-For applications, at runtime, `PIPEWIRE_DEBUG` can be set to a value between 0 and 5, 
+For applications, at runtime, `PIPEWIRE_DEBUG` can be set to a value between 0 and 5,
 with 5 being the most verbose and 0 the least verbose.
 
 For applications that use *libwireplumber* the equivalent environment variable is
@@ -155,5 +155,5 @@ For applications that use *libwireplumber* the equivalent environment variable i
 The default debug level for the daemons is 2, while for applications it's 0
 (with few exceptions).
 
-More information is also available on 
+More information is also available on
 [WirePlumber's documentation on debug logging](https://pipewire.pages.freedesktop.org/wireplumber/daemon-logging.html)

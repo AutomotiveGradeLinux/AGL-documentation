@@ -52,7 +52,7 @@ Run the help command for details.
   drm-lease-manager --help
 ```
 
-More details of DRM Lease Manager configuration, please check a [configuration guide](https://git.automotivelinux.org/src/drm-lease-manager/tree/doc/configuration-guide.md). 
+More details of DRM Lease Manager configuration, please check a [configuration guide](https://git.automotivelinux.org/src/drm-lease-manager/tree/doc/configuration-guide.md).
 
 ### Running weston
 
@@ -77,7 +77,7 @@ Multiple weston or kmscube instances (one per DRM lease) can be started at the s
 
 The DRM Lease Manager packages includes a client library (libdlmclient) to request access to the DRM leases it creates.  The client library provides file descriptors that can be used as if they were created by directly opening the underlying DRM device.
 
-Clients that want _direct access_ to the DRM device can use this library to do so.  Compositor (agl-compositor or weston) client applications do not need to use this interface.  
+Clients that want _direct access_ to the DRM device can use this library to do so.  Compositor (agl-compositor or weston) client applications do not need to use this interface.
 
 
 To use the DRM leases, clients only need to replace their calls to

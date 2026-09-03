@@ -34,7 +34,7 @@ $ git clone "ssh://<LFID>@gerrit.automotivelinux.org:29418/AGL/documentation" &&
     $ sudo pip install -r requirements.txt
     ```
 
-3. If pip is not already installed then install it 
+3. If pip is not already installed then install it
     ```sh
     $ sudo apt-install python3-pip
     ```

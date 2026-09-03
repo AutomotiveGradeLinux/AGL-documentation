@@ -40,7 +40,7 @@ Global configuration for the entire Container Manager.
 - **Description**: Array of network bridge configurations
 - **Elements**:
   - `name` (Required): Bridge name (string)
-  
+
 - **Example**:
 ```json
 "etherbridge": [

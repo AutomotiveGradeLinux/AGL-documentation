@@ -38,12 +38,12 @@ _Note_: Use a version of python compatible with CARLA to create the venv **(Pyth
 
 	```bash
 	# Navigate to directory containing the demo python scripts
-	# 
+	#
 	$ cd /path/to/CARLA_<version>/PythonAPI/examples
 	```
-	
+
 	Create a Python virtual environment and resolve dependencies
-	```bash 
+	```bash
 	$ python3 -m venv carlavenv
 	$ source carlavenv/bin/activate
 	$ pip3 install -r requirements.txt
@@ -122,7 +122,7 @@ $ ./vcan.sh
 
 	CLI Options:
 
-	- 1: Captures CAN messages and writes them into 'can_messages.txt' 
+	- 1: Captures CAN messages and writes them into 'can_messages.txt'
 	- 2: Replays captured CAN messages
 	- 3: Exit
 

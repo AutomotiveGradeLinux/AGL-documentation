@@ -64,23 +64,23 @@ generic application template.
 In addition to the above, some other notable systemd sandbox options worth further consideration for
 applications include:
 
-- [PrivateDevices](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#PrivateDevices=)  
+- [PrivateDevices](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#PrivateDevices=)<br>
   This option could be used to remove access to device files in /dev for applications that do not
   require them, but it is likely that `DeviceAllow` may also need to be used to enable functionality in
   some applications.
-- [ProtectSystem](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectSystem=)  
+- [ProtectSystem](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectSystem=)<br>
   The default and `full` modes of this option likely can be enabled with little impact to most
   applications, as they should not need write access to the directories that are made read-only.
   Using the `strict` option would need investigation into interactions with usage of directory
   hierarchies like `/run`.
-- [ProtectHome](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectHome=)  
+- [ProtectHome](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectHome=)<br>
   This option seems worthwhile if the system ends up with more than one active user for running
   applications, but interactions with default application caching and configuration locations
   needs to be investigated.  It is likely that enforcing use of locations outside of `/home`
   for these would need to be settled upon and documented for application developers.  For
   example using the [XDG directory scheme](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
   similar to the previous AGL application framework.
-- [ReadWritePaths, etc.](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ReadWritePaths=)  
+- [ReadWritePaths, etc.](https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ReadWritePaths=)<br>
    These options provide a more fine-grained approach to some of the above ones, and could be
    used to enable something like an application only seeing its own files and the contents of
    a specific set of directories like `/etc` and `/usr/lib`.  Implementing such would likely

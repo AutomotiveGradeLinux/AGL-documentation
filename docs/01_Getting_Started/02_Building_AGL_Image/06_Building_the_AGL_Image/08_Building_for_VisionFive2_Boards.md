@@ -2,7 +2,7 @@
 title: Building for VisionFive2 boards
 ---
 
-AGL supported StarFive [VisionFive2](https://www.starfivetech.com/en/site/boards) board.  
+AGL supported StarFive [VisionFive2](https://www.starfivetech.com/en/site/boards) board.<br>
 The processor of this board is RISC-V RV64GC.
 
 This section describes the steps you need to take to build the AGL demo image for the VisionFive2 board.
@@ -119,9 +119,9 @@ the image on the VisionFive2 board:
 
 Initially, please refer to [VisionFive2 gpio pin assign page](https://doc-en.rvspace.org/VisionFive2/Datasheet/VisionFive_2/gpio_pin_assig.html).
 
-Connect the cable's GND to pin 6 of the UART.  
-Connect the cable's UART side RX line to pin 8.  
-Connect the cable's UART side TX line to pin 10.  
+Connect the cable's GND to pin 6 of the UART.<br>
+Connect the cable's UART side RX line to pin 8.<br>
+Connect the cable's UART side TX line to pin 10.
 
 The UART speed of VisionFive2 is 115200bps.
 

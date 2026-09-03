@@ -121,13 +121,13 @@ After this process is complete, your image is available as AMI to you (only to y
 
 ### 3.2 Configuring within AWS EC2
 
-In your EC2 dashboard go to the same region as you configured the upload for, 
+In your EC2 dashboard go to the same region as you configured the upload for,
 select "Launch instance" and enter a name.
 
 ![ec2-dashboard](images/1_EC2_dashboard.png)
 
 Select under "My AMIs" the uploaded AGL image in question. Select an instance type
-that is big enough (>= 4GB RAM, 8GB RAM recommended). 
+that is big enough (>= 4GB RAM, 8GB RAM recommended).
 
 ![ec2-instance-1](images/2_start-instance-1.png)
 

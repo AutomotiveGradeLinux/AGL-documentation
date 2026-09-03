@@ -17,7 +17,7 @@ Changes are submitted as Git commits. Each commit must contain:
     a change description with your logic or reasoning for the changes,
       followed by a blank line
     a Signed-off-by line, followed by a colon (Signed-off-by:)
-    a Change-Id identifier line, followed by a colon (Change-Id:). 
+    a Change-Id identifier line, followed by a colon (Change-Id:).
       Gerrit won't accept patches without this identifier.
 
 A commit with the above details is considered well-formed.
