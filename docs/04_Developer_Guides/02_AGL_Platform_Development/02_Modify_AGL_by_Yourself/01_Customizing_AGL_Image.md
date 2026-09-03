@@ -8,7 +8,7 @@ This guide provides step-by-step instructions for customizing the AGL `agl-image
 
 ### Prerequisites
 
-- AGL build environment set up and initialized following [01_Getting_Started/02_Building_AGL_Image](../../../01_Getting_Started/02_Building_AGL_Image/)
+- AGL build environment set up and initialized following [01_Getting_Started/02_Building_AGL_Image](../../../01_Getting_Started/02_Building_AGL_Image/01_Build_Process_Overview.md)
 - Your build directory is 'build-agl' that setups by aglsetup.sh
 - Yocto knowledge and familiarity with bitbake and layer concepts
 

@@ -17,7 +17,7 @@ similarly one can run HTML5 based demos, cluster demo, or other AGL images.
 ## 1. Making Sure Your Build Environment is Correct
 
 The
-"[Initializing Your Build Environment](./04_Initializing_Your_Build_Environment.md)"
+"[Initializing Your Build Environment](../04_Initializing_Your_Build_Environment.md)"
 section presented generic information for setting up your build environment
 using the `aglsetup.sh` script.
 If you are building the AGL demo image for virtio platform, you need to specify

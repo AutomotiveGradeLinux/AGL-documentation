@@ -7,7 +7,7 @@ title: AGL Demo Control Panel
 
 This document describes the design and usage of the **AGL Demo Control Panel**, a **Qt6-based** tool that allows you to control and interact with various **Automotive Grade Linux (AGL)** demo applications. The tool uses **Kuksa.val** and **CAN frame messages** to communicate with the target machine that runs the AGL image(s). You can use the tool to perform tasks such as starting and stopping scripts, changing the vehicle speed and engine RPM, adjusting the HVAC settings, and providing Steering Inputs. The tool is designed to **demonstrate** the capabilities and features of AGL in a **user-friendly** and **interactive** way.
 
-It also supports file playback from CARLA based CAN messages. Refer to the [CARLA with AGL](13_CARLA_with_AGL.md) for more information.
+It also supports file playback from CARLA based CAN messages. Refer to the [CARLA with AGL](02_CARLA_with_AGL.md) for more information.
 
 ### Application Overview
 
@@ -113,7 +113,7 @@ The playback Mode runs in two ways:
 
 1. CARLA File Playback: In this mode, a pre-recorded sequence of CAN messages is used to feed values into the Demo apps.
 
-Follow the [CARLA with AGL](13_CARLA_with_AGL.md) steps to generate the **can_messages.txt** file, which is populated during a CARLA session.
+Follow the [CARLA with AGL](02_CARLA_with_AGL.md) steps to generate the **can_messages.txt** file, which is populated during a CARLA session.
 
 _Note_: While generating the playback file, it is recommended to run both **record_playback** and **carla_to_CAN** scripts with a python version supported by CARLA.
 

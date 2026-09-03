@@ -49,7 +49,7 @@ Wayland interface.*
 
 To provide a working example of application template units, AGL includes templates
 for generic, Flutter, and web applications as part of the `applaunchd` recipe in the
-`meta-app-framework` layer in [meta-agl](../../04_Developer_Guides/02_AGL_Layers/02_meta_agl.md).
+`meta-app-framework` layer in [meta-agl](../../04_Developer_Guides/02_AGL_Platform_Development/01_AGL_Yocto_Layers/02_meta_agl.md).
 If applaunchd is built into an image using the recipe, these templates will be available
 for applications to use for their systemd units by creating a symlink that includes the
 application identifier.  To simplify this, a `BitBake` class named `agl-app` is included in

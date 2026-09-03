@@ -16,7 +16,7 @@ was in place under the form of library, to control and signal back to the
 compositor when applications were started, among other things.
 
 Management of applications, starting, running and stopping them is done in AGL
-with the AppFW [Application Framework Management](20_IVI_Application_Framework/01_Introduction.md),
+with the AppFW [Application Framework Management](../20_IVI_Application_Framework/01_Introduction.md),
 which is an umbrella name to denote the suite of tools and daemons that handle
 all of that. It is integrated with systemd and with the current security model.
 Applications can use AppFW to hang off data, and to pass it down to
@@ -625,7 +625,7 @@ SMACK label and compares it with the ones statically defined.
 
 In the works, there's a new policy model, called [Role Based
 Arbitration](https://git.automotivelinux.org/staging/rba).
-Internally, how it works, should be found at [RBA](04_Rule_Based_Arbitrator.md).
+Internally, how it works, should be found at [RBA](../03_Policies_Service/01_Rule_Based_Arbitrator.md).
 While the other two policies are embedded into the compositor, the RBA policy
 model is an off the-shell policy.  Obviously, vendors and users can hook up
 their own policies, just like RBA did.  These all work towards satisfying

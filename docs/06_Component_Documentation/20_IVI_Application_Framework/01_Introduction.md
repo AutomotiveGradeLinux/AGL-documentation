@@ -69,7 +69,7 @@ following reasons:
   such as web applications or Flutter.
 
 AGL also provides reference implementations whenever possible and relevant,
-located in the [meta-agl](../../04_Developer_Guides/02_AGL_Layers/02_meta_agl.md)
+located in the [meta-agl](../../04_Developer_Guides/02_AGL_Platform_Development/01_AGL_Yocto_Layers/02_meta_agl.md)
 layer under `meta-app-framework`. At the moment, the application framework
 contains two such components:
 
@@ -96,7 +96,7 @@ for improved reliability and security.
 
 Each service should be represented by a `systemd` unit file installed to the
 appropriate location. More details can be obtained from the [Creating a New
-Service](../../04_Developer_Guides/03_Creating_a_New_Service.md) document.
+Service](../../04_Developer_Guides/02_AGL_Platform_Development/02_Modify_AGL_by_Yourself/02_Creating_a_New_Service.md) document.
 
 # User Session Management
 

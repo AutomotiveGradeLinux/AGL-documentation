@@ -82,7 +82,7 @@ The `meta-agl-demo` layer has the following base dependencies:
 ### Feature Dependencies
 
 The `meta-agl-demo` layer has the following AGL
-[feature](../getting_started/reference/getting-started/image-workflow-initialize-build-environment.html#agl-features)
+[feature](../../../01_Getting_Started/02_Building_AGL_Image/04_Initializing_Your_Build_Environment.md#agl-features)
 dependencies:
 
 * Yocto Project `meta-security` Layer:
