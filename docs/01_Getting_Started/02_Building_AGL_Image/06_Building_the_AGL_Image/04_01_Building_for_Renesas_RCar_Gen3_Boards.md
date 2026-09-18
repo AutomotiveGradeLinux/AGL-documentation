@@ -1,5 +1,5 @@
 ﻿---
-title: Building for Supported Renesas Boards
+title: Building for Renesas R-Car Gen 3 boards
 ---
 
 AGL supports building for several automotive

@@ -14,21 +14,22 @@ The following table briefs about the various hardware platforms, supported by AG
 
 ### AGL Reference Boards
 
-|      BOARD      |     MACHINE    | ARCHITECTURE | QUICK START GUIDE| LATEST SNAPSHOT |
-|:---------------:|:--------------:|:------------:|:----------------:|:--------------------:|
-|       QEMU      |   qemu-x86-64  |      x86      |[QEMU Quick Start](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/01_Quickstart/01_Using_Ready_Made_Images/#_top)| [qemu-x86-64]({{ agl_download_base }}/latest/qemux86-64/)|
-|                 |    qemu-arm    |     arm32     | | [qemu-arm]({{ agl_download_base }}/latest/qemuarm/)|
-|                 |   qemu-arm64   |     arm64     | | [qemu-arm64]({{ agl_download_base }}/latest/qemuarm64/)|
-|                 |                |               |
-|    RCar Gen 3   |     h3ulcb     |     arm64     |[RCar Gen 3 Quick Start](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/01_Quickstart/01_Using_Ready_Made_Images/#3-r-car-h3sk-h3ulcb-board)| [h3ulcb-nogfx]({{ agl_download_base }}/latest/h3ulcb-nogfx/)|
-|                 | h3-salvator-x  |     arm64     |
-|                 |      h3-kf     |     arm64     |
-|                 |     m3ulcb     |     arm64     |
-|                 | m3-salvator-x  |     arm64     |
-|                 |      m3-kf     |     arm64     |
-|                 |   agl-refhw    |     arm64     |
-|                 |                |               |
-|  Raspberry Pi   |  raspberrypi4  |     arm64     |[Raspberry Pi Quick Start](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/01_Quickstart/01_Using_Ready_Made_Images/#2-raspberry-pi-4)|[raspberrypi4]({{ agl_download_base }}/latest/raspberrypi4/)|
+|          BOARD         |     MACHINE    | ARCHITECTURE | QUICK START GUIDE| LATEST SNAPSHOT |
+|:----------------------:|:--------------:|:------------:|:----------------:|:--------------------:|
+|          QEMU          |   qemu-x86-64  |      x86      |[QEMU Quick Start](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/01_Quickstart/01_Using_Ready_Made_Images/#_top)| [qemu-x86-64]({{ agl_download_base }}/latest/qemux86-64/)|
+|                        |    qemu-arm    |     arm32     | | [qemu-arm]({{ agl_download_base }}/latest/qemuarm/)|
+|                        |   qemu-arm64   |     arm64     | | [qemu-arm64]({{ agl_download_base }}/latest/qemuarm64/)|
+|                        |                |               |
+|       RCar Gen 3       |     h3ulcb     |     arm64     |[RCar Gen 3 Quick Start](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/01_Quickstart/01_Using_Ready_Made_Images/#3-r-car-h3sk-h3ulcb-board)| [h3ulcb-nogfx]({{ agl_download_base }}/latest/h3ulcb-nogfx/)|
+|                        | h3-salvator-x  |     arm64     |
+|                        |      h3-kf     |     arm64     |
+|                        |     m3ulcb     |     arm64     |
+|                        | m3-salvator-x  |     arm64     |
+|                        |      m3-kf     |     arm64     |
+|                        |   agl-refhw    |     arm64     |
+| Sparrow Hawk R-Car V4H | sparrow-hawk   |     arm64     |
+|                        |                |               |
+|      Raspberry Pi      |  raspberrypi4  |     arm64     |[Raspberry Pi Quick Start](https://docs.automotivelinux.org/en/{{ agl.codename }}/#01_Getting_Started/01_Quickstart/01_Using_Ready_Made_Images/#2-raspberry-pi-4)|[raspberrypi4]({{ agl_download_base }}/latest/raspberrypi4/)|
 
 **Note:** Latest stable release source tar and binary for all the boards can be found [here](https://wiki.automotivelinux.org/agl-distro/release-notes#latest_stable_release)
 
