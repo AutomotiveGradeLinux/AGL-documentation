@@ -78,17 +78,23 @@ $ cd $AGL_TOP
 
 When your board is NanoPC T6
 ```bash
-$ source meta-agl/scripts/aglsetup.sh -f -m nanopc-t6 -b build-ic-nanopc-t6 agl-demo agl-ic agl-ic-slint
+$ source meta-agl/scripts/aglsetup.sh -f -m nanopc-t6 -b build-nanopc-t6 agl-demo agl-ic
+```
+
+When your board is R-Car V4H SBC "Sparrow Hawk".
+
+```bash
+$ source meta-agl/scripts/aglsetup.sh -f -m sparrow-hawk -b build-sparrow-hawk agl-demo agl-ic
 ```
 
 When your board is Raspberry Pi 4
 ```bash
-$ source meta-agl/scripts/aglsetup.sh -f -m raspberrypi4 -b build-ic-rpi4 agl-demo agl-ic agl-ic-slint
+$ source meta-agl/scripts/aglsetup.sh -f -m raspberrypi4 -b build-rpi4 agl-demo agl-ic
 ```
 
 When your board is Raspberry Pi 5
 ```bash
-$ source meta-agl/scripts/aglsetup.sh -f -m raspberrypi5 -b build-ic-rpi5 agl-demo agl-ic agl-ic-slint
+$ source meta-agl/scripts/aglsetup.sh -f -m raspberrypi5 -b build-rpi5 agl-demo agl-ic
 ```
 
 
