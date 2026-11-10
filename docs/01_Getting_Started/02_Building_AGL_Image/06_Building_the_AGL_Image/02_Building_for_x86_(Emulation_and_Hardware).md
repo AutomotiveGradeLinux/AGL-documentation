@@ -18,30 +18,11 @@ using the `aglsetup.sh` script.
 If you are building the AGL demo image for emulation, you need to specify some
 specific options when you run the script:
 
-**Sample Qt based IVI demo :**
+
+**Start by configuring yocto for QEMU demo build:**
 
 ```sh
 $ source meta-agl/scripts/aglsetup.sh -f -m qemux86-64 -b qemux86-64 agl-demo agl-devel
-$ echo "# reuse download directories" >> $AGL_TOP/site.conf
-$ echo "DL_DIR = \"$HOME/downloads/\"" >> $AGL_TOP/site.conf
-$ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
-$ ln -sf $AGL_TOP/site.conf conf/
-```
-
-**Sample HTML5 based IVI demo :**
-
-```sh
-$ source meta-agl/scripts/aglsetup.sh -f -m qemux86-64 -b qemux86-64 agl-demo agl-devel agl-profile-graphical-html5
-$ echo "# reuse download directories" >> $AGL_TOP/site.conf
-$ echo "DL_DIR = \"$HOME/downloads/\"" >> $AGL_TOP/site.conf
-$ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
-$ ln -sf $AGL_TOP/site.conf conf/
-```
-
-**IVI-EG Flutter based demo :**
-
-```sh
-$ source meta-agl/scripts/aglsetup.sh -f -m qemux86-64 -b qemux86-64 agl-flutter agl-devel
 $ echo "# reuse download directories" >> $AGL_TOP/site.conf
 $ echo "DL_DIR = \"$HOME/downloads/\"" >> $AGL_TOP/site.conf
 $ echo "SSTATE_DIR = \"$AGL_TOP/sstate-cache/\"" >> $AGL_TOP/site.conf
@@ -83,28 +64,15 @@ By default, the build process puts the resulting image in the Build Directory an
 <build_directory>/tmp/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.vmdk.xz
 
 $ export IMAGE_NAME=agl-ivi-demo-qt-qemux86-64.vmdk.xz
-```
-
-**Sample HTML5 based IVI demo :**
-The target is `agl-ivi-demo-html5`.
-
-```sh
-$ time bitbake agl-ivi-demo-html5
-```
-
-By default, the build process puts the resulting image in the Build Directory and further exporting that as `$IMAGE_NAME`:
-
-```sh
-<build_directory>/tmp/deploy/images/qemux86-64/agl-ivi-demo-html5-qemux86-64.vmdk.xz
-
-$ export IMAGE_NAME=agl-ivi-demo-html5-qemux86-64.vmdk.xz
+$ export IMAGE_PATH=tmp/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.rootfs.wic.vmdk # we will need it later for QEMU
 ```
 
 **IVI-EG Flutter based demo :**
 The target is `agl-image-flutter`.
 
 ```sh
-$ time bitbake agl-image-flutter
+$ time bitbake agl-ivi-demo-flutter
+$ export IMAGE_PATH=tmp/deploy/images/qemux86-64/agl-ivi-demo-flutter-qemux86-64.rootfs.wic.vmdk # we will need it later for QEMU
 ```
 
 **IC-EG container image :**
@@ -117,36 +85,25 @@ $ time bitbake agl-image-flutter
 # TBD
 ```
 
-## 3. Deploying the AGL Demo Image
+## 3. Running the demo image on QMEU
+
+Once the build is complete, you can now just use the ``runqemu`` wrapper command to boot the image :
+
+<!-- TODO: removed audio because i get error -->
+<!-- runqemu - ERROR - Failed to run qemu: qemu-system-x86_64: -device hda-duplex: no default audio driver available -->
+<!-- Perhaps you wanted to use -audio or set audiodev=agl? -->
+```sh
+$ runqemu kvm serialstdio slirp publicvnc
+```
+
+## 4. Deploying the AGL Demo Image
 
 Deploying the image consists of decompressing the image and then
 booting it using either QEMU, VirtualBox or physical system.
 The examples below are usually for the 'agl-ivi-demo-qt' target.
 Please adapt accordingly to your target image.
 
-**3.1 QEMU**
-
-Depending on your Linux distribution, use these commands to install QEMU:
-
-If you built your image with bitbake, you can now just use the ``runqemu`` wrapper, after sourcing `agl-init-build-env` inside the build-dir :
-
-For this example :
-
-```sh
-$ source $AGL_TOP/{{ agl.codename }}/qemux86-64/agl-init-build-env
-```
-
-In general :
-
-```sh
-$ source $AGL_TOP/<release-branch-name>/<build-dir>/
-```
-
-And further use `runqemu` to boot the image :
-
-```sh
-$ runqemu tmp/deploy/images/qemux86-64/agl-ivi-demo-qt-qemux86-64.qemuboot.conf kvm serialstdio slirp publicvnc audio
-```
+**4.1 QEMU**
 
 If you need to run it outside of the bitbake environment or need special settings for
 hardware pass-through using `qemu` :
@@ -166,7 +123,7 @@ If your build host is running
 
 ```sh
 sudo pacman -S qemu ovmf
-export OVMF_PATH=/usr/share/ovmf/x64/OVMF_CODE.fd
+export OVMF_PATH=/usr/share/ovmf/x64/OVMF_CODE.4m.fd
 ```
 
 If your build host is running Debian or Ubuntu, use the following commands:
@@ -187,17 +144,19 @@ export OVMF_PATH=/usr/share/edk2/ovmf/OVMF_CODE.fd
 
 Once QEMU is installed, boot the image with KVM support:
 
-```sh
-qemu-system-x86_64 -enable-kvm -m 2048 \
-    -bios ${OVMF_PATH} \
-    -hda ${IMAGE_NAME} \
+```
+qemu-system-x86_64 \
+    -accel kvm \
     -cpu kvm64 -cpu qemu64,+ssse3,+sse4.1,+sse4.2,+popcnt \
-    -vga virtio -show-cursor \
+    -m 2048 -smp 4 \
+    -device virtio-net-pci,netdev=net0 \
     -device virtio-rng-pci \
-    -serial mon:stdio -serial null \
-    -soundhw hda \
-    -net nic \
-    -net user,hostfwd=tcp::2222-:22
+    -audiodev pa,id=snd0 \
+    -netdev user,id=net0,hostfwd=tcp::2222-:22 \
+    -drive if=pflash,format=raw,readonly=on,file=${OVMF_PATH} \
+    -drive file=${IMAGE_PATH},if=virtio \
+    -display sdl \
+    -usb -device usb-tablet
 ```
 
 **NOTE:** KVM may not be supported within a virtualized environment such as
